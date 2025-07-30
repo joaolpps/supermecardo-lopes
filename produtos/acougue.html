@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Açougue - Supermercado Lopes</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+         <div class="container">
+            <nav class="top-nav">
+                <a href="../index.html" class="logo" title="Supermercado Lopes"></a>
+                <div class="search-bar">
+                    <input type="text" placeholder="Busque novos produtos">
+                    <button class="search-button">🔍</button>
+                </div>
+                <button class="mobile-menu">&#9776;</button>
+            </nav>
+            <nav class="main-categories-nav">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="eletro.html">Eletro</a></li> 
+                    <li><a href="infantil.html">Infantil</a></li> 
+                    <li><a href="petshop.html">Pet Shop</a></li> 
+                    <li><a href="higiene.html">Higiene & Beleza</a></li> 
+                    <li><a href="limpeza.html">Limpeza</a></li> 
+                    <li><a href="bebidas.html">Bebidas</a></li> 
+                    <li><a href="alimentos.html">Alimentos</a></li> 
+                    <li><a href="feira.html">Feira</a></li> 
+                    <li><a href="acougue.html">Açougue</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="section" id="products">
+            <div class="container">
+                <h2 class="section-title">Açougue</h2>
+                <div class="products-grid">
+                    <!-- Card 1 - Picanha -->
+                    <div class="card-produto" data-category="acougue">
+                        <div class="badges">
+                            <span class="desconto">-10%</span>
+                            <span class="evento">Oferta</span>
+                        </div>
+                        <div class="imagem-produto">
+                            <img src="../photos/picanha-bovina.webp" alt="Picanha">
+                        </div>
+                        <div class="descricao">
+                            <p class="titulo">Picanha Bovina kg</p>
+                            <div class="precos">
+                                <span class="preco-antigo">R$ 89,90</span>
+                                <span class="preco-novo">R$ 80,91</span>
+                                <span class="por-unidade">por kg</span>
+                            </div>
+                            <button class="btn-adicionar">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Supermercado Lopes. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i>FB</a>
+                <a href="#"><i class="fab fa-instagram"></i>IG</a>
+                <a href="#"><i class="fab fa-twitter"></i>TW</a>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/precos-globais.js"></script>
+    <script src="../js/preenche-precos.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/filtros-categoria.js"></script>
+    <script src="../js/calcula-desconto.js"></script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - Supermercado Lopes</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Início do cabeçalho do site: contém logo, barra de busca, links de usuário e navegação principal -->
+    <header>
+        <div class="container"> <!-- Container do header para centralizar conteúdo -->
+            <nav class="top-nav"> <!-- Navegação superior: logo, busca, links de usuário, menu mobile -->
+                <div class="logo"> <!-- Logo do supermercado -->
+                    <a href="../index.html" class="logo" title="Supermercado Lopes"></a> <!-- Link para a página inicial -->
+                </div>
+                <div class="search-bar"> <!-- Barra de busca de produtos -->
+                    <input type="text" placeholder="Busque novos produtos"> <!-- Campo de busca -->
+                    <button class="search-button">🔍</button> <!-- Botão de busca -->
+                </div>
+
+
+                <button class="mobile-menu">&#9776;</button> <!-- Botão do menu mobile -->
+            </nav>
+
+            <nav class="main-categories-nav"> <!-- Navegação das categorias principais -->
+                <ul class="nav-links"> <!-- Links para páginas de categorias -->
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../produtos/eletro.html">Eletrodomésticos</a></li> 
+                    <li><a href="../produtos/infantil.html">Infantil</a></li> 
+                    <li><a href="../produtos/petshop.html">Pet Shop</a></li> 
+                    <li><a href="../produtos/higiene.html">Higiene & Beleza</a></li> 
+                    <li><a href="../produtos/limpeza.html">Limpeza</a></li> 
+                    <li><a href="../produtos/bebidas.html">Bebidas</a></li> 
+                    <li><a href="../produtos/alimentos.html">Alimentos</a></li> 
+                    <li><a href="../produtos/feira.html">Feira</a></li> 
+                    <li><a href="../produtos/acougue.html">Açougue</a></li>
+                    <li><a href="#">Login</a></li> 
+                    <li><a href="#">Minha Conta</a></li>  
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Início do conteúdo principal da página -->
+    <main>
+        <section class="section" id="products"> <!-- Seção de produtos -->
+            <div class="container"> <!-- Container dos produtos -->
+                <h2 class="section-title">Todos os Produtos</h2>
+
+                <!-- Filtros de categoria -->
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-category="todos">Todos</button>
+                    <button class="filter-btn" data-category="acougue">Açougue</button>
+                    <button class="filter-btn" data-category="feira">Feira</button>
+                    <button class="filter-btn" data-category="alimentos">Alimentos</button>
+                    <button class="filter-btn" data-category="bebidas">Bebidas</button>
+                    <button class="filter-btn" data-category="limpeza">Limpeza</button>
+                    <button class="filter-btn" data-category="higiene">Higiene</button>
+                    <button class="filter-btn" data-category="infantil">Infantil</button>
+                    <button class="filter-btn" data-category="petshop">PetShop</button>
+                </div>
+
+                <div class="products-grid">
+                    <!-- Produtos do Açougue -->
+                    <div class="card-produto" data-category="acougue">
+                        <div class="badges">
+                            <span class="desconto">-10%</span>
+                            <span class="evento">Oferta</span>
+                        </div>
+                        <div class="imagem-produto">
+                            <img src="../photos/picanha-bovina.webp" alt="Picanha">
+                        </div>
+                        <div class="descricao">
+                            <p class="titulo">Picanha Bovina kg</p>
+                            <div class="precos">
+                                <span class="preco-antigo">R$ 89,90</span>
+                                <span class="preco-novo">R$ 80,91</span>
+                            </div>
+                            <button class="btn-adicionar">Adicionar</button>
+                        </div>
+                    </div>
+
+                    <!-- Produtos de Bebidas -->
+                    <div class="card-produto" data-category="bebidas">
+                        <div class="imagem-produto">
+                            <img src="../photos/cerveja_heineken.jpeg" alt="Heineken Long Neck">
+                        </div>
+                        <div class="descricao">
+                            <p class="titulo">Cerveja Heineken Long Neck 330ml</p>
+                            <div class="precos">
+                                <span class="preco-antigo">R$ 7,49</span>
+                                <span class="preco-novo">R$ 5,99</span>
+                            </div>
+                            <button class="btn-adicionar">Adicionar</button>
+                        </div>
+                    </div>
+
+                    <!-- Produtos de Limpeza -->
+                    <div class="card-produto" data-category="limpeza">
+                        <div class="imagem-produto">
+                            <img src="../photos/lava-loucas-ype.webp" alt="Detergente Ypê">
+                        </div>
+                        <div class="descricao">
+                            <p class="titulo">Detergente Ypê Clear 500ml</p>
+                            <div class="precos">
+                                <span class="preco-antigo">R$ 3,50</span>
+                                <span class="preco-novo">R$ 2,85</span>
+                            </div>
+                            <button class="btn-adicionar">Adicionar</button>
+                        </div>
+                    </div>
+
+                    <!-- Produtos de Higiene -->
+                    <div class="card-produto" data-category="higiene">
+                        <div class="imagem-produto">
+                            <img src="../photos/Sabonete-dove.webp" alt="Sabonete Dove">
+                        </div>
+                        <div class="descricao">
+                            <p class="titulo">Sabonete Dove Original 90g</p>
+                            <div class="precos">
+                                <span class="preco-antigo">R$ 3,20</span>
+                                <span class="preco-novo">R$ 2,72</span>
+                            </div>
+                            <button class="btn-adicionar">Adicionar</button>
+                        </div>
+                    </div>
+
+                    <!-- Produtos de Alimentos -->
+                    <div class="card-produto" data-category="alimentos">
+                        <div class="imagem-produto">
+                            <img src="../photos/cafe_pilao.jpeg" alt="Café Pilão">
+                        </div>
+                        <div class="descricao">
+                            <p class="titulo">Café Pilão Tradicional 500g</p>
+                            <div class="precos">
+                                <span class="preco-antigo">R$ 19,90</span>
+                                <span class="preco-novo">R$ 14,99</span>
+                            </div>
+                            <button class="btn-adicionar">Adicionar</button>
+                        </div>
+                    </div>
+
+                    <!-- Produtos Infantis -->
+                    <div class="card-produto" data-category="infantil">
+                        <div class="badges">
+                            <span class="desconto">-20%</span>
+                            <span class="evento">Oferta</span>
+                        </div>
+                        <div class="imagem-produto">
+                            <img src="../photos/placeholder.jpg" alt="Fralda">
+                        </div>
+                        <div class="descricao">
+                            <p class="titulo">Fralda Pampers M 30un</p>
+                            <div class="precos">
+                                <span class="preco-antigo">R$ 89,90</span>
+                                <span class="preco-novo">R$ 71,92</span>
+                            </div>
+                            <button class="btn-adicionar">Adicionar</button>
+                        </div>
+                    </div>
+
+                    <!-- Produtos da Feira -->
+                    <div class="card-produto" data-category="feira">
+                        <div class="badges">
+                            <span class="evento">Oferta</span>
+                        </div>
+                        <div class="imagem-produto">
+                            <img src="../photos/placeholder.jpg" alt="Tomate">
+                        </div>
+                        <div class="descricao">
+                            <p class="titulo">Tomate</p>
+                            <div class="precos">
+                                <span class="preco-antigo">R$ 8,99</span>
+                                <span class="preco-novo">R$ 6,99</span>
+                            </div>
+                            <button class="btn-adicionar">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Início do rodapé do site -->
+    <footer>
+        <div class="container"> <!-- Container do footer -->
+            <p>&copy; 2025 Supermercado Lopes. Todos os direitos reservados.</p> <!-- Direitos autorais -->
+            <div class="social-links"> <!-- Links para redes sociais -->
+                <a href="#"><i class="fab fa-facebook-f"></i>FB</a> <!-- Facebook -->
+                <a href="#"><i class="fab fa-instagram"></i>IG</a> <!-- Instagram -->
+                <a href="#"><i class="fab fa-twitter"></i>TW</a> <!-- Twitter -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- Ícone do carrinho: mostra quantidade de itens -->
+    <div class="cart-icon">
+        🛒<span class="cart-count">0</span> 
+    </div>
+
+    <!-- Sidebar do carrinho: exibe itens, total e ações de compra -->
+    <div class="cart" id="shoppingCart"> 
+        <div class="cart-header"> <!-- Cabeçalho do carrinho -->
+            <h2>Seu Carrinho</h2> 
+            <button class="close-cart">X</button> <!-- Botão para fechar o carrinho -->
+        </div>
+        <div class="cart-items"> <!-- Lista de itens do carrinho -->
+            <p>Seu carrinho está vazio.</p> 
+        </div>
+        <div class="cart-total"> <!-- Total do carrinho -->
+            Total: R$ 0,00 
+        </div>
+        <div class="cart-actions"> <!-- Botões de ação do carrinho -->
+            <button class="cta-button clear-cart-btn">Limpar Carrinho</button>
+            <button class="cta-button checkout-btn">Finalizar Compra</button>
+        </div>
+    </div>
+    <!-- Scripts JS: funcionalidades do carrinho, filtros de categoria e cálculo de desconto -->
+    <script src="../js/precos-globais.js"></script>
+    <script src="../js/preenche-precos.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/filtros-categoria.js"></script>
+    <script src="../js/calcula-desconto.js"></script>
+</body>
+</html>
