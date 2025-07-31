@@ -5,22 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Higiene & Beleza - Supermercado Lopes</title>
     <link rel="stylesheet" href="../css/style.css">
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
 <body>
     <header>
         <div class="container">
             <nav class="top-nav">
-                <a href="../index.html" class="logo" title="Supermercado Lopes"></a>
+                <a href="../index.html">
+                    <img src="../photos/Logotipo supermercado minimalista azul branco vermelho.png" alt="Logo Supermercado Lopes" class="logo">
+                </a>
                 <div class="search-bar">
                     <input type="text" placeholder="Busque novos produtos">
                     <button class="search-button">🔍</button>
                 </div>
+                <ul class="nav-links">
+                    <li><a href="#" id="openLoginPopup">Login</a></li>
+                    <li><a href="#">Minha Conta</a></li>
+                </ul>
                 <button class="mobile-menu">&#9776;</button>
             </nav>
             <nav class="main-categories-nav">
                 <ul class="nav-links">
                     <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="eletro.html">Eletro</a></li> 
+                    <li><a href="eletro.html">Eletrodomésticos</a></li> 
                     <li><a href="infantil.html">Infantil</a></li> 
                     <li><a href="petshop.html">Pet Shop</a></li> 
                     <li><a href="higiene.html">Higiene & Beleza</a></li> 
@@ -37,11 +44,10 @@
         <section class="section" id="products">
             <div class="container">
                 <h2 class="section-title">Higiene & Beleza</h2>
-                <div class="products-grid">
-                    <!-- Card 1 - Sabonete Dove -->
+                <div class="products-grid" id="products-grid">
                     <div class="card-produto" data-category="higiene">
                         <div class="imagem-produto">
-                            <img src="../photos/Sabonete-dove.webp" alt="Sabonete Dove">
+                            <img src="../photos/Sabonete-dove.webp" alt="Sabonete Dove Original">
                         </div>
                         <div class="descricao">
                             <p class="titulo">Sabonete Dove Original 90g</p>
@@ -54,13 +60,12 @@
                         </div>
                     </div>
 
-                    <!-- Card 2 - Shampoo -->
                     <div class="card-produto" data-category="higiene">
                         <div class="badges">
                             <span class="desconto">-20%</span>
                         </div>
                         <div class="imagem-produto">
-                            <img src="../photos/placeholder.jpg" alt="Shampoo">
+                            <img src="../photos/placeholder.jpg" alt="Shampoo Pantene">
                         </div>
                         <div class="descricao">
                             <p class="titulo">Shampoo Pantene 400ml</p>
@@ -73,13 +78,12 @@
                         </div>
                     </div>
 
-                    <!-- Card 3 - Condicionador -->
                     <div class="card-produto" data-category="higiene">
                         <div class="badges">
                             <span class="desconto">-20%</span>
                         </div>
                         <div class="imagem-produto">
-                            <img src="../photos/placeholder.jpg" alt="Condicionador">
+                            <img src="../photos/placeholder.jpg" alt="Condicionador Pantene">
                         </div>
                         <div class="descricao">
                             <p class="titulo">Condicionador Pantene 400ml</p>
@@ -92,7 +96,6 @@
                         </div>
                     </div>
 
-                    <!-- Card 4 - Papel Higiênico -->
                     <div class="card-produto" data-category="higiene">
                         <div class="badges">
                             <span class="evento">Oferta</span>
@@ -111,10 +114,9 @@
                         </div>
                     </div>
 
-                    <!-- Card 5 - Creme Dental -->
                     <div class="card-produto" data-category="higiene">
                         <div class="imagem-produto">
-                            <img src="../photos/placeholder.jpg" alt="Creme Dental">
+                            <img src="../photos/placeholder.jpg" alt="Creme Dental Colgate">
                         </div>
                         <div class="descricao">
                             <p class="titulo">Creme Dental Colgate 90g</p>
@@ -126,13 +128,12 @@
                         </div>
                     </div>
 
-                    <!-- Card 6 - Desodorante -->
                     <div class="card-produto" data-category="higiene">
                         <div class="badges">
                             <span class="desconto">-15%</span>
                         </div>
                         <div class="imagem-produto">
-                            <img src="../photos/placeholder.jpg" alt="Desodorante">
+                            <img src="../photos/placeholder.jpg" alt="Desodorante Rexona">
                         </div>
                         <div class="descricao">
                             <p class="titulo">Desodorante Rexona Aerosol 150ml</p>
@@ -149,12 +150,28 @@
         </section>
     </main>
     <footer>
-        <!-- ...existing footer code... -->
+        <div class="container">
+            <p>&copy; 2025 Supermercado Lopes. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i>FB</a>
+                <a href="#"><i class="fab fa-instagram"></i>IG</a>
+                <a href="#"><i class="fab fa-twitter"></i>TW</a>
+            </div>
+        </div>
     </footer>
-    <script src="../js/precos-globais.js"></script>
-    <script src="../js/preenche-precos.js"></script>
     <script src="../js/script.js"></script>
-    <script src="../js/filtros-categoria.js"></script>
-    <script src="../js/calcula-desconto.js"></script>
+    <div id="login-popup" class="login-popup" style="display:none;">
+        <div class="login-popup-content">
+            <span class="close-login-popup" id="closeLoginPopup">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="login-email">E-mail:</label>
+                <input type="email" id="login-email" name="email" required>
+                <label for="login-password">Senha:</label>
+                <input type="password" id="login-password" name="password" required>
+                <button type="submit" class="cta-button">Entrar</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

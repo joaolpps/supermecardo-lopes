@@ -5,27 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos - Supermercado Lopes</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 </head>
 <body>
-    <!-- Início do cabeçalho do site: contém logo, barra de busca, links de usuário e navegação principal -->
     <header>
-        <div class="container"> <!-- Container do header para centralizar conteúdo -->
-            <nav class="top-nav"> <!-- Navegação superior: logo, busca, links de usuário, menu mobile -->
-                <div class="logo"> <!-- Logo do supermercado -->
-                    <a href="../index.html" class="logo" title="Supermercado Lopes"></a> <!-- Link para a página inicial -->
-                </div>
-                <div class="search-bar"> <!-- Barra de busca de produtos -->
-                    <input type="text" placeholder="Busque novos produtos"> <!-- Campo de busca -->
-                    <button class="search-button">🔍</button> <!-- Botão de busca -->
-                </div>
+        <div class="container"> <nav class="top-nav"> <a href="../index.html">
+                    <img src="../photos/Logotipo supermercado minimalista azul branco vermelho.png" alt="Logo Supermercado Lopes" class="logo">
+                </a>
+                <div class="search-bar"> <input type="text" placeholder="Busque novos produtos"> <button class="search-button">🔍</button> </div>
+                <ul class="nav-links">
+                    <li><a href="#" id="openLoginPopup">Login</a></li>
+                    <li><a href="#">Minha Conta</a></li>
+                </ul>
+                <button class="mobile-menu">&#9776;</button> </nav>
 
-
-                <button class="mobile-menu">&#9776;</button> <!-- Botão do menu mobile -->
-            </nav>
-
-            <nav class="main-categories-nav"> <!-- Navegação das categorias principais -->
-                <ul class="nav-links"> <!-- Links para páginas de categorias -->
-                    <li><a href="../index.html">Inicio</a></li>
+            <nav class="main-categories-nav"> <ul class="nav-links"> <li><a href="../index.html">Inicio</a></li>
                     <li><a href="../produtos/eletro.html">Eletrodomésticos</a></li> 
                     <li><a href="../produtos/infantil.html">Infantil</a></li> 
                     <li><a href="../produtos/petshop.html">Pet Shop</a></li> 
@@ -34,23 +29,16 @@
                     <li><a href="../produtos/bebidas.html">Bebidas</a></li> 
                     <li><a href="../produtos/alimentos.html">Alimentos</a></li> 
                     <li><a href="../produtos/feira.html">Feira</a></li> 
-                    <li><a href="../produtos/acougue.html">Açougue</a></li>
-                    <li><a href="#">Login</a></li> 
-                    <li><a href="#">Minha Conta</a></li>  
+                    <li><a href="../produtos/acougue.html">Açougue</a></li> 
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Início do conteúdo principal da página -->
     <main>
-        <section class="section" id="products"> <!-- Seção de produtos -->
-            <div class="container"> <!-- Container dos produtos -->
-                <h2 class="section-title">Todos os Produtos</h2>
+        <section class="section" id="products"> <div class="container"> <h2 class="section-title">Todos os Produtos</h2>
 
-                <!-- Filtros de categoria -->
-                <div class="filter-buttons">
-                    <button class="filter-btn active" data-category="todos">Todos</button>
+                <div class="filter-buttons category-filters"> <button class="filter-btn active" data-category="todos">Todos</button>
                     <button class="filter-btn" data-category="acougue">Açougue</button>
                     <button class="filter-btn" data-category="feira">Feira</button>
                     <button class="filter-btn" data-category="alimentos">Alimentos</button>
@@ -61,15 +49,14 @@
                     <button class="filter-btn" data-category="petshop">PetShop</button>
                 </div>
 
-                <div class="products-grid">
-                    <!-- Produtos do Açougue -->
+                <div class="products-grid" id="products-grid">
                     <div class="card-produto" data-category="acougue">
                         <div class="badges">
                             <span class="desconto">-10%</span>
                             <span class="evento">Oferta</span>
                         </div>
                         <div class="imagem-produto">
-                            <img src="../photos/picanha-bovina.webp" alt="Picanha">
+                            <img src="../photos/picanha-bovina.webp" alt="Picanha Bovina">
                         </div>
                         <div class="descricao">
                             <p class="titulo">Picanha Bovina kg</p>
@@ -81,7 +68,6 @@
                         </div>
                     </div>
 
-                    <!-- Produtos de Bebidas -->
                     <div class="card-produto" data-category="bebidas">
                         <div class="imagem-produto">
                             <img src="../photos/cerveja_heineken.jpeg" alt="Heineken Long Neck">
@@ -96,7 +82,6 @@
                         </div>
                     </div>
 
-                    <!-- Produtos de Limpeza -->
                     <div class="card-produto" data-category="limpeza">
                         <div class="imagem-produto">
                             <img src="../photos/lava-loucas-ype.webp" alt="Detergente Ypê">
@@ -111,7 +96,6 @@
                         </div>
                     </div>
 
-                    <!-- Produtos de Higiene -->
                     <div class="card-produto" data-category="higiene">
                         <div class="imagem-produto">
                             <img src="../photos/Sabonete-dove.webp" alt="Sabonete Dove">
@@ -126,7 +110,6 @@
                         </div>
                     </div>
 
-                    <!-- Produtos de Alimentos -->
                     <div class="card-produto" data-category="alimentos">
                         <div class="imagem-produto">
                             <img src="../photos/cafe_pilao.jpeg" alt="Café Pilão">
@@ -141,17 +124,16 @@
                         </div>
                     </div>
 
-                    <!-- Produtos Infantis -->
                     <div class="card-produto" data-category="infantil">
                         <div class="badges">
                             <span class="desconto">-20%</span>
                             <span class="evento">Oferta</span>
                         </div>
                         <div class="imagem-produto">
-                            <img src="../photos/placeholder.jpg" alt="Fralda">
+                            <img src="../photos/pampers pants g 52" alt="Fralda Pampers">
                         </div>
                         <div class="descricao">
-                            <p class="titulo">Fralda Pampers M 30un</p>
+                            <p class="titulo">Fralda Pampers G 52un</p>
                             <div class="precos">
                                 <span class="preco-antigo">R$ 89,90</span>
                                 <span class="preco-novo">R$ 71,92</span>
@@ -160,7 +142,6 @@
                         </div>
                     </div>
 
-                    <!-- Produtos da Feira -->
                     <div class="card-produto" data-category="feira">
                         <div class="badges">
                             <span class="evento">Oferta</span>
@@ -182,45 +163,39 @@
         </section>
     </main>
 
-    <!-- Início do rodapé do site -->
     <footer>
-        <div class="container"> <!-- Container do footer -->
-            <p>&copy; 2025 Supermercado Lopes. Todos os direitos reservados.</p> <!-- Direitos autorais -->
-            <div class="social-links"> <!-- Links para redes sociais -->
-                <a href="#"><i class="fab fa-facebook-f"></i>FB</a> <!-- Facebook -->
-                <a href="#"><i class="fab fa-instagram"></i>IG</a> <!-- Instagram -->
-                <a href="#"><i class="fab fa-twitter"></i>TW</a> <!-- Twitter -->
-            </div>
+        <div class="container"> <p>&copy; 2025 Supermercado Lopes. Todos os direitos reservados.</p> <div class="social-links"> <a href="#"><i class="fab fa-facebook-f"></i>FB</a> <a href="#"><i class="fab fa-instagram"></i>IG</a> <a href="#"><i class="fab fa-twitter"></i>TW</a> </div>
         </div>
     </footer>
 
-    <!-- Ícone do carrinho: mostra quantidade de itens -->
     <div class="cart-icon">
         🛒<span class="cart-count">0</span> 
     </div>
 
-    <!-- Sidebar do carrinho: exibe itens, total e ações de compra -->
     <div class="cart" id="shoppingCart"> 
-        <div class="cart-header"> <!-- Cabeçalho do carrinho -->
-            <h2>Seu Carrinho</h2> 
-            <button class="close-cart">X</button> <!-- Botão para fechar o carrinho -->
+        <div class="cart-header"> <h2>Seu Carrinho</h2> 
+            <button class="close-cart">X</button> </div>
+        <div class="cart-items"> <p>Seu carrinho está vazio.</p> 
         </div>
-        <div class="cart-items"> <!-- Lista de itens do carrinho -->
-            <p>Seu carrinho está vazio.</p> 
+        <div class="cart-total"> Total: R$ 0,00 
         </div>
-        <div class="cart-total"> <!-- Total do carrinho -->
-            Total: R$ 0,00 
-        </div>
-        <div class="cart-actions"> <!-- Botões de ação do carrinho -->
-            <button class="cta-button clear-cart-btn">Limpar Carrinho</button>
+        <div class="cart-actions"> <button class="cta-button clear-cart-btn">Limpar Carrinho</button>
             <button class="cta-button checkout-btn">Finalizar Compra</button>
         </div>
     </div>
-    <!-- Scripts JS: funcionalidades do carrinho, filtros de categoria e cálculo de desconto -->
-    <script src="../js/precos-globais.js"></script>
-    <script src="../js/preenche-precos.js"></script>
     <script src="../js/script.js"></script>
-    <script src="../js/filtros-categoria.js"></script>
-    <script src="../js/calcula-desconto.js"></script>
+    <div id="login-popup" class="login-popup" style="display:none;">
+        <div class="login-popup-content">
+            <span class="close-login-popup" id="closeLoginPopup">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="login-email">E-mail:</label>
+                <input type="email" id="login-email" name="email" required>
+                <label for="login-password">Senha:</label>
+                <input type="password" id="login-password" name="password" required>
+                <button type="submit" class="cta-button">Entrar</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

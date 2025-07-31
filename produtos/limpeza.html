@@ -5,22 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Limpeza - Supermercado Lopes</title>
     <link rel="stylesheet" href="../css/style.css">
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
 <body>
     <header>
         <div class="container">
             <nav class="top-nav">
-                <a href="../index.html" class="logo" title="Supermercado Lopes"></a>
+                <a href="../index.html">
+                    <img src="../photos/Logotipo supermercado minimalista azul branco vermelho.png" alt="Logo Supermercado Lopes" class="logo">
+                </a>
                 <div class="search-bar">
                     <input type="text" placeholder="Busque novos produtos">
                     <button class="search-button">🔍</button>
                 </div>
+                <ul class="nav-links">
+                    <li><a href="#" id="openLoginPopup">Login</a></li>
+                    <li><a href="#">Minha Conta</a></li>
+                </ul>
                 <button class="mobile-menu">&#9776;</button>
             </nav>
             <nav class="main-categories-nav">
                 <ul class="nav-links">
                     <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="eletro.html">Eletro</a></li> 
+                    <li><a href="eletro.html">Eletrodomésticos</a></li> 
                     <li><a href="infantil.html">Infantil</a></li> 
                     <li><a href="petshop.html">Pet Shop</a></li> 
                     <li><a href="higiene.html">Higiene & Beleza</a></li> 
@@ -38,10 +45,7 @@
             <div class="container">
                 <h2 class="section-title">Limpeza</h2>
                 
-                <!-- Filtros de categoria -->
-
-                <div class="products-grid">
-                    <!-- Card 1 - Detergente -->
+                <div class="products-grid" id="products-grid">
                     <div class="card-produto" data-category="limpeza">
                         <div class="imagem-produto">
                             <img src="../photos/lava-loucas-ype.webp" alt="Detergente Ypê">
@@ -57,7 +61,6 @@
                         </div>
                     </div>
 
-                    <!-- Card 2 - Sabão em Pó -->
                     <div class="card-produto" data-category="limpeza">
                         <div class="badges">
                             <span class="desconto">-20%</span>
@@ -77,7 +80,6 @@
                         </div>
                     </div>
 
-                    <!-- Card 3 - Desinfetante -->
                     <div class="card-produto" data-category="limpeza">
                         <div class="imagem-produto">
                             <img src="../photos/produtos-limpezas.webp" alt="Desinfetante">
@@ -92,7 +94,6 @@
                         </div>
                     </div>
 
-                    <!-- Card 4 - Água Sanitária -->
                     <div class="card-produto" data-category="limpeza">
                         <div class="badges">
                             <span class="desconto">-15%</span>
@@ -111,7 +112,6 @@
                         </div>
                     </div>
 
-                    <!-- Card 5 - Multiuso -->
                     <div class="card-produto" data-category="limpeza">
                         <div class="imagem-produto">
                             <img src="../photos/produtos-limpezas.webp" alt="Multiuso">
@@ -126,7 +126,6 @@
                         </div>
                     </div>
 
-                    <!-- Card 6 - Amaciante -->
                     <div class="card-produto" data-category="limpeza">
                         <div class="badges">
                             <span class="evento">Novo</span>
@@ -148,12 +147,28 @@
         </section>
     </main>
     <footer>
-        <!-- ...existing footer code... -->
+        <div class="container">
+            <p>&copy; 2025 Supermercado Lopes. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i>FB</a>
+                <a href="#"><i class="fab fa-instagram"></i>IG</a>
+                <a href="#"><i class="fab fa-twitter"></i>TW</a>
+            </div>
+        </div>
     </footer>
-    <script src="../js/precos-globais.js"></script>
-    <script src="../js/preenche-precos.js"></script>
     <script src="../js/script.js"></script>
-    <script src="../js/filtros-categoria.js"></script>
-    <script src="../js/calcula-desconto.js"></script>
+    <div id="login-popup" class="login-popup" style="display:none;">
+        <div class="login-popup-content">
+            <span class="close-login-popup" id="closeLoginPopup">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="login-email">E-mail:</label>
+                <input type="email" id="login-email" name="email" required>
+                <label for="login-password">Senha:</label>
+                <input type="password" id="login-password" name="password" required>
+                <button type="submit" class="cta-button">Entrar</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

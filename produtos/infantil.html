@@ -5,22 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos Infantis - Supermercado Lopes</title>
     <link rel="stylesheet" href="../css/style.css">
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
 <body>
     <header>
         <div class="container">
             <nav class="top-nav">
-                <a href="../index.html" class="logo" title="Supermercado Lopes"></a>
+                <a href="../index.html">
+                    <img src="../photos/Logotipo supermercado minimalista azul branco vermelho.png" alt="Logo Supermercado Lopes" class="logo">
+                </a>
                 <div class="search-bar">
                     <input type="text" placeholder="Busque novos produtos">
                     <button class="search-button">🔍</button>
                 </div>
+                <ul class="nav-links">
+                    <li><a href="#" id="openLoginPopup">Login</a></li>
+                    <li><a href="#">Minha Conta</a></li>
+                </ul>
                 <button class="mobile-menu">&#9776;</button>
             </nav>
             <nav class="main-categories-nav">
                 <ul class="nav-links">
                     <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="eletro.html">Eletro</a></li> 
+                    <li><a href="eletro.html">Eletrodomésticos</a></li> 
                     <li><a href="infantil.html">Infantil</a></li> 
                     <li><a href="petshop.html">Pet Shop</a></li> 
                     <li><a href="higiene.html">Higiene & Beleza</a></li> 
@@ -37,18 +44,17 @@
         <section class="section" id="products">
             <div class="container">
                 <h2 class="section-title">Produtos Infantis</h2>
-                <div class="products-grid">
-                    <!-- Card 1 - Fralda -->
+                <div class="products-grid" id="products-grid">
                     <div class="card-produto" data-category="infantil">
                         <div class="badges">
                             <span class="desconto">-20%</span>
                             <span class="evento">Oferta</span>
                         </div>
                         <div class="imagem-produto">
-                            <img src="../photos/placeholder.jpg" alt="Fralda">
+                            <img src="../photos/pampers pants g 52" alt="Fralda Pampers">
                         </div>
                         <div class="descricao">
-                            <p class="titulo">Fralda Pampers M 30un</p>
+                            <p class="titulo">Fralda Pampers G 52un</p>
                             <div class="precos">
                                 <span class="preco-antigo">R$ 89,90</span>
                                 <span class="preco-novo">R$ 71,92</span>
@@ -58,16 +64,15 @@
                         </div>
                     </div>
 
-                    <!-- Card 2 - Lenços Umedecidos -->
                     <div class="card-produto" data-category="infantil">
                         <div class="badges">
                             <span class="desconto">-15%</span>
                         </div>
                         <div class="imagem-produto">
-                            <img src="../photos/placeholder.jpg" alt="Lenços Umedecidos">
+                            <img src="../photos/toalhas-umedecidas-huggies-hidratacao-e-nutricao-com-192-unidades_93857.jpg" alt="Lenços Umedecidos Johnson's">
                         </div>
                         <div class="descricao">
-                            <p class="titulo">Lenços Umedecidos Johnson's 96un</p>
+                            <p class="titulo">Lenços Umedecidos Huggies 192un</p>
                             <div class="precos">
                                 <span class="preco-antigo">R$ 24,90</span>
                                 <span class="preco-novo">R$ 21,15</span>
@@ -77,10 +82,9 @@
                         </div>
                     </div>
 
-                    <!-- Card 3 - Shampoo Infantil -->
                     <div class="card-produto" data-category="infantil">
                         <div class="imagem-produto">
-                            <img src="../photos/placeholder.jpg" alt="Shampoo Infantil">
+                            <img src="../photos/placeholder.jpg" alt="Shampoo Johnson's Baby">
                         </div>
                         <div class="descricao">
                             <p class="titulo">Shampoo Johnson's Baby 400ml</p>
@@ -92,13 +96,12 @@
                         </div>
                     </div>
 
-                    <!-- Card 4 - Sabonete Infantil -->
                     <div class="card-produto" data-category="infantil">
                         <div class="badges">
                             <span class="evento">Novo</span>
                         </div>
                         <div class="imagem-produto">
-                            <img src="../photos/placeholder.jpg" alt="Sabonete Infantil">
+                            <img src="../photos/placeholder.jpg" alt="Sabonete Infantil Dove Baby">
                         </div>
                         <div class="descricao">
                             <p class="titulo">Kit Sabonete Infantil Dove Baby 2un</p>
@@ -110,10 +113,9 @@
                         </div>
                     </div>
 
-                    <!-- Card 5 - Talco -->
                     <div class="card-produto" data-category="infantil">
                         <div class="imagem-produto">
-                            <img src="../photos/placeholder.jpg" alt="Talco Infantil">
+                            <img src="../photos/placeholder.jpg" alt="Talco Johnson's Baby">
                         </div>
                         <div class="descricao">
                             <p class="titulo">Talco Johnson's Baby 200g</p>
@@ -125,13 +127,12 @@
                         </div>
                     </div>
 
-                    <!-- Card 6 - Pomada -->
                     <div class="card-produto" data-category="infantil">
                         <div class="badges">
                             <span class="desconto">-10%</span>
                         </div>
                         <div class="imagem-produto">
-                            <img src="../photos/placeholder.jpg" alt="Pomada">
+                            <img src="../photos/placeholder.jpg" alt="Pomada para Assaduras Hipoglós">
                         </div>
                         <div class="descricao">
                             <p class="titulo">Pomada para Assaduras Hipoglós 90g</p>
@@ -157,10 +158,19 @@
             </div>
         </div>
     </footer>
-    <script src="../js/precos-globais.js"></script>
-    <script src="../js/preenche-precos.js"></script>
     <script src="../js/script.js"></script>
-    <script src="../js/filtros-categoria.js"></script>
-    <script src="../js/calcula-desconto.js"></script>
+    <div id="login-popup" class="login-popup" style="display:none;">
+        <div class="login-popup-content">
+            <span class="close-login-popup" id="closeLoginPopup">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="login-email">E-mail:</label>
+                <input type="email" id="login-email" name="email" required>
+                <label for="login-password">Senha:</label>
+                <input type="password" id="login-password" name="password" required>
+                <button type="submit" class="cta-button">Entrar</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

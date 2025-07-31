@@ -6,6 +6,7 @@
     <title>Supermercado Lopes - Seu Supermercado Online</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 </head>
 <body>
 
@@ -22,10 +23,13 @@
             </form>
         </div>
     </div>
+    
     <header>
         <div class="container"> 
             <nav class="top-nav"> 
-                <a href="index.html"><img src="photos/LOGO-1.png" alt="Logo Supermercado Lopes" class="logo"></a>
+                <a href="index.html">
+                    <img src="photos/Logotipo supermercado minimalista azul branco vermelho.png" alt="Logo Supermercado Lopes" class="logo">
+                </a>
                 <div class="search-bar"> 
                     <input type="text" placeholder="Busque novos produtos"> 
                     <button class="search-button">🔍</button>
@@ -36,42 +40,62 @@
                 </ul>
                 <button class="mobile-menu">&#9776;</button>
             </nav>
-
-            <nav class="main-categories-nav">
-                <ul class="nav-links"> 
-                    <li><a href="index.html">Inicio</a></li> 
-                    <li><a href="produtos/eletro.html">Eletrodomésticos</a></li> 
-                    <li><a href="produtos/infantil.html">Infantil</a></li> 
-                    <li><a href="produtos/petshop.html">Pet Shop</a></li> 
-                    <li><a href="produtos/higiene.html">Higiene & Beleza</a></li> 
-                    <li><a href="produtos/limpeza.html">Limpeza</a></li> 
-                    <li><a href="produtos/bebidas.html">Bebidas</a></li> 
-                    <li><a href="produtos/alimentos.html">Alimentos</a></li> 
-                    <li><a href="produtos/feira.html">Feira</a></li> 
-                    <li><a href="produtos/acougue.html">Açougue</a></li> 
+            <nav class="main-categories-nav"> <ul class="nav-links"> <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../produtos/eletro.html">Eletrodomésticos</a></li> 
+                    <li><a href="../produtos/infantil.html">Infantil</a></li> 
+                    <li><a href="../produtos/petshop.html">Pet Shop</a></li> 
+                    <li><a href="../produtos/higiene.html">Higiene & Beleza</a></li> 
+                    <li><a href="../produtos/limpeza.html">Limpeza</a></li> 
+                    <li><a href="../produtos/bebidas.html">Bebidas</a></li> 
+                    <li><a href="../produtos/alimentos.html">Alimentos</a></li> 
+                    <li><a href="../produtos/feira.html">Feira</a></li> 
+                    <li><a href="../produtos/acougue.html">Açougue</a></li> 
                 </ul>
             </nav>
         </div>
     </header>
+    <section class="banner-carousel-section">
+    <div class="swiper my-banner-swiper">
+        <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+            <img class="banner-hero-img" src="photos/banner1.png" alt="Banner 1" />
+        </div>
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+            <img class="banner-hero-img" src="photos/banner2.jpg" alt="Banner 2" />
+        </div>
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+            <img class="banner-hero-img" src="photos/banner3.jpg" alt="Banner 3" />
+        </div>
+        <div class="swiper-slide">
+            <img class="banner-hero-img" src="photos/banner4.jpg" alt="Banner 4" />
+        </div>
+        <div class="swiper-slide">
+            <img class="banner-hero-img" src="photos/banner5.jpg" alt="Banner 5" />
+        </div>
 
+        <!-- Navegação -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+    </section>
 
 
     <main>
-        <!-- Seção de produtos em destaque (apenas alguns) -->
         <section class="section" id="featured-products">
             <div class="container">
                 <h2 class="section-title">Produtos em Destaque</h2>
-                <div class="products-grid"> 
-                    <!-- Apenas alguns produtos em destaque -->
-                    
-                    <!-- Card 1 - Café Pilão -->
+                <div class="products-grid" id="products-grid"> 
                     <div class="card-produto">
                         <div class="badges">
                             <span class="desconto">-12%</span>
                             <span class="evento">Oferta</span>
                         </div>
                         <div class="imagem-produto">
-                            <img src="photos/cafe_pilao.jpeg" alt="Café Pilão">
+                            <img src="photos/cafe_pilao.jpeg" alt="Café Pilão Tradicional">
                         </div>
                         <div class="descricao">
                             <p class="titulo">Café Pilão Tradicional 500g</p>
@@ -83,7 +107,6 @@
                         </div>
                     </div>
 
-                    <!-- Card 2 - Heineken -->
                     <div class="card-produto">
                         <div class="badges">
                             <span class="desconto">-10%</span>
@@ -102,14 +125,13 @@
                         </div>
                     </div>
 
-                    <!-- Card 3 - Sabonete Dove -->
                     <div class="card-produto">
                         <div class="badges">
                             <span class="desconto">-8%</span>
                             <span class="evento">Oferta</span>
                         </div>
                         <div class="imagem-produto">
-                            <img src="photos/Sabonete-dove.webp" alt="Sabonete Dove">
+                            <img src="photos/Sabonete-dove.webp" alt="Sabonete Dove Original">
                         </div>
                         <div class="descricao">
                             <p class="titulo">Sabonete Dove Original 90g</p>
@@ -121,14 +143,13 @@
                         </div>
                     </div>
 
-                    <!-- Card 4 - Amstel -->
                     <div class="card-produto">
                         <div class="badges">
                             <span class="desconto">-10%</span>
                             <span class="evento">Oferta</span>
                         </div>
                         <div class="imagem-produto">
-                            <img src="photos/cerveja-amstel-lager.webp" alt="Cerveja Amstel Lata 350ml">
+                            <img src="photos/cerveja-amstel-lager.webp" alt="Cerveja Amstel Lata">
                         </div>
                         <div class="descricao">
                             <p class="titulo">Cerveja Amstel Lata 350ml</p>
@@ -140,13 +161,155 @@
                         </div>
                     </div>
 
+                    <div class="card-produto">
+                        <div class="badges">
+                            <span class="evento">Novo</span>
+                        </div>
+                        <div class="imagem-produto">
+                            <img src="photos/kit-refrigerante.webp" alt="Kit Refrigerantes">
+                        </div>
+                        <div class="descricao">
+                            <p class="titulo">Kit 6 Refrigerantes Sortidos 2L</p>
+                            <div class="precos">
+                                <span class="preco-antigo">R$ 59,94</span>
+                                <span class="preco-novo">R$ 44,95</span>
+                            </div>
+                            <button class="btn-adicionar">Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card-produto">
+                        <div class="badges">
+                            <span class="evento">Oferta</span>
+                        </div>
+                        <div class="imagem-produto">
+                            <img src="photos/211614-300-300" alt="Limao">
+                        </div>
+                        <div class="descricao">
+                            <p class="titulo">Limão Siciliano</p>
+                            <div class="precos">
+                                <span class="preco-antigo">R$ 8,99</span>
+                                <span class="preco-novo">R$ 6,99</span>
+                                <span class="por-unidade">por kg</span>
+                            </div>
+                            <button class="btn-adicionar">Adicionar</button>
+                        </div>
+                    </div>
+
+                    <div class="card-produto">
+                        <div class="badges">
+                            <span class="evento">Oferta</span>
+                        </div>
+                        <div class="imagem-produto">
+                            <img src="photos/211670-300-300" alt="Batata">
+                        </div>
+                        <div class="descricao">
+                            <p class="titulo">Batata</p>
+                            <div class="precos">
+                                <span class="preco-novo">R$ 4,99</span>
+                                <span class="por-unidade">por kg</span>
+                            </div>
+                            <button class="btn-adicionar">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="card-produto">
+                        <div class="badges">
+                            <span class="evento">Oferta</span>
+                        </div>
+                        <div class="imagem-produto">
+                            <img src="photos/211617-300-300" alt="Cebola">
+                        </div>
+                        <div class="descricao">
+                            <p class="titulo">Cebola</p>
+                            <div class="precos">
+                                <span class="preco-novo">R$ 5,99</span>
+                                <span class="por-unidade">por kg</span>
+                            </div>
+                            <button class="btn-adicionar">Adicionar</button>
+                        </div>
+                    </div>
+
+                    <div class="card-produto">
+                        <div class="badges">
+                            <span class="evento">Oferta</span>
+                        </div>
+                        <div class="imagem-produto">
+                            <img src="photos/feira-banana.webp" alt="Banana Prata">
+                        </div>
+                        <div class="descricao">
+                            <p class="titulo">Banana Prata</p>
+                            <div class="precos">
+                                <span class="preco-novo">R$ 5,99</span>
+                                <span class="por-unidade">por kg</span>
+                            </div>
+                            <button class="btn-adicionar">Adicionar</button>
+                        </div>
+                    </div>
+
+                   <div class="card-produto">
+                        <div class="badges">
+                            <span class="evento">Oferta</span>
+                        </div>
+                        <div class="imagem-produto">
+                            <img src="photos/alimentacao-macarrao.webp" alt="Macarrão Adria Espaguete">
+                        </div>
+                        <div class="descricao">
+                            <p class="titulo">Macarrão Adria Espaguete 500g</p>
+                            <div class="precos">
+                                <span class="preco-antigo">R$ 5,90</span>
+                                <span class="preco-novo">R$ 5,01</span>
+                                <span class="por-unidade">por pacote</span>
+                            </div>
+                            <button class="btn-adicionar">Adicionar</button>
+                        </div>
+                    </div>
+
+                    <div class="card-produto">
+                        <div class="badges">
+                            <span class="desconto">10% off</span>
+                            <span class="evento">Oferta</span>
+                        </div>
+                        <div class="imagem-produto">
+                            <img src="photos/alimentacao-feijao.webp" alt="Feijão Carioca Kicaldo">
+                        </div>
+                        <div class="descricao">
+                            <p class="titulo">Feijão Carioca Kicaldo 1kg</p>
+                            <div class="precos">
+                                <span class="preco-antigo">R$ 8,50</span>
+                                <span class="preco-novo">R$ 7,90</span>
+                                <span class="por-unidade">por pacote</span>
+                            </div>
+                            <button class="btn-adicionar">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="card-produto">
+                        <div class="badges">
+                            <span class="evento">Oferta</span>
+                        </div>
+                        <div class="imagem-produto">
+                            <img src="photos/alimentacao-oleo.webp" alt="Óleo de Soja Soya">
+                        </div>
+                        <div class="descricao">
+                            <p class="titulo">Óleo de Soja Soya 900ml</p>
+                            <div class="precos">
+                                <span class="preco-antigo">R$ 8,90</span>
+                                <span class="preco-novo">R$ 6,99</span>
+                                <span class="por-unidade">por unidade</span>
+                            </div>
+                            <button class="btn-adicionar">Adicionar</button>
+                        </div>
+                    </div>
+
                 </div>
-                
-                <!-- Botão para ver todos os produtos -->
+
                 <div style="text-align: center; margin-top: 30px;">
-                    <a href="produtos/produtos.html" class="cta-button">Ver Todos os Produtos</a>
+                    <a href="produtos/produtos.html" class="category-link">Ver Todos os Produtos</a>
                 </div>
             </div>
+        </section>
+
+
+                    
         </section>
 
         <section class="section category-promos-section">
@@ -227,6 +390,7 @@
     </div>
 
     <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
 </body>
 </html>

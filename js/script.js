@@ -3,7 +3,7 @@
 // =========================
 
 // =========================
-// PREÇOS GLOBAIS DOS PRODUTOS
+// PREÇOS GLOBAIS DOS PRODUTOS (Consolidado de precos-globais.js)
 // =========================
 window.PRECOS_PRODUTOS = {
     'cafe_pilao': {
@@ -33,12 +33,32 @@ window.PRECOS_PRODUTOS = {
     'detergente_ype': {
         antigo: 3.50,
         novo: 2.85
+    },
+    'picanha_bovina': { // Adicionado para Açougue
+        antigo: 89.90,
+        novo: 80.91
+    },
+    'racao_premium': { // Adicionado para Pet Shop
+        antigo: 159.90,
+        novo: 140.71
+    },
+    'fralda_pampers': { // Adicionado para Infantil
+        antigo: 89.90,
+        novo: 71.92
+    },
+    'microondas': { // Adicionado para Eletro
+        antigo: 599.90,
+        novo: 509.90
+    },
+    'tomate': { // Adicionado para Feira
+        antigo: 8.99,
+        novo: 6.99
     }
     // Adicione outros produtos conforme necessário
 };
 
 // =========================
-// SCRIPT PARA PREENCHER PREÇOS NOS CARDS
+// SCRIPT PARA PREENCHER PREÇOS NOS CARDS (Consolidado de preenche-precos.js)
 // =========================
 document.addEventListener('DOMContentLoaded', function() {
     // Mapeamento entre nome do produto (alt da imagem) e chave do objeto global
@@ -47,9 +67,14 @@ document.addEventListener('DOMContentLoaded', function() {
         'Heineken Long Neck': 'cerveja_heineken',
         'Sabonete Dove': 'sabonete_dove',
         'Cerveja Amstel Lata 350ml': 'cerveja_amstel',
-        'Arroz Tipo 1': 'arroz_camil',
+        'Arroz Camil Branco Tipo 1': 'arroz_camil',
         'Leite Integral': 'leite_longa_vida',
-        'Detergente Ypê': 'detergente_ype'
+        'Detergente Ypê': 'detergente_ype',
+        'Picanha Bovina': 'picanha_bovina',
+        'Ração para Cães': 'racao_premium',
+        'Fralda': 'fralda_pampers',
+        'Microondas': 'microondas',
+        'Tomate': 'tomate'
     };
 
     document.querySelectorAll('.card-produto').forEach(card => {
@@ -68,33 +93,38 @@ document.addEventListener('DOMContentLoaded', function() {
         // Atualiza os preços nos spans
         const precoAntigoEl = card.querySelector('.preco-antigo');
         const precoNovoEl = card.querySelector('.preco-novo');
-        if (precoAntigoEl) precoAntigoEl.textContent = `R$ ${precos.antigo.toFixed(2).replace('.', ',')}`;
+        if (precoAntigoEl && precos.antigo) precoAntigoEl.textContent = `R$ ${precos.antigo.toFixed(2).replace('.', ',')}`;
         if (precoNovoEl) precoNovoEl.textContent = `R$ ${precos.novo.toFixed(2).replace('.', ',')}`;
     });
 });
 
 // =========================
-// POPUP DE LOGIN
+// POPUP DE LOGIN (Consolidado de login-popup.js)
 // =========================
-const loginPopup = document.getElementById('login-popup');
-const openLoginPopup = document.getElementById('openLoginPopup');
-const closeLoginPopup = document.getElementById('closeLoginPopup');
+function setupLoginPopup() {
+    const loginPopup = document.getElementById('login-popup');
+    const openLoginPopup = document.getElementById('openLoginPopup');
+    const closeLoginPopup = document.getElementById('closeLoginPopup');
 
-if (openLoginPopup && loginPopup && closeLoginPopup) {
-    openLoginPopup.addEventListener('click', function(e) {
-        e.preventDefault();
-        loginPopup.style.display = 'flex';
-    });
+    if (openLoginPopup && loginPopup && closeLoginPopup) {
+        openLoginPopup.addEventListener('click', function(e) {
+            e.preventDefault();
+            loginPopup.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Previne scroll da página
+        });
 
-    closeLoginPopup.addEventListener('click', function() {
-        loginPopup.style.display = 'none';
-    });
-
-    window.addEventListener('click', function(event) {
-        if (event.target === loginPopup) {
+        closeLoginPopup.addEventListener('click', function() {
             loginPopup.style.display = 'none';
-        }
-    });
+            document.body.style.overflow = 'auto';
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target === loginPopup) {
+                loginPopup.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
 }
 
 // =========================
@@ -114,11 +144,13 @@ document.addEventListener('DOMContentLoaded', function() {
 function initializeApp() {
     // Inicializar componentes
     setupMobileMenu();
-    setupCarousel();
+    setupLoginPopup(); // Chama o setup do popup de login
+    initSwiperCarousel(); // Chama o inicializador do Swiper
     setupCart();
     setupSearch();
     setupProductButtons();
-    setupCategoryFilters();
+    setupCategoryFilters(); // Verifica a existência dos botões e do grid
+    setupSmoothScroll(); // Adicionado para links internos
     // Carregar carrinho do localStorage (se disponível)
     loadCartFromStorage();
     console.log('Supermercado Lopes - Sistema inicializado com sucesso!');
@@ -163,81 +195,33 @@ function setupMobileMenu() {
 }
 
 // =========================
-// CARROSSEL DE BANNERS
+// CARROSSEL DE BANNERS (Inicialização Swiper.js - Consolidado de banner-carossel.js)
 // =========================
-function setupCarousel() {
-    const carouselItems = document.querySelectorAll('.carousel-item');
-    const prevBtn = document.querySelector('.carousel-prev');
-    const nextBtn = document.querySelector('.carousel-next');
-    
-    if (carouselItems.length === 0) return;
-    
-    let currentSlide = 0;
-    const totalSlides = carouselItems.length;
-    
-    // Função para mostrar slide
-    function showSlide(index) {
-        carouselItems.forEach((item, i) => {
-            item.classList.remove('active');
-            if (i === index) {
-                item.classList.add('active');
-            }
+function initSwiperCarousel() {
+    // Verifica se a classe 'swiper' existe na página para evitar erro
+    const swiperElement = document.querySelector('.my-banner-swiper');
+    if (swiperElement && typeof Swiper !== 'undefined') {
+        new Swiper('.my-banner-swiper', {
+            loop: true, // Para um carrossel infinito
+            autoplay: {
+                delay: 5000, // Muda slide a cada 5 segundos
+                disableOnInteraction: false, // Continua autoplay mesmo após interação do usuário
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true, // Permite clicar nas bolinhas de paginação
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
         });
-    }
-    
-    // Próximo slide
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        showSlide(currentSlide);
-    }
-    
-    // Slide anterior
-    function prevSlide() {
-        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-        showSlide(currentSlide);
-    }
-    
-    // Event listeners para botões
-    if (nextBtn) {
-        nextBtn.addEventListener('click', nextSlide);
-    }
-    
-    if (prevBtn) {
-        prevBtn.addEventListener('click', prevSlide);
-    }
-    
-    // Auto-play do carrossel
-    setInterval(nextSlide, 5000); // Muda slide a cada 5 segundos
-    
-    // Suporte a touch/swipe em dispositivos móveis
-    let startX = 0;
-    let endX = 0;
-    
-    const carousel = document.querySelector('.hero-carousel');
-    if (carousel) {
-        carousel.addEventListener('touchstart', function(e) {
-            startX = e.touches[0].clientX;
-        });
-        
-        carousel.addEventListener('touchend', function(e) {
-            endX = e.changedTouches[0].clientX;
-            handleSwipe();
-        });
-        
-        function handleSwipe() {
-            const swipeThreshold = 50;
-            const diff = startX - endX;
-            
-            if (Math.abs(diff) > swipeThreshold) {
-                if (diff > 0) {
-                    nextSlide(); // Swipe left - próximo slide
-                } else {
-                    prevSlide(); // Swipe right - slide anterior
-                }
-            }
-        }
+        console.log('Swiper.js carrossel inicializado.');
+    } else {
+        // console.warn('Swiper library not loaded or .my-banner-swiper not found. Carousel will not work.');
     }
 }
+
 
 // =========================
 // SISTEMA DE CARRINHO
@@ -431,24 +415,14 @@ function showCartNotification(message) {
     const notification = document.createElement('div');
     notification.className = 'cart-notification';
     notification.textContent = message;
-    notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: #28a745;
-        color: white;
-        padding: 15px 20px;
-        border-radius: 8px;
-        z-index: 9999;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        animation: slideInRight 0.3s ease-out;
-    `;
+    // O CSS para esta notificação é definido em style.css (cart-notification)
+    // As animações slideInRight e slideOutRight também estão no style.css
     
     document.body.appendChild(notification);
     
     // Remover notificação após 3 segundos
     setTimeout(() => {
-        notification.style.animation = 'slideOutRight 0.3s ease-in';
+        notification.style.animation = 'slideOutRight 0.3s ease-in forwards'; // 'forwards' para manter o estado final da animação
         setTimeout(() => {
             if (document.body.contains(notification)) {
                 document.body.removeChild(notification);
@@ -480,7 +454,7 @@ function setupSearch() {
         searchInput.addEventListener('input', function() {
             clearTimeout(searchTimeout);
             searchTimeout = setTimeout(() => {
-                if (searchInput.value.length >= 3) {
+                if (searchInput.value.length >= 3 || searchInput.value.length === 0) { // Mostra tudo se o campo estiver vazio
                     performSearch();
                 }
             }, 500);
@@ -596,12 +570,13 @@ function extractProductData(productCard) {
     const imageElement = productCard.querySelector('img');
     
     if (!titleElement || !priceElement) {
-        console.error('Dados do produto incompletos');
+        console.error('Dados do produto incompletos para o card:', productCard);
         return null;
     }
     
     const name = titleElement.textContent.trim();
-    const priceText = priceElement.textContent.replace('R$', '').replace(',', '.').trim();
+    // Use .replace('.', '') antes de .replace(',', '.') para lidar com milhares e decimais
+    const priceText = priceElement.textContent.replace('R$', '').replace(/\./g, '').replace(',', '.').trim();
     const price = parseFloat(priceText);
     const image = imageElement ? imageElement.src : '';
     
@@ -618,20 +593,24 @@ function extractProductData(productCard) {
 
 function animateButton(button) {
     const originalText = button.textContent;
-    
+    const originalBackground = button.style.background;
+    const originalColor = button.style.color; // Captura a cor original do texto
+
     button.textContent = 'Adicionado!';
-    button.style.background = '#28a745';
+    button.style.background = 'var(--success-green)'; // Usa a variável CSS
+    button.style.color = 'var(--white)'; // Assegura texto branco
     button.disabled = true;
     
     setTimeout(() => {
         button.textContent = originalText;
-        button.style.background = '';
+        button.style.background = originalBackground;
+        button.style.color = originalColor; // Restaura a cor original
         button.disabled = false;
     }, 1500);
 }
 
 // =========================
-// FILTROS DE CATEGORIA (para página de produtos)
+// FILTROS DE CATEGORIA (para página de produtos - Consolidado de filtros-categoria.js)
 // =========================
 function setupCategoryFilters() {
     const filterButtons = document.querySelectorAll('.filter-btn');
@@ -661,7 +640,7 @@ function setupCategoryFilters() {
             });
             
             // Scroll suave para os produtos
-            const productsSection = document.getElementById('products-grid');
+            const productsSection = document.getElementById('products-grid'); // Precisa que a div products-grid tenha o ID
             if (productsSection) {
                 productsSection.scrollIntoView({ 
                     behavior: 'smooth',
@@ -673,9 +652,8 @@ function setupCategoryFilters() {
 }
 
 // =========================
-// ANIMAÇÕES E EFEITOS VISUAIS
+// ANIMAÇÕES E EFEITOS VISUAIS (Consolidado)
 // =========================
-
 
 // Smooth scroll para links internos
 function setupSmoothScroll() {
@@ -704,8 +682,10 @@ function setupSmoothScroll() {
 
 // Executar quando o DOM estiver pronto
 document.addEventListener('DOMContentLoaded', function() {
-    addAnimations();
-    setupSmoothScroll();
+    // A função addAnimations não está definida neste script.
+    // Se você tinha animações adicionais em outro JS, mova-as para cá
+    // ou remova a chamada.
+    // addAnimations(); 
     
     // Log de inicialização
     console.log('🛒 Supermercado Lopes - Sistema totalmente carregado!');
@@ -740,7 +720,7 @@ function debounce(func, wait) {
     };
 }
 
-// Função para detectar se é dispositivo móvel
+// Função para detectar se é dispositivo móvel (útil para lógica responsiva em JS)
 function isMobile() {
     return window.innerWidth <= 768;
 }
@@ -749,7 +729,7 @@ function isMobile() {
 // EXPOSIÇÃO DE FUNÇÕES GLOBAIS
 // =========================
 
-// Tornar algumas funções disponíveis globalmente para uso inline
+// Tornar algumas funções disponíveis globalmente para uso inline no HTML (onclick, etc.)
 window.addToCart = addToCart;
 window.removeFromCart = removeFromCart;
 window.updateQuantity = updateQuantity;
