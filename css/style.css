@@ -187,9 +187,9 @@ body {
    CABEÇALHO (HEADER)
    ========================= */
 header {
-    background: #1d3461; /* Fundo azul principal */
+    background: var(--primary-blue); /* Fundo azul principal */
     color: var(--white); /* Texto branco no cabeçalho */
-    padding: 0.2rem 0; /* Ainda menor para compactar o bloco azul */
+    padding: 0.1rem 0; /* Ainda menor para compactar o bloco azul */
     width: 100%;
     position: relative; /* Ocupa espaço normalmente, não sobrepõe o conteúdo */
     top: 0;
@@ -200,7 +200,9 @@ header {
 header .container {
     display: flex;
     flex-direction: column;
-    gap: 0.2rem; /* Gap menor para reduzir altura interna */
+    gap: 0;
+    max-width: 1200px;
+    padding: 0 20px;
 }
 
 .top-nav {
@@ -208,8 +210,7 @@ header .container {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding-bottom: var(--spacing-xs);
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: var(--spacing-xs); /* 8px */
 }
 
 /* Estilo para a imagem do logo */
@@ -230,44 +231,53 @@ a:has(> .logo) {
     display: flex;
     flex-grow: 1;
     max-width: 500px;
-    margin: 0 var(--spacing-lg);
-    border-radius: 25px;
+    margin: 0 40px;
+    border-radius: 8px;
     overflow: hidden;
-    background-color: var(--white); /* Fundo branco para a barra de busca */
-    box-shadow: var(--shadow-light); /* Sombra leve para destaque */
+    background-color: #cfd0d2; /* Fundo branco para a barra de busca */
+    border: 1px solid #ddd; /* Borda cinza clara */
 }
 
 .search-bar input {
     border: none;
-    padding: 12px 20px;
+    padding: 10px 14px;
     flex-grow: 1;
-    font-size: var(--spacing-sm); /* 1rem */
+    font-size:14px; /* 1rem */
     color: var(--black); /* Texto da busca em preto */
     outline: none;
 }
 
 .search-bar input::placeholder {
-    color: var(--gray);
+    color: #9999;
 }
 
 .search-bar .search-button {
-    background-color: var(--white); /* Botão de busca em branco */
+    background-color: var(--light-gray); /* Botão de busca em branco */
     border: none;
-    padding: 12px 20px;
+    padding: 10px 14px;
     cursor: pointer;
     color: var(--white); /* Ícone em branco */
     font-size: 1.2rem;
     transition: background-color var(--transition-normal);
+    border-left: 1px solid #eee;
 }
 
 .search-bar .search-button:hover {
-    background-color: var(--primary-blue); /* Azul primário no hover */
+    background-color: #f5f5f5; /* Azul primário no hover */
+
 }
+
 
 .user-links {
     display: flex;
     list-style: none;
     gap: var(--spacing-md);
+}
+
+.user-links li {
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
 .user-links a {
@@ -281,22 +291,33 @@ a:has(> .logo) {
     color: var(--accent-yellow); /* Amarelo no hover */
 }
 
+.user-links li:not(:last-child)::after {
+    content: '|';
+    color: rgba(255,255,255,0.3);
+    margin-left: 30px;
+}
+
 .nav-links {
     display: flex;
     list-style: none;
     gap: var(--spacing-lg);
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .nav-links a {
-    color: var(--white); /* Links de categoria em branco */
+    color: #ffffff;
     text-decoration: none;
-    font-weight: 500;
-    transition: all var(--transition-normal);
+    font-weight: 400;
+    font-size: 14px;
+    padding: 12px 12px; /* Reduzido para ficar mais compacto */
+    display: block;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+
 }
 
 .nav-links a:hover {
-    color: var(--accent-yellow); /* Amarelo no hover */
+    color: var(--danger-red); /* Vermelho no menu hover */
     transform: translateY(-2px);
 }
 
@@ -1066,25 +1087,27 @@ footer {
     }
     
     .search-bar {
-        order: 3;
-        width: 100%;
-        margin: var(--spacing-sm) 0 0 0;
         max-width: 100%;
+        margin: 0;
+        order: 2;
     }
     
     .user-links {
         order: 2;
-        gap: var(--spacing-sm);
+        gap: 20px;
     }
     
     .user-links a {
-        font-size: 0.9rem;
+        font-size: 13px;
+        padding: 10px 12px ; /* Reduzido para ficar mais compacto */
     }
     
+    img.logo {
+        width: 140px !important; /* Forçar tamanho fixo mesmo no tablet/mobile */
+    }
+
     .mobile-menu {
         display: block;
-        order: 1;
-        margin-left: auto;
     }
     
     .main-categories-nav {

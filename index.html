@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
 
@@ -28,19 +30,21 @@
         <div class="container"> 
             <nav class="top-nav"> 
                 <a href="index.html">
-                    <img src="photos/Logotipo supermercado minimalista azul branco vermelho.png" alt="Logo Supermercado Lopes" class="logo">
+                    <img src="photos/SUPERMERCADO.png" alt="Logo Supermercado Lopes" class="logo">
                 </a>
                 <div class="search-bar"> 
                     <input type="text" placeholder="Busque novos produtos"> 
                     <button class="search-button">🔍</button>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="#" id="openLoginPopup">Login</a></li>
-                    <li><a href="#">Minha Conta</a></li>
+                    <li><a href="#" id="openRegisterPopup"><p> Seja bem-vindo!</p><p><strong>Entre ou cadastre-se</strong></p></a></li>
+                    <li><a href="#" id="pedidos"><p> Meus</p><p><strong>Pedidos</strong></p></a></li>
+                    <li><a href="#" id="carrinho"><p>Carrinho</p><p><strong>R$ 00,00</strong></p></a></li>
                 </ul>
                 <button class="mobile-menu">&#9776;</button>
             </nav>
-            <nav class="main-categories-nav"> <ul class="nav-links"> <li><a href="../index.html">Inicio</a></li>
+            <nav class="main-categories-nav"> <ul class="nav-links"> 
+                    <li><a href="../index.html"><i class="fas fa-bars"></i><strong> Início</strong></a></li>
                     <li><a href="../produtos/eletro.html">Eletrodomésticos</a></li> 
                     <li><a href="../produtos/infantil.html">Infantil</a></li> 
                     <li><a href="../produtos/petshop.html">Pet Shop</a></li> 
@@ -367,27 +371,6 @@
             </div>
         </div>
     </footer>
-
-    <div class="cart-icon">
-        🛒<span class="cart-count">0</span> 
-    </div>
-
-    <div class="cart" id="shoppingCart"> 
-        <div class="cart-header">
-            <h2>Seu Carrinho</h2> 
-            <button class="close-cart">X</button> 
-        </div>
-        <div class="cart-items">
-            <p>Seu carrinho está vazio.</p> 
-        </div>
-        <div class="cart-total">
-            Total: R$ 0,00 
-        </div>
-        <div class="cart-actions">
-            <button class="cta-button clear-cart-btn">Limpar Carrinho</button>
-            <button class="cta-button checkout-btn">Finalizar Compra</button>
-        </div>
-    </div>
 
     <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
