@@ -1,133 +1,11 @@
 /* =========================
-   ANIMAÇÕES CSS (Para notificação de carrinho e filtros)
-   ========================= */
-@keyframes slideInRight {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideOutRight {
-    from {
-        transform: translateX(0);
-        opacity: 1;
-    }
-    to {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.cart-notification {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: #28a745; /* success-green */
-    color: #ffffff; /* white */
-    padding: 15px 20px;
-    border-radius: 8px;
-    z-index: 9999;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* shadow-medium */
-    animation: slideInRight 0.3s ease forwards; /* transition-normal */
-}
-
-/* Removendo esta classe no JS ao fechar o slideOut */
-.cart-notification.hide {
-    animation: slideOutRight 0.3s ease forwards;
-}
-
-/* Controles de quantidade e remoção no carrinho */
-.cart-item-controls {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-xs);
-}
-
-.qty-btn {
-    background: #22007C; /* primary-blue */
-    color: #ffffff; /* white */
-    border: none;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s ease;
-}
-
-.qty-btn:hover {
-    background: #022a7a; /* dark-blue */
-}
-
-.remove-btn {
-    background: #dc2626; /* danger-red */
-    color: #ffffff; /* white */
-    border: none;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    cursor: pointer;
-    margin-left: 10px;
-    transition: background 0.2s ease;
-}
-
-.remove-btn:hover {
-    background: #b91c1c; /* danger-red hover */
-}
-
-.quantity {
-    font-weight: bold;
-    min-width: 20px;
-    text-align: center;
-}
-
-.cart-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--spacing-md) 0;
-    border-bottom: 1px solid #dee2e6; /* light-gray */
-}
-
-.cart-item-info h4 {
-    margin: 0 0 5px 0;
-    font-size: 14px;
-    color: #212529; /* black */
-}
-
-.cart-item-info p {
-    margin: 0;
-    font-size: 12px;
-    color: #6c757d; /* gray */
-}
-
-/* =========================
    VARIÁVEIS DE CORES GLOBAIS
    ========================= */
 :root {
     /* Cores principais do sistema */
     --primary-blue: #1D3461; /* Azul primário */
-    --dark-blue: #1D3464; /* Versão mais escura do azul primário */
-    --accent-yellow: #F3B700 ; /* Amarelo de destaque */
+    --dark-blue: #1D3479; /* Versão mais escura do azul primário */
+    --accent-yellow: #F3B700; /* Amarelo de destaque */
     --darker-yellow: #e0cc43; /* Versão mais escura do amarelo de destaque */
 
     /* Cores de status */
@@ -173,27 +51,28 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: var(--black); /* Texto principal em preto */
-    background-color: var(--off-white); /* Fundo da página em off-white */
+    color: var(--black);
+    background-color: var(--off-white);
+    min-height: 100vh; /* Garante que o body ocupe a altura total da viewport */
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1px; /* Espaçamento padrão do projeto */
+    padding: 0 20px; /* Ajustado para 20px, era 1px no seu segundo código */
 }
 
 /* =========================
    CABEÇALHO (HEADER)
    ========================= */
 header {
-    background: var(--primary-blue); /* Fundo azul principal */
-    color: var(--white); /* Texto branco no cabeçalho */
-    padding: 0.1rem 0; /* Ainda menor para compactar o bloco azul */
+    background: var(--primary-blue);
+    color: var(--white);
+    padding: 0.1rem 0;
     width: 100%;
-    position: relative; /* Ocupa espaço normalmente, não sobrepõe o conteúdo */
+    position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000; /* Ajustado para 1000, era 100 no seu segundo código */
     box-shadow: var(--shadow-light);
 }
 
@@ -202,7 +81,7 @@ header .container {
     flex-direction: column;
     gap: 0;
     max-width: 1200px;
-    padding: 0 20px;
+    padding: 20px; /* Ajustado para 20px, era 1px no seu segundo código */
 }
 
 .top-nav {
@@ -210,129 +89,137 @@ header .container {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding-bottom: var(--spacing-xs); /* 8px */
+    padding-bottom: var(--spacing-xs);
+    flex-wrap: wrap;
 }
 
-/* Estilo para a imagem do logo */
+/* Logo */
 img.logo {
-    width: 190px !important; /* Forçar o tamanho fixo da logo */
+    width: 190px !important;
     height: auto;
     display: block;
+    transition: transform var(--transition-normal);
 }
-/* Estilo para o link do logo */
+
+img.logo:hover {
+    transform: scale(1.05);
+}
+
 a:has(> .logo) {
     cursor: pointer;
     flex-shrink: 0;
     display: block;
 }
 
-
+/* Barra de busca */
 .search-bar {
     display: flex;
     flex-grow: 1;
     max-width: 500px;
     margin: 0 40px;
-    border-radius: 8px;
+    border-radius: 6px;
     overflow: hidden;
-    background-color: #cfd0d2; /* Fundo branco para a barra de busca */
-    border: 1px solid #ddd; /* Borda cinza clara */
+    background-color: var(--white);
+    border: 1px solid var(--light-gray);
+    box-shadow: var(--shadow-light);
+    transition: all var(--transition-normal);
+}
+
+.search-bar:focus-within {
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-2px);
 }
 
 .search-bar input {
     border: none;
-    padding: 10px 14px;
+    padding: 12px 16px;
     flex-grow: 1;
-    font-size:14px; /* 1rem */
-    color: var(--black); /* Texto da busca em preto */
+    font-size: 14px;
+    color: var(--black);
     outline: none;
+    background: transparent;
 }
 
 .search-bar input::placeholder {
-    color: #9999;
+    color: var(--gray);
 }
 
 .search-bar .search-button {
-    background-color: var(--light-gray); /* Botão de busca em branco */
+    background-color: var(--primary-blue); /* Ajustado de var(--light-gray) para var(--primary-blue) */
     border: none;
-    padding: 10px 14px;
+    padding: 10px 16px;
     cursor: pointer;
-    color: var(--white); /* Ícone em branco */
+    color: var(--white);
     font-size: 1.2rem;
     transition: background-color var(--transition-normal);
-    border-left: 1px solid #eee;
+    border-left: 1px solid var(--light-gray);
 }
 
 .search-bar .search-button:hover {
-    background-color: #f5f5f5; /* Azul primário no hover */
-
+    background-color: var(--dark-blue);
 }
 
-
-.user-links {
-    display: flex;
-    list-style: none;
-    gap: var(--spacing-md);
-}
-
-.user-links li {
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.user-links a {
-    color: var(--white); /* Links de usuário em branco */
-    text-decoration: none;
-    font-weight: 500;
-    transition: color var(--transition-normal);
-}
-
-.user-links a:hover {
-    color: var(--accent-yellow); /* Amarelo no hover */
-}
-
-.user-links li:not(:last-child)::after {
-    content: '|';
-    color: rgba(255,255,255,0.3);
-    margin-left: 30px;
-}
-
+/* Links do usuário (mantido de 'user-links' para 'nav-links' para compatibilidade com o carrinho completo) */
 .nav-links {
     display: flex;
     list-style: none;
-    gap: var(--spacing-lg);
-    justify-content: space-between;
+    gap: 50px; /* Ajustado de var(--spacing-md) para var(--spacing-lg) */
+    align-items: center; /* Adicionado para centralizar verticalmente */
 }
 
 .nav-links a {
-    color: #ffffff;
+    color: var(--white);
     text-decoration: none;
-    font-weight: 400;
-    font-size: 14px;
-    padding: 12px 12px; /* Reduzido para ficar mais compacto */
-    display: block;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-
+    padding: 10px 15px;
+    border-radius: 20px;
+    transition: all var(--transition-normal);
+    text-align: center;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    display: inline-block; /* Adicionado para garantir que o link ocupe o espaço necessário */
+    line-height: 1.2;
 }
 
 .nav-links a:hover {
-    color: var(--danger-red); /* Vermelho no menu hover */
-    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.2); /* Ajustado de color para background */
+    transform: translateY(-2px);/* Adicionado efeito de hover */
+    box-shadow: var(--shadow-light);
 }
 
+.main-categories-nav {
+    padding: 0;
+    border-radius: 20px;
+    margin-top: 0; /* Removido margin-top para alinhar com o primeiro código */
+}
+
+.main-categories-nav .nav-links { /* Corrigido de .main-category-nav para .main-categories-nav */
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.main-categories-nav a {
+    padding: 8px 15px;
+    font-size: 14px;
+}
+
+/* Menu Mobile */
 .mobile-menu {
     display: none; /* Escondido por padrão no desktop */
     background: none;
     border: none;
-    color: var(--white); /* Ícone em branco */
+    color: var(--white);
     font-size: 1.5rem;
     cursor: pointer;
     transition: color var(--transition-normal);
 }
 
 .mobile-menu:hover {
-    color: var(--accent-yellow); /* Amarelo no hover */
+    color: var(--accent-yellow);
+}
+
+.main-categories-nav.active {
+    display: flex; /* Mantido para JS */
 }
 
 /* =========================
@@ -353,7 +240,7 @@ a:has(> .logo) {
 
 .login-popup-content {
     background-color: var(--white);
-    padding: var(--spacing-xl); /* 48px */
+    padding: var(--spacing-xl);
     border-radius: 10px;
     position: relative;
     width: 90%;
@@ -363,8 +250,8 @@ a:has(> .logo) {
 
 .close-login-popup {
     position: absolute;
-    top: var(--spacing-md); /* 24px */
-    right: var(--spacing-md); /* 24px */
+    top: var(--spacing-md);
+    right: var(--spacing-md);
     font-size: 1.8rem;
     cursor: pointer;
     color: var(--gray);
@@ -372,13 +259,13 @@ a:has(> .logo) {
 
 .login-popup-content h2 {
     text-align: center;
-    margin-bottom: var(--spacing-xl); /* 48px */
+    margin-bottom: var(--spacing-xl);
     color: var(--primary-blue);
 }
 
 .login-popup-content label {
     display: block;
-    margin-bottom: var(--spacing-xs); /* 8px */
+    margin-bottom: var(--spacing-xs);
     font-weight: bold;
     color: var(--black);
 }
@@ -387,25 +274,24 @@ a:has(> .logo) {
 .login-popup-content input[type="password"] {
     width: 100%;
     padding: 12px;
-    margin-bottom: var(--spacing-md); /* 24px */
+    margin-bottom: var(--spacing-md);
     border: 1px solid var(--border-gray);
     border-radius: 5px;
-    font-size: var(--spacing-sm); /* 1rem */
+    font-size: var(--spacing-sm);
     color: var(--black);
 }
-
 
 /* =========================
    BANNER CARROSSEL (SWIPER.JS)
    ========================= */
 .banner-carousel-section {
-    margin: 40px 0; /* 40px top/bottom margin */
-    width: 100%; /* Largura fixa para o swiper */
+    margin: 40px 0;
+    width: 100%;
     max-width: 1270px;
-    margin-left: auto; /* Centraliza o swiper na tela */
+    margin-left: auto;
     margin-right: auto;
-    position: relative; /* Ocupa espaço normalmente, não sobrepõe o conteúdo */
-    padding: 0 15px; /* Espaçamento lateral para evitar que o swiper encoste nas bordas */
+    position: relative;
+    padding: 0 15px;
 }
 
 .my-banner-swiper {
@@ -413,7 +299,7 @@ a:has(> .logo) {
     height: 300px;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.1); /* Sombra média */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
 }
 
 .swiper-slide {
@@ -433,7 +319,7 @@ a:has(> .logo) {
 .swiper-button-next,
 .swiper-button-prev {
     background-color: rgba(209, 207, 207, 0.4);
-    width: 100px;               /* botão maior e redondo */
+    width: 100px;
     height: 50px;
     border-radius: 60%;
     position: absolute;
@@ -475,7 +361,6 @@ a:has(> .logo) {
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-
 /* Estilo para paginação do Swiper (as bolinhas) */
 .swiper-pagination-bullet {
     background: #ffffff;
@@ -486,15 +371,13 @@ a:has(> .logo) {
     opacity: 1;
 }
 
-
-
 /* =========================
    SEÇÕES GERAIS
    ========================= */
 .section {
-    padding: var(--spacing-lg) 0; /* 32px */
-    background-color: var(--white); /* Fundo branco para as seções */
-    margin-bottom: var(--spacing-lg); /* 32px */
+    padding: var(--spacing-lg) 0;
+    background-color: var(--white);
+    margin-bottom: var(--spacing-lg);
     border-radius: 10px;
     box-shadow: var(--shadow-light);
 }
@@ -506,11 +389,11 @@ a:has(> .logo) {
 .section-title {
     text-align: center;
     font-size: 2.5rem;
-    margin-bottom: var(--spacing-xl); /* 48px */
-    color: var(--black); /* Títulos de seção em preto */
+    margin-bottom: var(--spacing-xl);
+    color: var(--black);
     position: relative;
     font-weight: 700;
-    padding-bottom: 15px; /* Espaço para a linha decorativa */
+    padding-bottom: 15px;
 }
 
 .section-title::after {
@@ -521,7 +404,7 @@ a:has(> .logo) {
     transform: translateX(-50%);
     width: 60px;
     height: 4px;
-    background: var(--primary-blue); /* Linha decorativa em azul primário */
+    background: var(--primary-blue);
     border-radius: 2px;
 }
 
@@ -532,15 +415,15 @@ a:has(> .logo) {
     display: flex;
     gap: 10px;
     justify-content: center;
-    margin-bottom: var(--spacing-lg); /* 32px */
+    margin-bottom: var(--spacing-lg);
     flex-wrap: wrap;
 }
 
 .filter-btn {
     padding: 10px 20px;
-    border: 2px solid var(--light-gray); /* Borda em cinza claro */
-    background: var(--white); /* Fundo branco para os botões */
-    color: var(--black); /* Texto em preto */
+    border: 2px solid var(--light-gray);
+    background: var(--white);
+    color: var(--black);
     cursor: pointer;
     border-radius: 25px;
     font-weight: 500;
@@ -563,17 +446,17 @@ a:has(> .logo) {
    ========================= */
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Min-width ajustada */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: var(--spacing-lg);
-    margin-top: var(--spacing-md); /* 24px */
+    margin-top: var(--spacing-md);
     justify-items: center;
 }
 
 /* CARDS DE PRODUTO - MODELO PRINCIPAL */
 .card-produto,
 .product-card {
-    width: 250px; /* Largura ajustada para o exemplo do HTML */
-    background: var(--white); /* Fundo branco para os cards */
+    width: 250px;
+    background: var(--white);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--shadow-light);
@@ -602,8 +485,8 @@ a:has(> .logo) {
 }
 
 .desconto {
-    background: var(--danger-red); /* Vermelho para desconto */
-    color: var(--white); /* Texto branco no badge */
+    background: var(--danger-red);
+    color: var(--white);
     padding: 4px 8px;
     border-radius: 4px;
     font-size: 12px;
@@ -612,8 +495,8 @@ a:has(> .logo) {
 }
 
 .evento {
-    background: var(--success-green); /* Verde para oferta/evento */
-    color: var(--white); /* Texto branco no badge */
+    background: var(--success-green);
+    color: var(--white);
     padding: 4px 8px;
     border-radius: 4px;
     font-size: 12px;
@@ -625,12 +508,12 @@ a:has(> .logo) {
 .imagem-produto,
 .product-image {
     width: 100%;
-    height: 180px; /* Altura da área da imagem */
+    height: 180px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 16px;
-    background: var(--white); /* Fundo branco da área da imagem */
+    background: var(--white);
 }
 
 .imagem-produto img,
@@ -652,12 +535,12 @@ a:has(> .logo) {
 
 .titulo,
 .product-info h3 {
-    font-size: 1.1rem; /* 18px */
+    font-size: 1.1rem;
     font-weight: 600;
-    color: var(--black); /* Título em preto */
+    color: var(--black);
     margin-bottom: 12px;
     line-height: 1.3;
-    min-height: 44px; /* Para títulos de 2 linhas */
+    min-height: 44px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -665,7 +548,7 @@ a:has(> .logo) {
 }
 
 .product-info p {
-    color: var(--gray); /* Texto cinza */
+    color: var(--gray);
     font-size: 12px;
     margin-bottom: var(--spacing-sm);
 }
@@ -674,13 +557,13 @@ a:has(> .logo) {
 .precos,
 .product-pricing {
     margin-bottom: 16px;
-    margin-top: auto; /* Empurra os preços para cima */
+    margin-top: auto;
 }
 
 .preco-antigo,
 .product-old-price {
     font-size: 14px;
-    color: var(--gray); /* Preço antigo em cinza */
+    color: var(--gray);
     text-decoration: line-through;
     display: block;
     margin-bottom: 2px;
@@ -688,9 +571,9 @@ a:has(> .logo) {
 
 .preco-novo,
 .product-price {
-    font-size: 1.4rem; /* 22.4px */
+    font-size: 1.4rem;
     font-weight: 700;
-    color: var(--primary-blue); /* Preço novo em azul principal */
+    color: var(--primary-blue);
     display: block;
     margin-bottom: 2px;
 }
@@ -698,7 +581,7 @@ a:has(> .logo) {
 .por-unidade,
 .product-unit {
     font-size: 11px;
-    color: var(--success-green); /* 'Por unidade' em verde */
+    color: var(--success-green);
     display: block;
 }
 
@@ -706,12 +589,12 @@ a:has(> .logo) {
 .btn-adicionar,
 .add-to-cart {
     width: 100%;
-    background: var(--primary-blue); /* Azul principal */
-    color: var(--white); /* Texto branco */
+    background: var(--primary-blue);
+    color: var(--white);
     border: none;
     padding: 12px;
     border-radius: 8px;
-    font-size: var(--spacing-sm); /* 1rem */
+    font-size: var(--spacing-sm);
     font-weight: 600;
     cursor: pointer;
     transition: all var(--transition-normal);
@@ -719,7 +602,7 @@ a:has(> .logo) {
 
 .btn-adicionar:hover,
 .add-to-cart:hover {
-    background: var(--dark-blue); /* Azul escuro no hover */
+    background: var(--dark-blue);
     transform: translateY(-2px);
 }
 
@@ -732,7 +615,7 @@ a:has(> .logo) {
    PROMOÇÕES DE CATEGORIA
    ========================= */
 .category-promos-section {
-    background-color: var(--off-white); /* Fundo off-white */
+    background-color: var(--off-white);
     padding: 60px 0;
 }
 
@@ -744,7 +627,7 @@ a:has(> .logo) {
 }
 
 .category-promo-block {
-    background: var(--white); /* Fundo branco para o bloco de promo */
+    background: var(--white);
     border-radius: 12px;
     box-shadow: var(--shadow-light);
     padding: var(--spacing-lg);
@@ -777,7 +660,7 @@ a:has(> .logo) {
 
 .category-promo-block p span {
     font-weight: 700;
-    color: var(--dark-blue); /* Azul escuro para a porcentagem */
+    color: var(--dark-blue);
 }
 
 .category-promo-block img {
@@ -790,7 +673,7 @@ a:has(> .logo) {
 
 .category-link {
     background: var(--primary-blue);
-    color: var(--white); /* Texto branco */
+    color: var(--white);
     padding: 10px 25px;
     border-radius: 25px;
     text-decoration: none;
@@ -808,21 +691,20 @@ a:has(> .logo) {
    SEÇÃO DE AGENDAMENTO
    ========================= */
 .schedule-delivery-section {
-    /* Fundo com imagem e overlay de cor principal */
     background: linear-gradient(rgba(3, 77, 191, 0.8), rgba(3, 77, 191, 0.8)), url('../photos/delivery-bg.webp') no-repeat center center/cover;
-    color: var(--white); /* Texto em branco */
+    color: var(--white);
     text-align: center;
     padding: 80px 0;
-    border-radius: 10px; /* Borda arredondada */
+    border-radius: 10px;
     margin-bottom: var(--spacing-lg);
 }
 
 .schedule-delivery-content h2 {
     font-size: 3rem;
-    margin-bottom: var(--spacing-md); /* Corrigido para variável de espaçamento */
+    margin-bottom: var(--spacing-md);
     text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
     font-weight: 700;
-    color: var(--accent-yellow); /* Título em amarelo de destaque */
+    color: var(--accent-yellow);
 }
 
 .schedule-delivery-content p {
@@ -833,14 +715,399 @@ a:has(> .logo) {
 }
 
 /* =========================
-   CARRINHO DE COMPRAS
+   NOTIFICAÇÕES DE ADIÇÃO AO CARRINHO (TOAST)
+   ========================= */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.cart-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--success-green);
+    color: var(--white);
+    padding: 15px 20px;
+    border-radius: 8px;
+    z-index: 9999;
+    box-shadow: var(--shadow-medium);
+    animation: slideInRight var(--transition-normal) forwards;
+    font-weight: 500;
+}
+
+.cart-notification.hide {
+    animation: slideOutRight var(--transition-normal) forwards;
+}
+
+/* =========================
+   CARRINHO STYLES (PÁGINA DEDICADA DO CARRINHO)
+   ========================= */
+.carrinho-container {
+    padding: 40px 0;
+}
+
+.carrinho-header {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-medium);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.carrinho-header h1 {
+    color: var(--black);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.carrinho-header p {
+    color: var(--gray);
+    font-size: 1.1rem;
+}
+
+.carrinho-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.carrinho-items {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: var(--shadow-medium);
+    border: 1px solid var(--border-gray);
+}
+
+/* =========================
+   ITENS DO CARRINHO (PÁGINA DEDICADA)
+   ========================= */
+.item-carrinho {
+    display: grid;
+    grid-template-columns: 100px 1fr auto auto auto;
+    gap: 20px;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--light-gray);
+    transition: all var(--transition-normal);
+    animation: fadeIn 0.5s ease;
+}
+
+.item-carrinho:hover {
+    background: var(--off-white);
+    border-radius: 15px;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-light);
+}
+
+.item-carrinho:last-child {
+    border-bottom: none;
+}
+
+.item-imagem {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--white);
+    box-shadow: var(--shadow-light);
+}
+
+.item-info h3 {
+    color: var(--black);
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.item-info p {
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.item-preco {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--primary-blue);
+    transition: transform var(--transition-fast);
+}
+
+/* =========================
+   CONTROLES DE QUANTIDADE (PÁGINA DEDICADA)
+   ========================= */
+.quantidade-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--off-white);
+    padding: 8px 12px;
+    border-radius: 25px;
+    border: 1px solid var(--border-gray);
+}
+
+.quantidade-btn {
+    background: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all var(--transition-normal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quantidade-btn:hover {
+    background: var(--dark-blue);
+    transform: scale(1.1);
+    box-shadow: var(--shadow-light);
+}
+
+.quantidade-input {
+    width: 50px;
+    text-align: center;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--black);
+}
+
+.quantidade-input:focus {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+.remover-btn {
+    background: var(--danger-red);
+    color: var(--white);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    font-weight: 500;
+}
+
+.remover-btn:hover {
+    background: #b91c1c;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-light);
+}
+
+/* =========================
+   RESUMO DO PEDIDO (PÁGINA DEDICADA)
+   ========================= */
+.resumo-pedido {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: var(--shadow-medium);
+    height: fit-content;
+    position: sticky;
+    top: 120px;
+    border: 1px solid var(--border-gray);
+}
+
+.resumo-pedido h2 {
+    color: var(--black);
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.resumo-linha {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 10px 0;
+    color: var(--black);
+}
+
+.resumo-linha.total {
+    border-top: 2px solid var(--light-gray);
+    padding-top: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--black);
+}
+
+.finalizar-btn {
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+    color: var(--white);
+    border: none;
+    padding: 18px 30px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-light);
+}
+
+.finalizar-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+    background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+}
+
+.finalizar-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* =========================
+   CARRINHO VAZIO (PÁGINA DEDICADA)
+   ========================= */
+.carrinho-vazio {
+    text-align: center;
+    padding: 60px 30px;
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: var(--shadow-medium);
+    border: 1px solid var(--border-gray);
+}
+
+.carrinho-vazio i {
+    font-size: 4rem;
+    color: var(--light-gray);
+    margin-bottom: 20px;
+}
+
+.carrinho-vazio h2 {
+    color: var(--gray);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.carrinho-vazio p {
+    color: var(--gray);
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+.continuar-comprando {
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+    color: var(--white);
+    padding: 15px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    transition: all var(--transition-normal);
+    font-weight: 600;
+    box-shadow: var(--shadow-light);
+}
+
+.continuar-comprando:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+    background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+}
+
+/* =========================
+   CUPOM DE DESCONTO (PÁGINA DEDICADA)
+   ========================= */
+.cupom-section {
+    margin: 20px 0;
+    padding: 20px;
+    background: var(--off-white);
+    border-radius: 15px;
+    border: 1px solid var(--border-gray);
+}
+
+.cupom-section label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--black);
+    font-weight: 500;
+}
+
+.cupom-input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.cupom-input-group input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid var(--border-gray);
+    border-radius: 15px;
+    font-size: 14px;
+    color: var(--black);
+    background: var(--white);
+    transition: all var(--transition-normal);
+}
+
+.cupom-input-group input:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(29, 52, 97, 0.1);
+}
+
+.cupom-input-group button {
+    background: var(--success-green);
+    color: var(--white);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all var(--transition-normal);
+}
+
+.cupom-input-group button:hover {
+    background: #15803d;
+    transform: translateY(-1px);
+}
+
+/* =========================
+   CARRINHO LATERAL (OVERLAY)
    ========================= */
 .cart-icon {
     position: fixed;
     bottom: 30px;
     right: 30px;
     background: var(--primary-blue);
-    color: var(--white); /* Ícone em branco */
+    color: var(--white);
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -849,7 +1116,7 @@ a:has(> .logo) {
     justify-content: center;
     cursor: pointer;
     box-shadow: var(--shadow-heavy);
-    z-index: 900; /* Abaixo do carrinho em si */
+    z-index: 900;
     transition: all var(--transition-normal);
     font-size: 1.5rem;
     border: none;
@@ -865,8 +1132,8 @@ a:has(> .logo) {
     position: absolute;
     top: -8px;
     right: -8px;
-    background: var(--white); /* Fundo branco */
-    color: var(--primary-blue); /* Texto em azul primário */
+    background: var(--white);
+    color: var(--primary-blue);
     width: 24px;
     height: 24px;
     border-radius: 50%;
@@ -881,17 +1148,17 @@ a:has(> .logo) {
 .cart {
     position: fixed;
     top: 0;
-    right: -400px; /* Oculto por padrão */
+    right: -400px;
     width: 400px;
-    height: 100vh; /* Altura total da viewport */
-    background: var(--white); /* Fundo branco para a sidebar */
+    height: 100vh;
+    background: var(--white);
     box-shadow: -8px 0 30px rgba(0,0,0,0.15);
     transition: right var(--transition-slow);
     z-index: 9999;
     overflow-y: auto;
     border-left: 1px solid var(--light-gray);
     display: flex;
-    flex-direction: column; /* Organiza o conteúdo verticalmente */
+    flex-direction: column;
 }
 
 .cart.open {
@@ -900,14 +1167,14 @@ a:has(> .logo) {
 
 .cart-header {
     padding: var(--spacing-md);
-    background: var(--primary-blue); /* Cabeçalho do carrinho em azul primário */
-    color: var(--white); /* Texto em branco */
+    background: var(--primary-blue);
+    color: var(--white);
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 1.3rem;
     font-weight: 600;
-    position: sticky; /* Fixo ao topo ao rolar */
+    position: sticky;
     top: 0;
     z-index: 10;
     box-shadow: var(--shadow-light);
@@ -916,34 +1183,106 @@ a:has(> .logo) {
 .close-cart {
     background: none;
     border: none;
-    color: var(--white); /* 'X' em branco */
+    color: var(--white);
     font-size: 1.5rem;
     cursor: pointer;
     transition: color var(--transition-normal);
 }
 
 .close-cart:hover {
-    color: var(--accent-yellow); /* Amarelo no hover */
+    color: var(--accent-yellow);
 }
 
 .cart-items {
     padding: var(--spacing-md);
-    flex-grow: 1; /* Permite que a lista de itens ocupe o espaço restante */
-    overflow-y: auto; /* Adiciona scroll se os itens excederem a altura */
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+/* Nota: .cart-item foi substituído por .item-carrinho para a página dedicada */
+/* No entanto, se você também tem .cart-item para a sidebar, ele precisa ser separado. */
+/* Vou manter os estilos originais do seu segundo código aqui, caso você use ambos. */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid var(--light-gray);
 }
 
 .cart-item:last-child {
     border-bottom: none;
 }
 
+.cart-item-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    color: var(--black);
+}
+
+.cart-item-info p {
+    margin: 0;
+    font-size: 12px;
+    color: var(--gray);
+}
+
+/* Controles de quantidade para a sidebar do carrinho (se forem diferentes da página de carrinho) */
+.cart-item-controls { /* Mantido para a sidebar, se aplicado */
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.qty-btn { /* Mantido para a sidebar, se aplicado */
+    background: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background var(--transition-fast); /* Ajustado para var */
+}
+
+.qty-btn:hover {
+    background: var(--dark-blue);
+}
+
+.remove-btn { /* Mantido para a sidebar, se aplicado */
+    background: var(--danger-red);
+    color: var(--white);
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background var(--transition-fast); /* Ajustado para var */
+}
+
+.remove-btn:hover {
+    background: #b91c1c;
+}
+
+.quantity { /* Mantido para a sidebar, se aplicado */
+    font-weight: bold;
+    min-width: 20px;
+    text-align: center;
+}
+
+
 .cart-total {
-    padding: var(--spacing-md); /* Corrigido de var(--white) para espaçamento */
-    background: var(--off-white); /* Fundo off-white */
-    border-top: 2px solid var(--primary-blue); /* Borda superior em azul primário */
+    padding: var(--spacing-md);
+    background: var(--off-white);
+    border-top: 2px solid var(--primary-blue);
     font-size: 1.2rem;
     font-weight: 700;
-    color: var(--black); /* Texto em preto */
-    position: sticky; /* Fixo na parte inferior ao rolar */
+    color: var(--black);
+    position: sticky;
     bottom: 0;
     z-index: 10;
     box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
@@ -951,10 +1290,10 @@ a:has(> .logo) {
 
 .cart-actions {
     padding: var(--spacing-md);
-    background: var(--off-white); /* Fundo off-white */
+    background: var(--off-white);
     display: flex;
     gap: var(--spacing-sm);
-    flex-shrink: 0; /* Previne que os botões encolham */
+    flex-shrink: 0;
 }
 
 .clear-cart-btn,
@@ -974,7 +1313,7 @@ a:has(> .logo) {
 }
 
 .clear-cart-btn:hover {
-    background: #b91c1c; /* Corrigido para valor direto */
+    background: #b91c1c;
 }
 
 .checkout-btn {
@@ -983,19 +1322,19 @@ a:has(> .logo) {
 }
 
 .checkout-btn:hover {
-    background: #15803d; /* Corrigido para valor direto */
+    background: #15803d;
 }
 
 /* =========================
    FOOTER
    ========================= */
 footer {
-    background: var(--black); /* Fundo do rodapé em preto */
-    color: var(--white); /* Texto do rodapé em branco */
+    background: var(--black);
+    color: var(--white);
     text-align: center;
-    padding: var(--spacing-lg) 0; /* Corrigido de var(--off-white) para espaçamento */
+    padding: var(--spacing-lg) 0;
     font-size: 0.9rem;
-    margin-top: var(--spacing-lg); /* Garante espaço após a última seção */
+    margin-top: var(--spacing-lg);
 }
 
 .social-links {
@@ -1006,11 +1345,11 @@ footer {
 }
 
 .social-links a {
-    color: var(--white); /* Ícones sociais em branco */
+    color: var(--white);
     text-decoration: none;
     padding: 10px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.1); /* Fundo transparente leve */
+    background: rgba(255,255,255,0.1);
     transition: all var(--transition-normal);
     font-size: 1.1rem;
 }
@@ -1022,34 +1361,69 @@ footer {
 }
 
 /* =========================
+   ANIMAÇÕES GERAIS
+   ========================= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
    RESPONSIVIDADE
    ========================= */
 
 /* Tablets e dispositivos médios */
 @media (max-width: 992px) {
+    .carrinho-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .resumo-pedido {
+        position: relative;
+        top: 0;
+    }
+    
     .hero-content h1,
     .carousel-content h1 {
         font-size: 2.5rem;
     }
     
     .my-banner-swiper {
-        height: 350px; /* Altura ajustada para tablets */
+        height: 350px;
     }
 
     .section-title {
         font-size: 2rem;
     }
-    
-    /* As seções 'about' e 'contact' não estão no HTML que você forneceu */
-    /* .about-content,
-    .contact-content {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
-    }
-    
-    .about-image {
-        height: 250px;
-    } */
     
     .search-bar {
         max-width: 350px;
@@ -1079,35 +1453,37 @@ footer {
         justify-content: space-between;
         align-items: center;
         padding-bottom: var(--spacing-xs);
+        flex-direction: column; /* Ajustado para coluna para melhor quebra */
+        gap: 15px; /* Adicionado gap */
+        overflow: visible; /* Para evitar overflow */
     }
     
     img.logo {
-        width: 12px !important; /* Forçar tamanho fixo mesmo no tablet/mobile */
+        width: 140px !important; /* Ajustado para 140px para consistência */
         height: auto;
     }
     
     .search-bar {
         max-width: 100%;
         margin: 0;
-        order: 2;
+        order: 3; /* Para ficar abaixo do logo e links */
     }
     
-    .user-links {
-        order: 2;
-        gap: 20px;
+    .nav-links { /* Substitui .user-links e .main-categories-nav a */
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 15px; /* Espaçamento após a barra de busca */
     }
     
-    .user-links a {
+    .nav-links a {
         font-size: 13px;
-        padding: 10px 12px ; /* Reduzido para ficar mais compacto */
-    }
-    
-    img.logo {
-        width: 140px !important; /* Forçar tamanho fixo mesmo no tablet/mobile */
+        padding: 8px 12px;
     }
 
     .mobile-menu {
         display: block;
+        order: 1; /* Para aparecer no topo */
     }
     
     .main-categories-nav {
@@ -1127,14 +1503,12 @@ footer {
         display: flex;
     }
     
-    .my-banner-swiper { /* Afeta o carrossel na index */
-        height: 250px; /* Altura menor no mobile */
+    .my-banner-swiper {
+        height: 250px;
     }
     
-    /* Estilos do carrossel manual removidos */
-    
     .section {
-        padding: 60px 0;
+        padding: 40px 0; /* Ajustado de 60px para 40px */
     }
     
     .section-title {
@@ -1148,8 +1522,8 @@ footer {
     
     .card-produto,
     .product-card {
-        width: 100%; /* Ajusta para preencher a coluna */
-        max-width: 180px; /* Limite de largura para não esticar demais */
+        width: 100%;
+        max-width: 180px;
     }
     
     .imagem-produto, .product-image {
@@ -1188,7 +1562,7 @@ footer {
     }
     
     .cart {
-        width: 90%; /* Ocupa mais largura no mobile */
+        width: 90%;
         right: -90%;
     }
     
@@ -1205,16 +1579,42 @@ footer {
         height: 20px;
         font-size: 0.7rem;
     }
+
+    /* Ajustes para a página do carrinho em mobile */
+    .carrinho-header h1 {
+        font-size: 2rem;
+    }
+    
+    .item-carrinho {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 15px;
+        padding: 20px;
+        border-radius: 15px;
+        background: var(--off-white);
+        margin-bottom: 15px;
+    }
+    
+    .item-imagem {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        margin: 0 auto;
+    }
+    
+    .cupom-input-group {
+        flex-direction: column;
+    }
 }
 
 /* Mobile pequeno */
 @media (max-width: 480px) {
     .container {
-        padding: 0 15px; /* Ajustado para um pouco mais de padding */
+        padding: 0 15px;
     }
     
     img.logo {
-        width: 12px !important; /* Forçar tamanho fixo mesmo no mobile pequeno */
+        width: 120px !important; /* Ajustado para 120px */
         height: auto;
     }
     
@@ -1229,7 +1629,7 @@ footer {
     }
     
     .my-banner-swiper {
-        height: 180px; /* Altura ainda menor para telas muito pequenas */
+        height: 180px;
     }
     
     .section-title {
@@ -1237,14 +1637,14 @@ footer {
     }
     
     .products-grid {
-        grid-template-columns: 1fr; /* Uma única coluna de produtos */
+        grid-template-columns: 1fr;
         justify-items: center;
     }
     
     .card-produto,
     .product-card {
         width: 100%;
-        max-width: 280px; /* Limite para não ficar muito largo em telas pequenas */
+        max-width: 280px;
     }
     
     .imagem-produto,
@@ -1321,18 +1721,36 @@ footer {
         font-size: 1rem;
     }
     
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        padding: 10px 12px;
-        font-size: 0.9rem;
+    /* Ajustes para a página do carrinho em mobile pequeno */
+    .carrinho-header {
+        padding: 20px;
+    }
+    
+    .carrinho-items {
+        padding: 20px;
+    }
+    
+    .resumo-pedido {
+        padding: 20px;
+    }
+    
+    .carrinho-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .item-info h3 {
+        font-size: 1rem;
+    }
+    
+    .item-preco {
+        font-size: 1.1rem;
     }
 }
 
 /* Ajustes específicos para orientação landscape em mobile */
 @media (max-width: 768px) and (orientation: landscape) {
     .my-banner-swiper {
-        height: 80vh; /* Ocupa mais altura na horizontal */
+        height: 80vh;
         min-height: 300px;
     }
     
@@ -1349,13 +1767,13 @@ footer {
     }
     
     .products-grid {
-        grid-template-columns: 1fr; /* Garantir uma única coluna */
+        grid-template-columns: 1fr;
         justify-items: center;
     }
     
     .card-produto,
     .product-card {
-        max-width: 280px; /* Manter um limite */
+        max-width: 280px;
     }
     
     .category-filters {
@@ -1374,15 +1792,13 @@ footer {
 @media print {
     .cart-icon,
     .mobile-menu,
-    .swiper-button-prev, /* Botões do Swiper */
-    .swiper-button-next, /* Botões do Swiper */
-    .swiper-pagination, /* Paginação do Swiper */
-    /* .banner-carousel-btn foi removido, não precisa mais */
-    {
+    .swiper-button-prev,
+    .swiper-button-next,
+    .swiper-pagination {
         display: none !important;
     }
     
-    .my-banner-swiper { /* Afeta o carrossel na index */
+    .my-banner-swiper {
         height: auto;
         min-height: auto;
     }
@@ -1403,7 +1819,9 @@ footer {
     }
 }
 
-/* Estados de foco para acessibilidade */
+/* =========================
+   ESTADOS DE FOCO PARA ACESSIBILIDADE
+   ========================= */
 *:focus {
     outline: 2px solid var(--primary-blue);
     outline-offset: 2px;
@@ -1416,19 +1834,9 @@ textarea:focus {
     outline-color: var(--primary-blue);
 }
 
-/* Animações e transições suaves (prefer reduced motion) */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-}
-
-
-/* Utilitários */
+/* =========================
+   UTILITÁRIOS
+   ========================= */
 .hidden {
     display: none !important;
 }
@@ -1462,3 +1870,14 @@ textarea:focus {
 .mb-3 { margin-bottom: var(--spacing-md); }
 .mb-4 { margin-bottom: var(--spacing-lg); }
 .mb-5 { margin-bottom: var(--spacing-xl); }
+
+/* Redução de movimento para acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
