@@ -1,0 +1,28 @@
+[
+  {
+    "id": "in-001",
+    "nome": "Fralda Tamanho M (48 un.)",
+    "imagem": "https://via.placeholder.com/400x300?text=Fralda",
+    "preco_de": 79.9,
+    "preco_por": 64.9,
+    "desconto": 19
+  },
+  {
+    "id": "in-002",
+    "nome": "Lenço Umedecido (100 un.)",
+    "imagem": "https://via.placeholder.com/400x300?text=Len%C3%A7o",
+    "preco_por": 17.9
+  },
+  {
+    "id": "in-003",
+    "nome": "Shampoo Baby 200ml",
+    "imagem": "https://via.placeholder.com/400x300?text=Shampoo+Baby",
+    "preco_por": 15.5
+  },
+  {
+    "id": "in-004",
+    "nome": "Papinha de Frutas 120g",
+    "imagem": "https://via.placeholder.com/400x300?text=Papinha",
+    "preco_por": 5.9
+  }
+]

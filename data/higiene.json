@@ -1,0 +1,28 @@
+[
+  {
+    "id": "hg-001",
+    "nome": "Sabonete em Barra 90g",
+    "imagem": "https://via.placeholder.com/400x300?text=Sabonete",
+    "preco_por": 3.5
+  },
+  {
+    "id": "hg-002",
+    "nome": "Shampoo 350ml",
+    "imagem": "https://via.placeholder.com/400x300?text=Shampoo",
+    "preco_de": 19.9,
+    "preco_por": 14.9,
+    "desconto": 25
+  },
+  {
+    "id": "hg-003",
+    "nome": "Creme Dental 90g",
+    "imagem": "https://via.placeholder.com/400x300?text=Creme+Dental",
+    "preco_por": 6.9
+  },
+  {
+    "id": "hg-004",
+    "nome": "Desodorante Aerossol 150ml",
+    "imagem": "https://via.placeholder.com/400x300?text=Desodorante",
+    "preco_por": 16.9
+  }
+]

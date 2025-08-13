@@ -1,0 +1,30 @@
+[
+  {
+    "id": "al-001",
+    "nome": "Arroz Tipo 1 5kg",
+    "imagem": "https://via.placeholder.com/400x300?text=Arroz+5kg",
+    "preco_de": 34.9,
+    "preco_por": 29.9,
+    "desconto": 14
+  },
+  {
+    "id": "al-002",
+    "nome": "Feijão Carioca 1kg",
+    "imagem": "https://via.placeholder.com/400x300?text=Feij%C3%A3o+1kg",
+    "preco_por": 8.9
+  },
+  {
+    "id": "al-003",
+    "nome": "Macarrão Espaguete 500g",
+    "imagem": "https://via.placeholder.com/400x300?text=Macarr%C3%A3o+500g",
+    "preco_por": 4.9
+  },
+  {
+    "id": "al-004",
+    "nome": "Café Torrado e Moído 500g",
+    "imagem": "https://via.placeholder.com/400x300?text=Caf%C3%A9+500g",
+    "preco_de": 24.9,
+    "preco_por": 19.9,
+    "desconto": 20
+  }
+]

@@ -1,0 +1,35 @@
+[
+    {
+        "id": "eltr-001",
+        "nome": "Smartphone 128GB 6GB RAM",
+        "imagem": "../img/produtos/smartphone.webp",
+        "preco_de": 2499.9,
+        "preco_por": 1999.9,
+        "desconto": 20,
+        "parcelas": "em até 10x sem juros"
+    },
+    {
+        "id": "eltr-002",
+        "nome": "Smart TV 50'' 4K",
+        "imagem": "../img/produtos/smarttv50.webp",
+        "preco_de": 3199.9,
+        "preco_por": 2599.9,
+        "desconto": 19
+    },
+    {
+        "id": "eltr-003",
+        "nome": "Notebook 256GB SSD 8GB RAM",
+        "imagem": "../img/produtos/notebook.webp",
+        "preco_de": 3499.9,
+        "preco_por": 2999.9,
+        "desconto": 14
+    },
+    {
+        "id": "eltr-004",
+        "nome": "Fone Bluetooth com Cancelamento de Ruído",
+        "imagem": "../img/produtos/fonebluetooth.webp",
+        "preco_de": 499.9,
+        "preco_por": 349.9,
+        "desconto": 30
+    }
+]

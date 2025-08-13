@@ -1,0 +1,5 @@
+[
+  { "id": "mv-001", "nome": "Leite Integral Longa Vida 1L", "imagem": "img/produtos/leite-integral.webp", "preco_por": 4.89 },
+  { "id": "mv-002", "nome": "Detergente Ypê 500ml", "imagem": "img/produtos/detergente-ype.webp", "preco_por": 2.99 },
+  { "id": "mv-003", "nome": "Picanha Bovina kg", "imagem": "img/produtos/picanha.webp", "preco_de": 89.90, "preco_por": 79.90, "desconto": 11 }
+]

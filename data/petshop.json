@@ -1,0 +1,28 @@
+[
+  {
+    "id": "pt-001",
+    "nome": "Ração Premium Cães 10kg",
+    "imagem": "https://via.placeholder.com/400x300?text=Racao+10kg",
+    "preco_de": 169.9,
+    "preco_por": 139.9,
+    "desconto": 18
+  },
+  {
+    "id": "pt-002",
+    "nome": "Areia Sanitária 4kg",
+    "imagem": "https://via.placeholder.com/400x300?text=Areia+Sanit%C3%A1ria",
+    "preco_por": 29.9
+  },
+  {
+    "id": "pt-003",
+    "nome": "Shampoo Pet 500ml",
+    "imagem": "https://via.placeholder.com/400x300?text=Shampoo+Pet",
+    "preco_por": 22.9
+  },
+  {
+    "id": "pt-004",
+    "nome": "Petisco para Cães 65g",
+    "imagem": "https://via.placeholder.com/400x300?text=Petisco",
+    "preco_por": 9.9
+  }
+]

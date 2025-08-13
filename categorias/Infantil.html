@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eletrônicos - Supermercado Lopes</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/carrinho.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Popup de login -->
+    <div id="login-popup" class="login-popup" style="display:none;">
+        <div class="login-popup-content">
+            <span class="close-login-popup" id="closeLoginPopup">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="login-email">E-mail:</label>
+                <input type="email" id="login-email" name="email" required>
+                <label for="login-password">Senha:</label>
+                <input type="password" id="login-password" name="password" required>
+                <button type="submit" class="cta-button">Entrar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <nav class="top-nav">
+                <a href="../index.html">
+                    <img src="../img/logo/SUPERMERCADO.png" alt="Logo Supermercado Lopes" class="logo">
+                </a>
+                <div class="search-bar">
+                    <input type="text" placeholder="Busque novos produtos">
+                    <button class="search-button">🔍</button>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#" id="openRegisterPopup"><p> Seja bem-vindo!</p><p><strong>Entre ou cadastre-se</strong></p></a></li>
+                    <li><a href="#" id="pedidos"><p> Meus</p><p><strong>Pedidos</strong></p></a></li>
+                    <li><a href="../carrinho/carrinho.html" id="carrinho"><p>Carrinho</p><p><strong id="total-carrinho">R$ 0,00</strong></p></a></li>
+                </ul>
+                <button class="mobile-menu">&#9776;</button>
+            </nav>
+            <nav class="main-categories-nav">
+                <ul class="nav-links">
+                    <li><a href="../index.html"><i class="fas fa-bars"></i><strong> Início</strong></a></li>
+                    <li><a href="Alimentos.html"><strong>Alimentos</strong></a></li>
+                    <li><a href="Bebidas.html"><strong>Bebidas</strong></a></li>
+                    <li><a href="Higiene.html"><strong>Higiene & Beleza</strong></a></li>
+                    <li><a href="Limpeza.html"><strong>Limpezas</strong></a></li>
+                    <li><a href="Petshop.html"><strong>Pet Shop</strong></a></li>
+                    <li><a href="Infantil.html"><strong>Infantil</strong></a></li>
+                    <li><a href="Eletronicos.html"><strong>Eletrônicos</strong></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo da categoria -->
+    <main>
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Infantil</h2>
+                <div class="products-grid" id="grid-produtos" data-json="../data/infantil.json">
+                    <!-- Produtos carregados via JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Supermercado Lopes. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i>FB</a>
+                <a href="#"><i class="fab fa-instagram"></i>IG</a>
+                <a href="#"><i class="fab fa-twitter"></i>TW</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script>
+        // Carregar produtos dessa categoria
+        loadProducts('#grid-produtos');
+    </script>
+</body>
+</html>
+                

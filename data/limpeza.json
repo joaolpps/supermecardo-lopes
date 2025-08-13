@@ -1,0 +1,33 @@
+[
+    {
+        "id": "limp-001",
+        "nome": "Detergente Líquido Ypê 500ml",
+        "imagem": "../img/produtos/detergente-ype.webp",
+        "preco_de": 3.99,
+        "preco_por": 2.99,
+        "desconto": 25
+    },
+    {
+        "id": "limp-002",
+        "nome": "Sabão em Pó Omo Lavagem Perfeita 2,2kg",
+        "imagem": "../img/produtos/sabao-omo.webp",
+        "preco_de": 32.9,
+        "preco_por": 27.9,
+        "desconto": 15,
+        "parcelas": "em até 2x sem juros"
+    },
+    {
+        "id": "limp-003",
+        "nome": "Desinfetante Pinho Sol 500ml",
+        "imagem": "../img/produtos/pinho-sol.webp",
+        "preco_por": 5.49
+    },
+    {
+        "id": "limp-004",
+        "nome": "Esponja Multiuso Scotch-Brite (Pacote c/ 3)",
+        "imagem": "../img/produtos/esponja-scotchbrite.webp",
+        "preco_de": 7.9,
+        "preco_por": 5.9,
+        "desconto": 25
+    }
+]
