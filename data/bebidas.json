@@ -1,28 +1,12 @@
 [
-  {
-    "id": "bb-001",
-    "nome": "Refrigerante 2L",
-    "imagem": "https://via.placeholder.com/400x300?text=Refrigerante+2L",
-    "preco_por": 9.9
-  },
-  {
-    "id": "bb-002",
-    "nome": "Cerveja Lata 350ml (un.)",
-    "imagem": "https://via.placeholder.com/400x300?text=Cerveja+350ml",
-    "preco_de": 5.5,
-    "preco_por": 4.49,
-    "desconto": 18
-  },
-  {
-    "id": "bb-003",
-    "nome": "Suco 1L",
-    "imagem": "https://via.placeholder.com/400x300?text=Suco+1L",
-    "preco_por": 8.9
-  },
-  {
-    "id": "bb-004",
-    "nome": "Água Mineral 500ml (pack c/ 12)",
-    "imagem": "https://via.placeholder.com/400x300?text=%C3%81gua+500ml",
-    "preco_por": 24.9
-  }
+  { "id": "bb-001", "nome": "Coca-Cola 2L", "imagem": "img/produtos/coca-cola-2l.webp", "preco_de": 9.50, "preco_por": 8.50, "desconto": 10, "categoria": "refrigerante", "data_cadastro": "2025-08-10" },
+  { "id": "bb-002", "nome": "Guaraná Antarctica 2L", "imagem": "img/produtos/guarana-antarctica.webp", "preco_de": 8.90, "preco_por": 7.90, "desconto": 11, "categoria": "refrigerante", "data_cadastro": "2025-07-21" },
+
+  { "id": "bb-003", "nome": "Suco Natural One Laranja 1L", "imagem": "img/produtos/suco-laranja-natural-one.webp", "preco_de": 11.90, "preco_por": 10.90, "desconto": 8, "categoria": "suco", "data_cadastro": "2025-08-05" },
+  { "id": "bb-004", "nome": "Suco Del Valle Uva 1L", "imagem": "img/produtos/suco-del-valle-uva.webp", "preco_de": 8.50, "preco_por": 7.50, "desconto": 12, "categoria": "suco", "data_cadastro": "2025-07-28" },
+
+  { "id": "bb-005", "nome": "Cerveja Heineken Long Neck 330ml", "imagem": "img/produtos/cerveja-heineken.webp", "preco_de": 6.99, "preco_por": 5.99, "desconto": 14, "categoria": "cerveja", "data_cadastro": "2025-07-15" },
+  { "id": "bb-006", "nome": "Cerveja Budweiser Lata 350ml", "imagem": "img/produtos/cerveja-budweiser.webp", "preco_de": 4.99, "preco_por": 4.50, "desconto": 10, "categoria": "cerveja", "data_cadastro": "2025-07-10" },
+
+  { "id": "bb-007", "nome": "Energético Red Bull 250ml", "imagem": "img/produtos/red-bull.webp", "preco_de": 9.90, "preco_por": 8.90, "desconto": 10, "categoria": "energetico", "data_cadastro": "2025-07-05" }
 ]

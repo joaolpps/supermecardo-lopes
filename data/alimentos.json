@@ -1,30 +1,9 @@
 [
-  {
-    "id": "al-001",
-    "nome": "Arroz Tipo 1 5kg",
-    "imagem": "https://via.placeholder.com/400x300?text=Arroz+5kg",
-    "preco_de": 34.9,
-    "preco_por": 29.9,
-    "desconto": 14
-  },
-  {
-    "id": "al-002",
-    "nome": "Feijão Carioca 1kg",
-    "imagem": "https://via.placeholder.com/400x300?text=Feij%C3%A3o+1kg",
-    "preco_por": 8.9
-  },
-  {
-    "id": "al-003",
-    "nome": "Macarrão Espaguete 500g",
-    "imagem": "https://via.placeholder.com/400x300?text=Macarr%C3%A3o+500g",
-    "preco_por": 4.9
-  },
-  {
-    "id": "al-004",
-    "nome": "Café Torrado e Moído 500g",
-    "imagem": "https://via.placeholder.com/400x300?text=Caf%C3%A9+500g",
-    "preco_de": 24.9,
-    "preco_por": 19.9,
-    "desconto": 20
-  }
+  { "id": "al-001", "nome": "Arroz Camil Tipo 1 5kg", "imagem": "img/produtos/arroz-camil.webp", "preco_de": 28.90, "preco_por": 25.90, "desconto": 10, "categoria": "graos", "data_cadastro": "2025-08-07" },
+  { "id": "al-002", "nome": "Feijão Carioca Kicaldo 1kg", "imagem": "img/produtos/feijao-kicaldo.webp", "preco_de": 9.90, "preco_por": 8.90, "desconto": 10, "categoria": "graos", "data_cadastro": "2025-07-26" },
+
+  { "id": "al-003", "nome": "Macarrão Renata Espaguete 500g", "imagem": "img/produtos/macarrao-renata.webp", "preco_de": 5.50, "preco_por": 4.90, "desconto": 11, "categoria": "massas", "data_cadastro": "2025-08-03" },
+  { "id": "al-004", "nome": "Macarrão Dona Benta Parafuso 500g", "imagem": "img/produtos/macarrao-dona-benta.webp", "preco_de": 5.80, "preco_por": 5.20, "desconto": 10, "categoria": "massas", "data_cadastro": "2025-07-15" },
+
+  { "id": "al-005", "nome": "Óleo de Soja Soya 900ml", "imagem": "img/produtos/oleo-soya.webp", "preco_de": 8.50, "preco_por": 7.80, "desconto": 8, "categoria": "oleo", "data_cadastro": "2025-07-05" }
 ]

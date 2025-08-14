@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Supermercado Lopes - Seu Supermercado Online</title>
+
+    <!-- Ícone da aba (usando imagem do projeto) -->
+    <link rel="icon" type="image/png" href="../img/logo/SUPERMERCADO.png">
+    <link rel="apple-touch-icon" href="../img/logo/SUPERMERCADO.png">
+    <meta name="theme-color" content="#0f172a">
+
+    <!-- Open Graph / Twitter (em produção, prefira URL absoluta para og:image) -->
+    <meta property="og:title" content="Supermercado Lopes - Seu Supermercado Online">
+    <meta property="og:description" content="Ofertas e novidades do seu supermercado online.">
+    <meta property="og:image" content="../img/logo/SUPERMERCADO.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="../img/logo/SUPERMERCADO.png">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/carrinho.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -29,8 +43,9 @@
     <header>
         <div class="container">
             <nav class="top-nav">
-                <a href="index.html">
-                    <img src="img/logo/SUPERMERCADO.png" alt="Logo Supermercado Lopes" class="logo">
+                <a href="../index.html">
+                    <!-- Caminho ajustado para subpasta -->
+                    <img src="img/logo/SUPERMERCADO (800 x 500 px).png" alt="Logo Supermercado Lopes" class="logo">
                 </a>
                 <div class="search-bar">
                     <input type="text" placeholder="Busque novos produtos">
@@ -43,7 +58,8 @@
                 </ul>
                 <button class="mobile-menu">&#9776;</button>
             </nav>
-            <nav class="main-categories-nav">
+
+            <!-- Removido nav duplicado -->
             <nav class="main-categories-nav">
                 <ul class="nav-links">
                     <li><a href="../index.html"><i class="fas fa-bars"></i><strong> Início</strong></a></li>
@@ -62,11 +78,12 @@
     <section class="banner-carousel-section">
         <div class="swiper my-banner-swiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img class="banner-hero-img" src="img/banners/banner1.png" alt="Banner 1" /></div>
-                <div class="swiper-slide"><img class="banner-hero-img" src="img/banners/banner2.jpg" alt="Banner 2" /></div>
-                <div class="swiper-slide"><img class="banner-hero-img" src="img/banners/banner3.jpg" alt="Banner 3" /></div>
-                <div class="swiper-slide"><img class="banner-hero-img" src="img/banners/banner4.jpg" alt="Banner 4" /></div>
-                <div class="swiper-slide"><img class="banner-hero-img" src="img/banners/banner5.jpg" alt="Banner 5" /></div>
+                <!-- Banners com caminho relativo corrigido -->
+                <div class="swiper-slide"><img class="banner-hero-img" src="../img/banners/banner1.png" alt="Banner 1" /></div>
+                <div class="swiper-slide"><img class="banner-hero-img" src="../img/banners/banner2.jpg" alt="Banner 2" /></div>
+                <div class="swiper-slide"><img class="banner-hero-img" src="../img/banners/banner3.jpg" alt="Banner 3" /></div>
+                <div class="swiper-slide"><img class="banner-hero-img" src="../img/banners/banner4.jpg" alt="Banner 4" /></div>
+                <div class="swiper-slide"><img class="banner-hero-img" src="../img/banners/banner5.jpg" alt="Banner 5" /></div>
             </div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
@@ -81,15 +98,10 @@
                 <div class="products-grid" id="products-grid">
                     <!-- Produtos carregados dinamicamente -->
                 </div>
-                <h2 class="section-title">Mais Vendidos</h2>
-                <div class="products-grid" id="best-sellers-grid">
-                    <!-- Produtos mais vendidos carregados dinamicamente -->
-                </div>
                 <h2 class="section-title">Novidades</h2>
                 <div class="products-grid" id="new-products-grid">
                     <!-- Novos produtos carregados dinamicamente -->
                 </div>
-                
             </div>
         </section>
 
@@ -100,26 +112,26 @@
                     <div class="category-promo-block">
                         <h3>Cervejas</h3>
                         <p>com até <span>10%</span> off</p>
-                        <img src="img/produtos/melhores_cervejas.webp" alt="Promoção de Cervejas">
-                        <a href="produtos/produtos.html" class="category-link">Ver Mais</a>
+                        <img src="../img/produtos/melhores_cervejas.webp" alt="Promoção de Cervejas">
+                        <a href="../produtos/produtos.html" class="category-link">Ver Mais</a>
                     </div>
                     <div class="category-promo-block">
                         <h3>Refrigerantes</h3>
                         <p>com até <span>15%</span> off</p>
-                        <img src="img/produtos/kit-refrigerante.webp" alt="Promoção de Refrigerantes">
-                        <a href="produtos/produtos.html" class="category-link">Ver Mais</a>
+                        <img src="../img/produtos/kit-refrigerante.webp" alt="Promoção de Refrigerantes">
+                        <a href="../produtos/produtos.html" class="category-link">Ver Mais</a>
                     </div>
                     <div class="category-promo-block">
                         <h3>Limpeza</h3>
                         <p>com até <span>8%</span> off</p>
-                        <img src="img/produtos/produtos-limpezas.webp" alt="Promoção de Limpeza">
-                        <a href="produtos/produtos.html" class="category-link">Ver Mais</a>
+                        <img src="../img/produtos/produtos-limpezas.webp" alt="Promoção de Limpeza">
+                        <a href="../produtos/produtos.html" class="category-link">Ver Mais</a>
                     </div>
                     <div class="category-promo-block">
                         <h3>Alimentos</h3>
                         <p>com até <span>12%</span> off</p>
-                        <img src="img/produtos/alimentacao.webp" alt="Promoção de Alimentos">
-                        <a href="produtos/produtos.html" class="category-link">Ver Mais</a>
+                        <img src="../img/produtos/alimentacao.webp" alt="Promoção de Alimentos">
+                        <a href="../produtos/produtos.html" class="category-link">Ver Mais</a>
                     </div>
                 </div>
             </div>
@@ -147,8 +159,9 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <!-- JS -->
+    <script src="../js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script src="js/produtos-index.js"></script>
+    <script src="../js/produtos-index.js"></script>
 </body>
 </html>

@@ -1,33 +1,9 @@
 [
-    {
-        "id": "limp-001",
-        "nome": "Detergente Líquido Ypê 500ml",
-        "imagem": "../img/produtos/detergente-ype.webp",
-        "preco_de": 3.99,
-        "preco_por": 2.99,
-        "desconto": 25
-    },
-    {
-        "id": "limp-002",
-        "nome": "Sabão em Pó Omo Lavagem Perfeita 2,2kg",
-        "imagem": "../img/produtos/sabao-omo.webp",
-        "preco_de": 32.9,
-        "preco_por": 27.9,
-        "desconto": 15,
-        "parcelas": "em até 2x sem juros"
-    },
-    {
-        "id": "limp-003",
-        "nome": "Desinfetante Pinho Sol 500ml",
-        "imagem": "../img/produtos/pinho-sol.webp",
-        "preco_por": 5.49
-    },
-    {
-        "id": "limp-004",
-        "nome": "Esponja Multiuso Scotch-Brite (Pacote c/ 3)",
-        "imagem": "../img/produtos/esponja-scotchbrite.webp",
-        "preco_de": 7.9,
-        "preco_por": 5.9,
-        "desconto": 25
-    }
+  { "id": "lp-001", "nome": "Detergente Ypê Neutro 500ml", "imagem": "img/produtos/detergente-ype.webp", "preco_de": 2.99, "preco_por": 2.49, "desconto": 17, "categoria": "detergente", "data_cadastro": "2025-08-10" },
+  { "id": "lp-002", "nome": "Detergente Limpol Limão 500ml", "imagem": "img/produtos/detergente-limpol.webp", "preco_de": 3.20, "preco_por": 2.70, "desconto": 16, "categoria": "detergente", "data_cadastro": "2025-07-25" },
+
+  { "id": "lp-003", "nome": "Desinfetante Pinho Sol 500ml", "imagem": "img/produtos/desinfetante-pinho-sol.webp", "preco_de": 8.50, "preco_por": 7.50, "desconto": 12, "categoria": "desinfetante", "data_cadastro": "2025-08-04" },
+  { "id": "lp-004", "nome": "Desinfetante Lysoform 1L", "imagem": "img/produtos/desinfetante-lysoform.webp", "preco_de": 12.90, "preco_por": 11.50, "desconto": 11, "categoria": "desinfetante", "data_cadastro": "2025-07-18" },
+
+  { "id": "lp-005", "nome": "Sabão em Pó OMO Lavagem Perfeita 800g", "imagem": "img/produtos/sabao-omo.webp", "preco_de": 14.90, "preco_por": 13.50, "desconto": 9, "categoria": "sabao-po", "data_cadastro": "2025-07-09" }
 ]

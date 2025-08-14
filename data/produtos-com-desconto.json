@@ -1,9 +1,0 @@
-
-[
-  { "id": "pd-001", "nome": "Arroz Camil Branco 5kg", "imagem": "img/produtos/arroz-camil.webp", "preco_de": 32.90, "preco_por": 27.90, "desconto": 15 },
-  { "id": "pd-002", "nome": "Sabonete Dove 90g", "imagem": "img/produtos/sabonete-dove.webp", "preco_de": 4.99, "preco_por": 3.99, "desconto": 20 },
-  { "id": "pd-003", "nome": "Cerveja Heineken Long Neck 330ml", "imagem": "img/produtos/cerveja-heineken.webp", "preco_de": 7.50, "preco_por": 6.00, "desconto": 20 }, 
-  { "id": "pd-004", "nome": "Detergente Ypê Limão 500ml", "imagem": "img/produtos/detergente-ype.webp", "preco_de": 3.99, "preco_por": 2.99, "desconto": 25 },
-  { "id": "pd-005", "nome": "Ração Premier Pet Cães Adultos 15kg", "imagem": "img/produtos/racao-premier.webp", "preco_de": 199.90, "preco_por": 179.90, "desconto": 10 },
-  { "id": "pd-006", "nome": "Fralda Pampers Confort Sec M (48 Unidades)", "imagem": "img/produtos/fralda-pampers.webp", "preco_de": 89.90, "preco_por": 79.90, "desconto": 11 }
-]

@@ -1,5 +1,0 @@
-[
-  { "id": "nv-001", "nome": "Smart TV 50\" 4K", "imagem": "img/produtos/smarttv50.webp", "preco_de": 3199.90, "preco_por": 2599.90, "desconto": 19 },
-  { "id": "nv-002", "nome": "Cafeteira Expresso Automática", "imagem": "img/produtos/cafeteira-expresso.webp", "preco_de": 1599.90, "preco_por": 1299.90, "desconto": 18 },
-  { "id": "nv-003", "nome": "Caixa de Som Bluetooth JBL", "imagem": "img/produtos/jbl-go3.webp", "preco_de": 299.90, "preco_por": 249.90, "desconto": 17 }
-]

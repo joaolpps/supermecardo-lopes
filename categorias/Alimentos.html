@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eletrônicos - Supermercado Lopes</title>
+    <title>Alimentos - Supermercado Lopes</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/carrinho.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -65,6 +65,15 @@
         <section class="section">
             <div class="container">
                 <h2 class="section-title">Alimentos</h2>
+
+                <!-- Botões de filtro -->
+                <div class="category-filters">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="graos">Grãos</button>
+                    <button class="filter-btn" data-filter="massas">Massas</button>
+                    <button class="filter-btn" data-filter="oleo">Óleos</button>
+                </div>
+
                 <div class="products-grid" id="grid-produtos" data-json="../data/alimentos.json">
                     <!-- Produtos carregados via JS -->
                 </div>
@@ -86,9 +95,7 @@
 
     <script src="../js/script.js"></script>
     <script>
-        // Carregar produtos dessa categoria
         loadProducts('#grid-produtos');
     </script>
 </body>
 </html>
-                

@@ -1,28 +1,9 @@
 [
-  {
-    "id": "hg-001",
-    "nome": "Sabonete em Barra 90g",
-    "imagem": "https://via.placeholder.com/400x300?text=Sabonete",
-    "preco_por": 3.5
-  },
-  {
-    "id": "hg-002",
-    "nome": "Shampoo 350ml",
-    "imagem": "https://via.placeholder.com/400x300?text=Shampoo",
-    "preco_de": 19.9,
-    "preco_por": 14.9,
-    "desconto": 25
-  },
-  {
-    "id": "hg-003",
-    "nome": "Creme Dental 90g",
-    "imagem": "https://via.placeholder.com/400x300?text=Creme+Dental",
-    "preco_por": 6.9
-  },
-  {
-    "id": "hg-004",
-    "nome": "Desodorante Aerossol 150ml",
-    "imagem": "https://via.placeholder.com/400x300?text=Desodorante",
-    "preco_por": 16.9
-  }
+  { "id": "hg-001", "nome": "Sabonete Dove Original 90g", "imagem": "img/produtos/sabonete-dove.webp", "preco_de": 4.50, "preco_por": 3.90, "desconto": 13, "categoria": "sabonetes", "data_cadastro": "2025-08-09" },
+  { "id": "hg-002", "nome": "Sabonete Lux Rosas Francesas 85g", "imagem": "img/produtos/sabonete-lux.webp", "preco_de": 3.80, "preco_por": 3.20, "desconto": 15, "categoria": "sabonetes", "data_cadastro": "2025-07-30" },
+
+  { "id": "hg-003", "nome": "Shampoo Seda Ceramidas 325ml", "imagem": "img/produtos/shampoo-seda.webp", "preco_de": 9.90, "preco_por": 8.90, "desconto": 10, "categoria": "shampoos", "data_cadastro": "2025-08-02" },
+  { "id": "hg-004", "nome": "Shampoo Pantene Hidratante 400ml", "imagem": "img/produtos/shampoo-pantene.webp", "preco_de": 17.90, "preco_por": 15.90, "desconto": 11, "categoria": "shampoos", "data_cadastro": "2025-07-20" },
+
+  { "id": "hg-005", "nome": "Creme Dental Colgate Total 90g", "imagem": "img/produtos/colgate-total.webp", "preco_de": 8.50, "preco_por": 7.50, "desconto": 12, "categoria": "creme-dental", "data_cadastro": "2025-07-12" }
 ]

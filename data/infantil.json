@@ -1,28 +1,9 @@
 [
-  {
-    "id": "in-001",
-    "nome": "Fralda Tamanho M (48 un.)",
-    "imagem": "https://via.placeholder.com/400x300?text=Fralda",
-    "preco_de": 79.9,
-    "preco_por": 64.9,
-    "desconto": 19
-  },
-  {
-    "id": "in-002",
-    "nome": "Lenço Umedecido (100 un.)",
-    "imagem": "https://via.placeholder.com/400x300?text=Len%C3%A7o",
-    "preco_por": 17.9
-  },
-  {
-    "id": "in-003",
-    "nome": "Shampoo Baby 200ml",
-    "imagem": "https://via.placeholder.com/400x300?text=Shampoo+Baby",
-    "preco_por": 15.5
-  },
-  {
-    "id": "in-004",
-    "nome": "Papinha de Frutas 120g",
-    "imagem": "https://via.placeholder.com/400x300?text=Papinha",
-    "preco_por": 5.9
-  }
+  { "id": "in-001", "nome": "Fralda Pampers Confort Sec G 40un", "imagem": "img/produtos/fralda-pampers.webp", "preco_de": 69.90, "preco_por": 64.90, "desconto": 7, "categoria": "fralda", "data_cadastro": "2025-08-08" },
+  { "id": "in-002", "nome": "Fralda Huggies Supreme Care M 36un", "imagem": "img/produtos/fralda-huggies.webp", "preco_de": 59.90, "preco_por": 54.90, "desconto": 8, "categoria": "fralda", "data_cadastro": "2025-07-29" },
+
+  { "id": "in-003", "nome": "Leite Ninho Fases 1+ 800g", "imagem": "img/produtos/leite-ninho.webp", "preco_de": 39.90, "preco_por": 36.90, "desconto": 8, "categoria": "leite", "data_cadastro": "2025-08-02" },
+  { "id": "in-004", "nome": "Leite Aptamil 2 800g", "imagem": "img/produtos/leite-aptamil.webp", "preco_de": 69.90, "preco_por": 64.90, "desconto": 7, "categoria": "leite", "data_cadastro": "2025-07-21" },
+
+  { "id": "in-005", "nome": "Papinha Nestlé Frango com Legumes", "imagem": "img/produtos/papinha-nestle.webp", "preco_de": 5.50, "preco_por": 4.90, "desconto": 11, "categoria": "papinha", "data_cadastro": "2025-07-12" }
 ]

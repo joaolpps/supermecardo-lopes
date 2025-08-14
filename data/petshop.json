@@ -1,28 +1,10 @@
 [
-  {
-    "id": "pt-001",
-    "nome": "Ração Premium Cães 10kg",
-    "imagem": "https://via.placeholder.com/400x300?text=Racao+10kg",
-    "preco_de": 169.9,
-    "preco_por": 139.9,
-    "desconto": 18
-  },
-  {
-    "id": "pt-002",
-    "nome": "Areia Sanitária 4kg",
-    "imagem": "https://via.placeholder.com/400x300?text=Areia+Sanit%C3%A1ria",
-    "preco_por": 29.9
-  },
-  {
-    "id": "pt-003",
-    "nome": "Shampoo Pet 500ml",
-    "imagem": "https://via.placeholder.com/400x300?text=Shampoo+Pet",
-    "preco_por": 22.9
-  },
-  {
-    "id": "pt-004",
-    "nome": "Petisco para Cães 65g",
-    "imagem": "https://via.placeholder.com/400x300?text=Petisco",
-    "preco_por": 9.9
-  }
+  { "id": "pt-001", "nome": "Ração Premier Cães Adultos 10kg", "imagem": "img/produtos/racao-premier-cao.webp", "preco_de": 189.90, "preco_por": 179.90, "desconto": 5, "categoria": "racao-cachorro", "data_cadastro": "2025-08-06" },
+  { "id": "pt-002", "nome": "Ração Whiskas Gatos Adultos 1kg", "imagem": "img/produtos/racao-whiskas.webp", "preco_de": 26.90, "preco_por": 24.90, "desconto": 7, "categoria": "racao-gato", "data_cadastro": "2025-07-24" },
+
+  { "id": "pt-003", "nome": "Coleira Antipulgas Seresto Cães", "imagem": "img/produtos/coleira-seresto.webp", "preco_de": 149.90, "preco_por": 139.90, "desconto": 7, "categoria": "acessorio", "data_cadastro": "2025-08-01" },
+  { "id": "pt-004", "nome": "Coleira Nylon Ajustável Gatos", "imagem": "img/produtos/coleira-gato.webp", "preco_de": 18.90, "preco_por": 16.90, "desconto": 10, "categoria": "acessorio", "data_cadastro": "2025-07-16" },
+
+  { "id": "pt-005", "nome": "Petisco Pedigree Biscrok 500g", "imagem": "img/produtos/petisco-biscrok.webp", "preco_de": 19.90, "preco_por": 17.90, "desconto": 10, "categoria": "petisco", "data_cadastro": "2025-07-07" },
+  { "id": "pt-006", "nome": "Petisco Friskies Gatos 1kg", "imagem": "img/produtos/petisco-friskies.webp", "preco_de": 22.90, "preco_por": 20.90, "desconto": 9, "categoria": "petisco", "data_cadastro": "2025-07-10" }
 ]
