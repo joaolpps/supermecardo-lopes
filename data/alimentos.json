@@ -1,9 +1,481 @@
 [
-  { "id": "al-001", "nome": "Arroz Camil Tipo 1 5kg", "imagem": "img/produtos/arroz-camil.webp", "preco_de": 28.90, "preco_por": 25.90, "desconto": 10, "categoria": "graos", "data_cadastro": "2025-08-07" },
-  { "id": "al-002", "nome": "Feijão Carioca Kicaldo 1kg", "imagem": "img/produtos/feijao-kicaldo.webp", "preco_de": 9.90, "preco_por": 8.90, "desconto": 10, "categoria": "graos", "data_cadastro": "2025-07-26" },
+  {
+    "id": "al-001",
+    "nome": "Arroz Camil Tipo 1 1kg",
+    "imagem": "img/produtos/arroz-camil-1kg.webp",
+    "preco_de": 28.90,
+    "preco_por": 25.90,
+    "desconto": 10,
+    "categoria": "graos",
+    "data_cadastro": "2025-08-07"
+  },
+  {
+    "id": "al-002",
+    "nome": "Feijão Carioca Kicaldo 1kg",
+    "imagem": "img/produtos/feijao-kicaldo.webp",
+    "preco_de": 9.90,
+    "preco_por": 8.90,
+    "desconto": 10,
+    "categoria": "graos",
+    "data_cadastro": "2025-07-26"
+  },
+  {
+    "id": "al-003",
+    "nome": "Macarrão Renata Espaguete 500g",
+    "imagem": "img/produtos/macarrao-renata.webp",
+    "preco_de": 5.50,
+    "preco_por": 4.90,
+    "desconto": 11,
+    "categoria": "massas",
+    "data_cadastro": "2025-08-03"
+  },
+  {
+    "id": "al-004",
+    "nome": "Macarrão Dona Benta Parafuso 500g",
+    "imagem": "img/produtos/macarrao-dona-benta.webp",
+    "preco_de": 5.80,
+    "preco_por": 5.20,
+    "desconto": 10,
+    "categoria": "massas",
+    "data_cadastro": "2025-07-15"
+  },
+  {
+    "id": "al-005",
+    "nome": "Óleo de Soja Soya 900ml",
+    "imagem": "img/produtos/oleo-soya.webp",
+    "preco_de": 8.50,
+    "preco_por": 7.80,
+    "desconto": 8,
+    "categoria": "oleo",
+    "data_cadastro": "2025-07-05"
+  },
+  {
+    "id": "al-006",
+    "nome": "Arroz Tio João Tipo 1 1kg",
+    "imagem": "img/produtos/arroz-tio-joao.webp",
+    "preco_de": 6.90,
+    "preco_por": 6.20,
+    "desconto": 10,
+    "categoria": "graos",
+    "data_cadastro": "2025-07-10"
+  },
+  {
+    "id": "al-007",
+    "nome": "Feijão Preto Namorado 1kg",
+    "imagem": "img/produtos/feijao-preto-namorado.webp",
+    "preco_de": 8.90,
+    "preco_por": 7.90,
+    "desconto": 11,
+    "categoria": "graos",
+    "data_cadastro": "2025-07-18"
+  },
+  {
+    "id": "al-008",
+    "nome": "Lentilha Camil 500g",
+    "imagem": "img/produtos/lentilha-camil.webp",
+    "preco_de": 9.90,
+    "preco_por": 8.50,
+    "desconto": 14,
+    "categoria": "graos",
+    "data_cadastro": "2025-08-01"
+  },
+  {
+    "id": "al-009",
+    "nome": "Grão de Bico Camil 500g",
+    "imagem": "img/produtos/grao-bico-camil.webp",
+    "preco_de": 8.50,
+    "preco_por": 7.80,
+    "desconto": 8,
+    "categoria": "graos",
+    "data_cadastro": "2025-07-28"
+  },
+  {
+    "id": "al-010",
+    "nome": "Quinoa Real Mãe Terra 250g",
+    "imagem": "img/produtos/quinoa-mae-terra.webp",
+    "preco_de": 16.90,
+    "preco_por": 14.90,
+    "desconto": 12,
+    "categoria": "graos",
+    "data_cadastro": "2025-08-05"
+  },
+  {
+    "id": "al-011",
+    "nome": "Aveia Flocos Quaker 500g",
+    "imagem": "img/produtos/aveia-quaker.webp",
+    "preco_de": 7.90,
+    "preco_por": 6.90,
+    "desconto": 13,
+    "categoria": "graos",
+    "data_cadastro": "2025-07-12"
+  },
+  {
+    "id": "al-012",
+    "nome": "Macarrão Barilla Penne 500g",
+    "imagem": "img/produtos/macarrao-barilla-penne.webp",
+    "preco_de": 7.50,
+    "preco_por": 6.50,
+    "desconto": 13,
+    "categoria": "massas",
+    "data_cadastro": "2025-07-22"
+  },
+  {
+    "id": "al-013",
+    "nome": "Macarrão Galo Lasanha 500g",
+    "imagem": "img/produtos/macarrao-galo-lasanha.webp",
+    "preco_de": 8.90,
+    "preco_por": 7.90,
+    "desconto": 11,
+    "categoria": "massas",
+    "data_cadastro": "2025-08-02"
+  },
+  {
+    "id": "al-014",
+    "nome": "Macarrão Renata Fusilli 500g",
+    "imagem": "img/produtos/macarrao-renata-fusilli.webp",
+    "preco_de": 6.20,
+    "preco_por": 5.50,
+    "desconto": 11,
+    "categoria": "massas",
+    "data_cadastro": "2025-07-30"
+  },
+  {
+    "id": "al-015",
+    "nome": "Nhoque Massa Leve Batata 400g",
+    "imagem": "img/produtos/nhoque-massa-leve.webp",
+    "preco_de": 9.50,
+    "preco_por": 8.20,
+    "desconto": 14,
+    "categoria": "massas",
+    "data_cadastro": "2025-08-08"
+  },
+  {
+    "id": "al-016",
+    "nome": "Macarrão Instant Nissin Galinha 85g",
+    "imagem": "img/produtos/nissin-galinha.webp",
+    "preco_de": 3.50,
+    "preco_por": 2.90,
+    "desconto": 17,
+    "categoria": "massas",
+    "data_cadastro": "2025-07-08"
+  },
+  {
+    "id": "al-017",
+    "nome": "Macarrão Petybon Capellini 500g",
+    "imagem": "img/produtos/macarrao-petybon.webp",
+    "preco_de": 5.90,
+    "preco_por": 5.20,
+    "desconto": 12,
+    "categoria": "massas",
+    "data_cadastro": "2025-07-25"
+  },
+  {
+    "id": "al-018",
+    "nome": "Óleo de Canola Liza 900ml",
+    "imagem": "img/produtos/oleo-canola-liza.webp",
+    "preco_de": 13.90,
+    "preco_por": 12.50,
+    "desconto": 10,
+    "categoria": "oleo",
+    "data_cadastro": "2025-07-14"
+  },
+  {
+    "id": "al-019",
+    "nome": "Azeite Extra Virgem Andorinha 500ml",
+    "imagem": "img/produtos/azeite-andorinha.webp",
+    "preco_de": 19.90,
+    "preco_por": 17.90,
+    "desconto": 10,
+    "categoria": "oleo",
+    "data_cadastro": "2025-08-06"
+  },
+  {
+    "id": "al-020",
+    "nome": "Óleo de Girassol Salada 900ml",
+    "imagem": "img/produtos/oleo-girassol-salada.webp",
+    "preco_de": 9.90,
+    "preco_por": 8.90,
+    "desconto": 10,
+    "categoria": "oleo",
+    "data_cadastro": "2025-07-20"
+  },
+  {
+    "id": "al-021",
+    "nome": "Óleo de Coco Copra Extra Virgem 200ml",
+    "imagem": "img/produtos/oleo-coco-copra.webp",
+    "preco_de": 17.50,
+    "preco_por": 15.90,
+    "desconto": 9,
+    "categoria": "oleo",
+    "data_cadastro": "2025-08-04"
+  },
+  {
+    "id": "al-022",
+    "nome": "Azeite Português Gallo 500ml",
+    "imagem": "img/produtos/azeite-gallo.webp",
+    "preco_por": 15.90,
+    "desconto": false,
+    "categoria": "oleo",
+    "data_cadastro": "2025-07-17"
+  },
+  {
+    "id": "al-023",
+    "nome": "Óleo de Milho Mazola 900ml",
+    "imagem": "img/produtos/oleo-mazola.webp",
+    "preco_de": 9.50,
+    "preco_por": 8.50,
+    "desconto": 11,
+    "categoria": "oleo",
+    "data_cadastro": "2025-07-31"
+  },
+  {
+    "id": "al-024",
+    "nome": "Açúcar Cristal União 1kg",
+    "imagem": "img/produtos/acucar-uniao.webp",
+    "preco_por": 4.50,
+    "desconto": false,
+    "categoria": "graos",
+    "data_cadastro": "2025-07-06"
+  },
 
-  { "id": "al-003", "nome": "Macarrão Renata Espaguete 500g", "imagem": "img/produtos/macarrao-renata.webp", "preco_de": 5.50, "preco_por": 4.90, "desconto": 11, "categoria": "massas", "data_cadastro": "2025-08-03" },
-  { "id": "al-004", "nome": "Macarrão Dona Benta Parafuso 500g", "imagem": "img/produtos/macarrao-dona-benta.webp", "preco_de": 5.80, "preco_por": 5.20, "desconto": 10, "categoria": "massas", "data_cadastro": "2025-07-15" },
-
-  { "id": "al-005", "nome": "Óleo de Soja Soya 900ml", "imagem": "img/produtos/oleo-soya.webp", "preco_de": 8.50, "preco_por": 7.80, "desconto": 8, "categoria": "oleo", "data_cadastro": "2025-07-05" }
+  {
+    "id": "ac-001",
+    "nome": "Picanha Bovina Premium kg",
+    "imagem": "img/produtos/picanha-bovina.webp",
+    "preco_de": 65.90,
+    "preco_por": 59.90,
+    "desconto": 9,
+    "categoria": "bovinos",
+    "data_cadastro": "2025-08-01"
+  },
+  {
+    "id": "ac-002",
+    "nome": "Alcatra Bovina Maturada kg",
+    "imagem": "img/produtos/alcatra-bovina.webp",
+    "preco_de": 48.90,
+    "preco_por": 43.90,
+    "desconto": 10,
+    "categoria": "bovinos",
+    "data_cadastro": "2025-07-28"
+  },
+  {
+    "id": "ac-003",
+    "nome": "Contrafilé Bovino kg",
+    "imagem": "img/produtos/contrafile-bovino.webp",
+    "preco_de": 52.90,
+    "preco_por": 47.90,
+    "desconto": 9,
+    "categoria": "bovinos",
+    "data_cadastro": "2025-08-03"
+  },
+  {
+    "id": "ac-004",
+    "nome": "Patinho Moído Bovino kg",
+    "imagem": "img/produtos/patinho-moido.webp",
+    "preco_de": 29.90,
+    "preco_por": 26.90,
+    "desconto": 10,
+    "categoria": "bovinos",
+    "data_cadastro": "2025-07-25"
+  },
+  {
+    "id": "ac-005",
+    "nome": "Acém Bovino kg",
+    "imagem": "img/produtos/acem-bovino.webp",
+    "preco_de": 32.90,
+    "preco_por": 29.90,
+    "desconto": 9,
+    "categoria": "bovinos",
+    "data_cadastro": "2025-07-30"
+  },
+  {
+    "id": "ac-006",
+    "nome": "Músculo Bovino kg",
+    "imagem": "img/produtos/musculo-bovino.webp",
+    "preco_de": 28.90,
+    "preco_por": 25.90,
+    "desconto": 10,
+    "categoria": "bovinos",
+    "data_cadastro": "2025-08-02"
+  },
+  {
+    "id": "ac-007",
+    "nome": "Frango Inteiro Resfriado kg",
+    "imagem": "img/produtos/frango-inteiro.webp",
+    "preco_de": 8.90,
+    "preco_por": 7.90,
+    "desconto": 11,
+    "categoria": "aves",
+    "data_cadastro": "2025-07-26"
+  },
+  {
+    "id": "ac-008",
+    "nome": "Peito de Frango s/ Osso kg",
+    "imagem": "img/produtos/peito-frango.webp",
+    "preco_de": 16.90,
+    "preco_por": 14.90,
+    "desconto": 12,
+    "categoria": "aves",
+    "data_cadastro": "2025-08-04"
+  },
+  {
+    "id": "ac-009",
+    "nome": "Coxa e Sobrecoxa de Frango kg",
+    "imagem": "img/produtos/coxa-sobrecoxa.webp",
+    "preco_de": 12.90,
+    "preco_por": 11.50,
+    "desconto": 11,
+    "categoria": "aves",
+    "data_cadastro": "2025-07-29"
+  },
+  {
+    "id": "ac-010",
+    "nome": "Asa de Frango kg",
+    "imagem": "img/produtos/asa-frango.webp",
+    "preco_de": 10.90,
+    "preco_por": 9.90,
+    "desconto": 9,
+    "categoria": "aves",
+    "data_cadastro": "2025-08-05"
+  },
+  {
+    "id": "ac-011",
+    "nome": "File de Frango kg",
+    "imagem": "img/produtos/file-frango.webp",
+    "preco_de": 18.90,
+    "preco_por": 16.90,
+    "desconto": 11,
+    "categoria": "aves",
+    "data_cadastro": "2025-07-31"
+  },
+  {
+    "id": "ac-012",
+    "nome": "Peru Temperado Inteiro kg",
+    "imagem": "img/produtos/peru-temperado.webp",
+    "preco_de": 24.90,
+    "preco_por": 22.90,
+    "desconto": 8,
+    "categoria": "aves",
+    "data_cadastro": "2025-08-06"
+  },
+  {
+    "id": "ac-013",
+    "nome": "Costela Suína kg",
+    "imagem": "img/produtos/costela-suina.webp",
+    "preco_de": 24.90,
+    "preco_por": 22.90,
+    "desconto": 8,
+    "categoria": "suinos",
+    "data_cadastro": "2025-07-27"
+  },
+  {
+    "id": "ac-014",
+    "nome": "Lombo Suíno kg",
+    "imagem": "img/produtos/lombo-suino.webp",
+    "preco_de": 28.90,
+    "preco_por": 25.90,
+    "desconto": 10,
+    "categoria": "suinos",
+    "data_cadastro": "2025-08-07"
+  },
+  {
+    "id": "ac-015",
+    "nome": "Pernil Suíno kg",
+    "imagem": "img/produtos/pernil-suino.webp",
+    "preco_de": 22.90,
+    "preco_por": 19.90,
+    "desconto": 13,
+    "categoria": "suinos",
+    "data_cadastro": "2025-07-24"
+  },
+  {
+    "id": "ac-016",
+    "nome": "Bacon Fatiado kg",
+    "imagem": "img/produtos/bacon-fatiado.webp",
+    "preco_de": 32.90,
+    "preco_por": 29.90,
+    "desconto": 9,
+    "categoria": "suinos",
+    "data_cadastro": "2025-08-08"
+  },
+  {
+    "id": "ac-017",
+    "nome": "Linguiça Calabresa kg",
+    "imagem": "img/produtos/linguica-calabresa.webp",
+    "preco_de": 19.90,
+    "preco_por": 17.90,
+    "desconto": 10,
+    "categoria": "embutidos",
+    "data_cadastro": "2025-07-22"
+  },
+  {
+    "id": "ac-018",
+    "nome": "Salsicha Hot Dog kg",
+    "imagem": "img/produtos/salsicha-hot-dog.webp",
+    "preco_de": 14.90,
+    "preco_por": 12.90,
+    "desconto": 13,
+    "categoria": "embutidos",
+    "data_cadastro": "2025-08-01"
+  },
+  {
+    "id": "ac-019",
+    "nome": "Mortadela Italiana Fatiada kg",
+    "imagem": "img/produtos/mortadela-italiana.webp",
+    "preco_de": 16.90,
+    "preco_por": 14.90,
+    "desconto": 12,
+    "categoria": "embutidos",
+    "data_cadastro": "2025-07-26"
+  },
+  {
+    "id": "ac-020",
+    "nome": "Presunto Cozido Fatiado kg",
+    "imagem": "img/produtos/presunto-cozido.webp",
+    "preco_de": 24.90,
+    "preco_por": 22.90,
+    "desconto": 8,
+    "categoria": "embutidos",
+    "data_cadastro": "2025-08-04"
+  },
+  {
+    "id": "ac-021",
+    "nome": "Queijo Mussarela Fatiado kg",
+    "imagem": "img/produtos/queijo-mussarela.webp",
+    "preco_de": 28.90,
+    "preco_por": 25.90,
+    "desconto": 10,
+    "categoria": "embutidos",
+    "data_cadastro": "2025-07-28"
+  },
+  {
+    "id": "ac-022",
+    "nome": "Linguiça Toscana kg",
+    "imagem": "img/produtos/linguica-toscana.webp",
+    "preco_de": 22.90,
+    "preco_por": 19.90,
+    "desconto": 13,
+    "categoria": "embutidos",
+    "data_cadastro": "2025-08-05"
+  },
+  {
+    "id": "ac-023",
+    "nome": "Maminha Bovina kg",
+    "imagem": "img/produtos/maminha-bovina.webp",
+    "preco_de": 44.90,
+    "preco_por": 39.90,
+    "desconto": 11,
+    "categoria": "bovinos",
+    "data_cadastro": "2025-08-02"
+  },
+  {
+    "id": "ac-024",
+    "nome": "Fraldinha Bovina kg",
+    "imagem": "img/produtos/fraldinha-bovina.webp",
+    "preco_de": 38.90,
+    "preco_por": 34.90,
+    "desconto": 10,
+    "categoria": "bovinos",
+    "data_cadastro": "2025-07-30"
+  }
 ]

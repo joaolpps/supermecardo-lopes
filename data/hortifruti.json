@@ -1,0 +1,262 @@
+[
+  {
+    "id": "hf-001",
+    "nome": "Banana Prata kg",
+    "imagem": "img/produtos/banana-prata.webp",
+    "preco_de": 6.90,
+    "preco_por": 5.90,
+    "desconto": 14,
+    "categoria": "frutas",
+    "data_cadastro": "2025-08-07"
+  },
+  {
+    "id": "hf-002",
+    "nome": "Maçã Gala kg",
+    "imagem": "img/produtos/maca-gala.webp",
+    "preco_de": 8.90,
+    "preco_por": 7.90,
+    "desconto": 11,
+    "categoria": "frutas",
+    "data_cadastro": "2025-08-05"
+  },
+  {
+    "id": "hf-003",
+    "nome": "Laranja Pera kg",
+    "imagem": "img/produtos/laranja-pera.webp",
+    "preco_de": 4.90,
+    "preco_por": 3.90,
+    "desconto": 20,
+    "categoria": "frutas",
+    "data_cadastro": "2025-08-06"
+  },
+  {
+    "id": "hf-004",
+    "nome": "Uva Red Globe kg",
+    "imagem": "img/produtos/uva-red-globe.webp",
+    "preco_de": 12.90,
+    "preco_por": 10.90,
+    "desconto": 16,
+    "categoria": "frutas",
+    "data_cadastro": "2025-08-04"
+  },
+  {
+    "id": "hf-005",
+    "nome": "Mamão Papaya kg",
+    "imagem": "img/produtos/mamao-papaya.webp",
+    "preco_de": 7.50,
+    "preco_por": 6.50,
+    "desconto": 13,
+    "categoria": "frutas",
+    "data_cadastro": "2025-08-08"
+  },
+  {
+    "id": "hf-006",
+    "nome": "Abacaxi Pérola unidade",
+    "imagem": "img/produtos/abacaxi-perola.webp",
+    "preco_de": 6.90,
+    "preco_por": 5.90,
+    "desconto": 14,
+    "categoria": "frutas",
+    "data_cadastro": "2025-08-03"
+  },
+  {
+    "id": "hf-007",
+    "nome": "Manga Tommy kg",
+    "imagem": "img/produtos/manga-tommy.webp",
+    "preco_de": 9.90,
+    "preco_por": 8.50,
+    "desconto": 14,
+    "categoria": "frutas",
+    "data_cadastro": "2025-08-02"
+  },
+  {
+    "id": "hf-008",
+    "nome": "Limão Taiti kg",
+    "imagem": "img/produtos/limao-taiti.webp",
+    "preco_de": 5.90,
+    "preco_por": 4.90,
+    "desconto": 17,
+    "categoria": "frutas",
+    "data_cadastro": "2025-08-01"
+  },
+  {
+    "id": "hf-009",
+    "nome": "Alface Americana unidade",
+    "imagem": "img/produtos/alface-americana.webp",
+    "preco_de": 3.50,
+    "preco_por": 2.90,
+    "desconto": 17,
+    "categoria": "verduras",
+    "data_cadastro": "2025-08-07"
+  },
+  {
+    "id": "hf-010",
+    "nome": "Rúcula Maço",
+    "imagem": "img/produtos/rucula-maco.webp",
+    "preco_de": 4.90,
+    "preco_por": 3.90,
+    "desconto": 20,
+    "categoria": "verduras",
+    "data_cadastro": "2025-08-06"
+  },
+  {
+    "id": "hf-011",
+    "nome": "Espinafre Maço",
+    "imagem": "img/produtos/espinafre-maco.webp",
+    "preco_de": 4.50,
+    "preco_por": 3.50,
+    "desconto": 22,
+    "categoria": "verduras",
+    "data_cadastro": "2025-08-05"
+  },
+  {
+    "id": "hf-012",
+    "nome": "Couve Manteiga Maço",
+    "imagem": "img/produtos/couve-manteiga.webp",
+    "preco_de": 3.90,
+    "preco_por": 2.90,
+    "desconto": 26,
+    "categoria": "verduras",
+    "data_cadastro": "2025-08-08"
+  },
+  {
+    "id": "hf-013",
+    "nome": "Acelga Maço",
+    "imagem": "img/produtos/acelga-maco.webp",
+    "preco_de": 4.20,
+    "preco_por": 3.20,
+    "desconto": 24,
+    "categoria": "verduras",
+    "data_cadastro": "2025-08-04"
+  },
+  {
+    "id": "hf-014",
+    "nome": "Agrião Maço",
+    "imagem": "img/produtos/agriao-maco.webp",
+    "preco_de": 3.90,
+    "preco_por": 3.20,
+    "desconto": 18,
+    "categoria": "verduras",
+    "data_cadastro": "2025-08-03"
+  },
+  {
+    "id": "hf-015",
+    "nome": "Tomate Salada kg",
+    "imagem": "img/produtos/tomate-salada.webp",
+    "preco_de": 8.90,
+    "preco_por": 7.50,
+    "desconto": 16,
+    "categoria": "legumes",
+    "data_cadastro": "2025-08-07"
+  },
+  {
+    "id": "hf-016",
+    "nome": "Cebola Branca kg",
+    "imagem": "img/produtos/cebola-branca.webp",
+    "preco_de": 6.90,
+    "preco_por": 5.90,
+    "desconto": 14,
+    "categoria": "legumes",
+    "data_cadastro": "2025-08-06"
+  },
+  {
+    "id": "hf-017",
+    "nome": "Batata Inglesa kg",
+    "imagem": "img/produtos/batata-inglesa.webp",
+    "preco_de": 7.50,
+    "preco_por": 6.50,
+    "desconto": 13,
+    "categoria": "legumes",
+    "data_cadastro": "2025-08-05"
+  },
+  {
+    "id": "hf-018",
+    "nome": "Cenoura kg",
+    "imagem": "img/produtos/cenoura.webp",
+    "preco_de": 5.90,
+    "preco_por": 4.90,
+    "desconto": 17,
+    "categoria": "legumes",
+    "data_cadastro": "2025-08-04"
+  },
+  {
+    "id": "hf-019",
+    "nome": "Abobrinha kg",
+    "imagem": "img/produtos/abobrinha.webp",
+    "preco_de": 6.50,
+    "preco_por": 5.50,
+    "desconto": 15,
+    "categoria": "legumes",
+    "data_cadastro": "2025-08-08"
+  },
+  {
+    "id": "hf-020",
+    "nome": "Pimentão Verde kg",
+    "imagem": "img/produtos/pimentao-verde.webp",
+    "preco_de": 9.90,
+    "preco_por": 8.50,
+    "desconto": 14,
+    "categoria": "legumes",
+    "data_cadastro": "2025-08-03"
+  },
+  {
+    "id": "hf-021",
+    "nome": "Manjericão Vaso",
+    "imagem": "img/produtos/manjericao-vaso.webp",
+    "preco_de": 7.90,
+    "preco_por": 6.90,
+    "desconto": 13,
+    "categoria": "temperos",
+    "data_cadastro": "2025-08-07"
+  },
+  {
+    "id": "hf-022",
+    "nome": "Salsa Maço",
+    "imagem": "img/produtos/salsa-maco.webp",
+    "preco_de": 2.90,
+    "preco_por": 2.50,
+    "desconto": 14,
+    "categoria": "temperos",
+    "data_cadastro": "2025-08-06"
+  },
+  {
+    "id": "hf-023",
+    "nome": "Cebolinha Maço",
+    "imagem": "img/produtos/cebolinha-maco.webp",
+    "preco_de": 2.90,
+    "preco_por": 2.50,
+    "desconto": 14,
+    "categoria": "temperos",
+    "data_cadastro": "2025-08-05"
+  },
+  {
+    "id": "hf-024",
+    "nome": "Coentro Maço",
+    "imagem": "img/produtos/coentro-maco.webp",
+    "preco_de": 2.50,
+    "preco_por": 2.20,
+    "desconto": 12,
+    "categoria": "temperos",
+    "data_cadastro": "2025-08-04"
+  },
+  {
+    "id": "hf-025",
+    "nome": "Alho Roxo kg",
+    "imagem": "img/produtos/alho-roxo.webp",
+    "preco_de": 18.90,
+    "preco_por": 16.90,
+    "desconto": 11,
+    "categoria": "temperos",
+    "data_cadastro": "2025-08-08"
+  },
+  {
+    "id": "hf-026",
+    "nome": "Gengibre kg",
+    "imagem": "img/produtos/gengibre.webp",
+    "preco_de": 24.90,
+    "preco_por": 21.90,
+    "desconto": 12,
+    "categoria": "temperos",
+    "data_cadastro": "2025-08-03"
+  }
+]

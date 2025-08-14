@@ -1,10 +1,202 @@
 [
-  { "id": "pt-001", "nome": "Ração Premier Cães Adultos 10kg", "imagem": "img/produtos/racao-premier-cao.webp", "preco_de": 189.90, "preco_por": 179.90, "desconto": 5, "categoria": "racao-cachorro", "data_cadastro": "2025-08-06" },
-  { "id": "pt-002", "nome": "Ração Whiskas Gatos Adultos 1kg", "imagem": "img/produtos/racao-whiskas.webp", "preco_de": 26.90, "preco_por": 24.90, "desconto": 7, "categoria": "racao-gato", "data_cadastro": "2025-07-24" },
-
-  { "id": "pt-003", "nome": "Coleira Antipulgas Seresto Cães", "imagem": "img/produtos/coleira-seresto.webp", "preco_de": 149.90, "preco_por": 139.90, "desconto": 7, "categoria": "acessorio", "data_cadastro": "2025-08-01" },
-  { "id": "pt-004", "nome": "Coleira Nylon Ajustável Gatos", "imagem": "img/produtos/coleira-gato.webp", "preco_de": 18.90, "preco_por": 16.90, "desconto": 10, "categoria": "acessorio", "data_cadastro": "2025-07-16" },
-
-  { "id": "pt-005", "nome": "Petisco Pedigree Biscrok 500g", "imagem": "img/produtos/petisco-biscrok.webp", "preco_de": 19.90, "preco_por": 17.90, "desconto": 10, "categoria": "petisco", "data_cadastro": "2025-07-07" },
-  { "id": "pt-006", "nome": "Petisco Friskies Gatos 1kg", "imagem": "img/produtos/petisco-friskies.webp", "preco_de": 22.90, "preco_por": 20.90, "desconto": 9, "categoria": "petisco", "data_cadastro": "2025-07-10" }
+  {
+    "id": "pt-001",
+    "nome": "Ração Golden Cães Adultos 15kg",
+    "imagem": "img/produtos/racao-golden-caes.webp",
+    "preco_de": 149.90,
+    "preco_por": 134.90,
+    "desconto": 10,
+    "categoria": "racao-caes",
+    "data_cadastro": "2025-08-05"
+  },
+  {
+    "id": "pt-002",
+    "nome": "Ração Pedigree Cães Adultos 10kg",
+    "imagem": "img/produtos/racao-pedigree-caes.webp",
+    "preco_de": 89.90,
+    "preco_por": 79.90,
+    "desconto": 11,
+    "categoria": "racao-caes",
+    "data_cadastro": "2025-07-28"
+  },
+  {
+    "id": "pt-003",
+    "nome": "Ração Royal Canin Cães Filhotes 7,5kg",
+    "imagem": "img/produtos/racao-royal-canin-caes.webp",
+    "preco_de": 199.90,
+    "preco_por": 179.90,
+    "desconto": 10,
+    "categoria": "racao-caes",
+    "data_cadastro": "2025-08-02"
+  },
+  {
+    "id": "pt-004",
+    "nome": "Ração Premier Cães Pequeno Porte 2,5kg",
+    "imagem": "img/produtos/racao-premier-caes.webp",
+    "preco_de": 59.90,
+    "preco_por": 52.90,
+    "desconto": 12,
+    "categoria": "racao-caes",
+    "data_cadastro": "2025-07-30"
+  },
+  {
+    "id": "pt-005",
+    "nome": "Ração Whiskas Gatos Adultos 3kg",
+    "imagem": "img/produtos/racao-whiskas-gatos.webp",
+    "preco_de": 49.90,
+    "preco_por": 44.90,
+    "desconto": 10,
+    "categoria": "racao-gatos",
+    "data_cadastro": "2025-08-07"
+  },
+  {
+    "id": "pt-006",
+    "nome": "Ração Golden Gatos Castrados 3kg",
+    "imagem": "img/produtos/racao-golden-gatos.webp",
+    "preco_de": 69.90,
+    "preco_por": 62.90,
+    "desconto": 10,
+    "categoria": "racao-gatos",
+    "data_cadastro": "2025-08-01"
+  },
+  {
+    "id": "pt-007",
+    "nome": "Ração Premier Gatos Filhotes 1,5kg",
+    "imagem": "img/produtos/racao-premier-gatos.webp",
+    "preco_de": 39.90,
+    "preco_por": 34.90,
+    "desconto": 13,
+    "categoria": "racao-gatos",
+    "data_cadastro": "2025-07-25"
+  },
+  {
+    "id": "pt-008",
+    "nome": "Areia Sanitária Pipicat 4kg",
+    "imagem": "img/produtos/areia-pipicat.webp",
+    "preco_de": 24.90,
+    "preco_por": 21.90,
+    "desconto": 12,
+    "categoria": "higiene-gatos",
+    "data_cadastro": "2025-08-04"
+  },
+  {
+    "id": "pt-009",
+    "nome": "Caixa de Areia Sanitária Plástica",
+    "imagem": "img/produtos/caixa-areia-gato.webp",
+    "preco_de": 39.90,
+    "preco_por": 34.90,
+    "desconto": 13,
+    "categoria": "higiene-gatos",
+    "data_cadastro": "2025-07-31"
+  },
+  {
+    "id": "pt-010",
+    "nome": "Sachê Whiskas Gatos Adultos Frango 85g",
+    "imagem": "img/produtos/sache-whiskas.webp",
+    "preco_de": 3.50,
+    "preco_por": 2.90,
+    "desconto": 17,
+    "categoria": "racao-gatos",
+    "data_cadastro": "2025-08-06"
+  },
+  {
+    "id": "pt-011",
+    "nome": "Shampoo Sanol Dog Pelos Escuros 500ml",
+    "imagem": "img/produtos/shampoo-sanol-dog.webp",
+    "preco_de": 18.90,
+    "preco_por": 16.90,
+    "desconto": 11,
+    "categoria": "higiene-caes",
+    "data_cadastro": "2025-08-03"
+  },
+  {
+    "id": "pt-012",
+    "nome": "Condicionador Petex para Cães 500ml",
+    "imagem": "img/produtos/condicionador-petex.webp",
+    "preco_de": 22.90,
+    "preco_por": 19.90,
+    "desconto": 13,
+    "categoria": "higiene-caes",
+    "data_cadastro": "2025-07-26"
+  },
+  {
+    "id": "pt-013",
+    "nome": "Coleira Antipulgas Seresto Cães G",
+    "imagem": "img/produtos/coleira-seresto.webp",
+    "preco_de": 179.90,
+    "preco_por": 159.90,
+    "desconto": 11,
+    "categoria": "saude",
+    "data_cadastro": "2025-08-08"
+  },
+  {
+    "id": "pt-014",
+    "nome": "Vermífugo Drontal Plus Cães 10kg",
+    "imagem": "img/produtos/vermifugo-drontal.webp",
+    "preco_de": 32.90,
+    "preco_por": 28.90,
+    "desconto": 12,
+    "categoria": "saude",
+    "data_cadastro": "2025-07-22"
+  },
+  {
+    "id": "pt-015",
+    "nome": "Brinquedo Mordedor Corda para Cães",
+    "imagem": "img/produtos/brinquedo-corda.webp",
+    "preco_de": 16.90,
+    "preco_por": 14.90,
+    "desconto": 12,
+    "categoria": "brinquedos",
+    "data_cadastro": "2025-08-02"
+  },
+  {
+    "id": "pt-016",
+    "nome": "Bolinha de Tênis para Cães 3 unid",
+    "imagem": "img/produtos/bolinha-tenis.webp",
+    "preco_de": 12.90,
+    "preco_por": 10.90,
+    "desconto": 16,
+    "categoria": "brinquedos",
+    "data_cadastro": "2025-07-29"
+  },
+  {
+    "id": "pt-017",
+    "nome": "Arranhador para Gatos Torre 60cm",
+    "imagem": "img/produtos/arranhador-gatos.webp",
+    "preco_de": 89.90,
+    "preco_por": 79.90,
+    "desconto": 11,
+    "categoria": "brinquedos",
+    "data_cadastro": "2025-08-05"
+  },
+  {
+    "id": "pt-018",
+    "nome": "Comedouro Duplo Inox para Cães",
+    "imagem": "img/produtos/comedouro-inox.webp",
+    "preco_de": 34.90,
+    "preco_por": 29.90,
+    "desconto": 14,
+    "categoria": "acessorios",
+    "data_cadastro": "2025-07-24"
+  },
+  {
+    "id": "pt-019",
+    "nome": "Guia para Cães Nylon 1,20m",
+    "imagem": "img/produtos/guia-nylon.webp",
+    "preco_de": 19.90,
+    "preco_por": 17.90,
+    "desconto": 10,
+    "categoria": "acessorios",
+    "data_cadastro": "2025-08-07"
+  },
+  {
+    "id": "pt-020",
+    "nome": "Casinha para Cães Pequeno Porte",
+    "imagem": "img/produtos/casinha-caes.webp",
+    "preco_de": 199.90,
+    "preco_por": 179.90,
+    "desconto": 10,
+    "categoria": "acessorios",
+    "data_cadastro": "2025-07-27"
+  }
 ]

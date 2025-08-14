@@ -1,9 +1,202 @@
 [
-  { "id": "lp-001", "nome": "Detergente Ypê Neutro 500ml", "imagem": "img/produtos/detergente-ype.webp", "preco_de": 2.99, "preco_por": 2.49, "desconto": 17, "categoria": "detergente", "data_cadastro": "2025-08-10" },
-  { "id": "lp-002", "nome": "Detergente Limpol Limão 500ml", "imagem": "img/produtos/detergente-limpol.webp", "preco_de": 3.20, "preco_por": 2.70, "desconto": 16, "categoria": "detergente", "data_cadastro": "2025-07-25" },
-
-  { "id": "lp-003", "nome": "Desinfetante Pinho Sol 500ml", "imagem": "img/produtos/desinfetante-pinho-sol.webp", "preco_de": 8.50, "preco_por": 7.50, "desconto": 12, "categoria": "desinfetante", "data_cadastro": "2025-08-04" },
-  { "id": "lp-004", "nome": "Desinfetante Lysoform 1L", "imagem": "img/produtos/desinfetante-lysoform.webp", "preco_de": 12.90, "preco_por": 11.50, "desconto": 11, "categoria": "desinfetante", "data_cadastro": "2025-07-18" },
-
-  { "id": "lp-005", "nome": "Sabão em Pó OMO Lavagem Perfeita 800g", "imagem": "img/produtos/sabao-omo.webp", "preco_de": 14.90, "preco_por": 13.50, "desconto": 9, "categoria": "sabao-po", "data_cadastro": "2025-07-09" }
+  {
+    "id": "lp-001",
+    "nome": "Detergente Ypê Neutro 500ml",
+    "imagem": "img/produtos/detergente-ype.webp",
+    "preco_de": 3.90,
+    "preco_por": 2.90,
+    "desconto": 26,
+    "categoria": "loucas",
+    "data_cadastro": "2025-08-05"
+  },
+  {
+    "id": "lp-002",
+    "nome": "Detergente Minuano Limão 500ml",
+    "imagem": "img/produtos/detergente-minuano.webp",
+    "preco_de": 4.50,
+    "preco_por": 3.50,
+    "desconto": 22,
+    "categoria": "loucas",
+    "data_cadastro": "2025-07-28"
+  },
+  {
+    "id": "lp-003",
+    "nome": "Esponja de Aço Bombril 8 unid",
+    "imagem": "img/produtos/esponja-bombril.webp",
+    "preco_de": 6.90,
+    "preco_por": 5.90,
+    "desconto": 14,
+    "categoria": "loucas",
+    "data_cadastro": "2025-08-02"
+  },
+  {
+    "id": "lp-004",
+    "nome": "Esponja Dupla Face Scotch Brite 3 unid",
+    "imagem": "img/produtos/esponja-scotch.webp",
+    "preco_de": 9.90,
+    "preco_por": 8.50,
+    "desconto": 14,
+    "categoria": "loucas",
+    "data_cadastro": "2025-07-30"
+  },
+  {
+    "id": "lp-005",
+    "nome": "Sabão em Barra Ypê Glicerina 5x200g",
+    "imagem": "img/produtos/sabao-ype-barra.webp",
+    "preco_de": 12.90,
+    "preco_por": 10.90,
+    "desconto": 16,
+    "categoria": "roupas",
+    "data_cadastro": "2025-08-07"
+  },
+  {
+    "id": "lp-006",
+    "nome": "Sabão em Pó OMO Lavagem Perfeita 1kg",
+    "imagem": "img/produtos/sabao-omo.webp",
+    "preco_de": 18.90,
+    "preco_por": 16.90,
+    "desconto": 11,
+    "categoria": "roupas",
+    "data_cadastro": "2025-08-01"
+  },
+  {
+    "id": "lp-007",
+    "nome": "Amaciante Comfort Concentrado 1L",
+    "imagem": "img/produtos/amaciante-comfort.webp",
+    "preco_de": 14.90,
+    "preco_por": 12.90,
+    "desconto": 13,
+    "categoria": "roupas",
+    "data_cadastro": "2025-07-25"
+  },
+  {
+    "id": "lp-008",
+    "nome": "Alvejante Ypê sem Cloro 1L",
+    "imagem": "img/produtos/alvejante-ype.webp",
+    "preco_de": 8.90,
+    "preco_por": 7.50,
+    "desconto": 16,
+    "categoria": "roupas",
+    "data_cadastro": "2025-08-04"
+  },
+  {
+    "id": "lp-009",
+    "nome": "Desinfetante Pinho Sol Original 1L",
+    "imagem": "img/produtos/desinfetante-pinho-sol.webp",
+    "preco_de": 12.90,
+    "preco_por": 10.90,
+    "desconto": 16,
+    "categoria": "chao",
+    "data_cadastro": "2025-07-31"
+  },
+  {
+    "id": "lp-010",
+    "nome": "Desinfetante Lysoform Lavanda 1L",
+    "imagem": "img/produtos/desinfetante-lysoform.webp",
+    "preco_de": 11.90,
+    "preco_por": 9.90,
+    "desconto": 17,
+    "categoria": "chao",
+    "data_cadastro": "2025-08-06"
+  },
+  {
+    "id": "lp-011",
+    "nome": "Água Sanitária Ypê 1L",
+    "imagem": "img/produtos/agua-sanitaria-ype.webp",
+    "preco_de": 4.90,
+    "preco_por": 3.90,
+    "desconto": 20,
+    "categoria": "chao",
+    "data_cadastro": "2025-08-03"
+  },
+  {
+    "id": "lp-012",
+    "nome": "Rodo de Espuma com Cabo 40cm",
+    "imagem": "img/produtos/rodo-espuma.webp",
+    "preco_de": 24.90,
+    "preco_por": 21.90,
+    "desconto": 12,
+    "categoria": "chao",
+    "data_cadastro": "2025-07-26"
+  },
+  {
+    "id": "lp-013",
+    "nome": "Limpa Vidros Veja Cristal 500ml",
+    "imagem": "img/produtos/limpa-vidros-veja.webp",
+    "preco_de": 9.90,
+    "preco_por": 8.50,
+    "desconto": 14,
+    "categoria": "multiuso",
+    "data_cadastro": "2025-08-08"
+  },
+  {
+    "id": "lp-014",
+    "nome": "Limpador Multiuso Veja Original 500ml",
+    "imagem": "img/produtos/veja-multiuso.webp",
+    "preco_de": 7.90,
+    "preco_por": 6.90,
+    "desconto": 13,
+    "categoria": "multiuso",
+    "data_cadastro": "2025-07-22"
+  },
+  {
+    "id": "lp-015",
+    "nome": "Álcool Gel 70% Start 500ml",
+    "imagem": "img/produtos/alcool-gel-start.webp",
+    "preco_de": 12.90,
+    "preco_por": 10.90,
+    "desconto": 16,
+    "categoria": "multiuso",
+    "data_cadastro": "2025-08-02"
+  },
+  {
+    "id": "lp-016",
+    "nome": "Sabão Líquido Ypê Coco 1L",
+    "imagem": "img/produtos/sabao-liquido-ype.webp",
+    "preco_de": 16.90,
+    "preco_por": 14.90,
+    "desconto": 12,
+    "categoria": "roupas",
+    "data_cadastro": "2025-07-29"
+  },
+  {
+    "id": "lp-017",
+    "nome": "Vassoura de Piaçava com Cabo",
+    "imagem": "img/produtos/vassoura-piacava.webp",
+    "preco_de": 19.90,
+    "preco_por": 17.90,
+    "desconto": 10,
+    "categoria": "acessorios",
+    "data_cadastro": "2025-08-05"
+  },
+  {
+    "id": "lp-018",
+    "nome": "Balde Plástico 10L",
+    "imagem": "img/produtos/balde-plastico.webp",
+    "preco_de": 14.90,
+    "preco_por": 12.90,
+    "desconto": 13,
+    "categoria": "acessorios",
+    "data_cadastro": "2025-07-24"
+  },
+  {
+    "id": "lp-019",
+    "nome": "Luvas de Borracha Tamanho M",
+    "imagem": "img/produtos/luvas-borracha.webp",
+    "preco_de": 8.90,
+    "preco_por": 7.50,
+    "desconto": 16,
+    "categoria": "acessorios",
+    "data_cadastro": "2025-08-07"
+  },
+  {
+    "id": "lp-020",
+    "nome": "Pano de Chão Microfibra 3 unid",
+    "imagem": "img/produtos/pano-microfibra.webp",
+    "preco_de": 16.90,
+    "preco_por": 14.90,
+    "desconto": 12,
+    "categoria": "acessorios",
+    "data_cadastro": "2025-07-27"
+  }
 ]

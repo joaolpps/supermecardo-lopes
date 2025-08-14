@@ -1,9 +1,62 @@
 [
-  { "id": "in-001", "nome": "Fralda Pampers Confort Sec G 40un", "imagem": "img/produtos/fralda-pampers.webp", "preco_de": 69.90, "preco_por": 64.90, "desconto": 7, "categoria": "fralda", "data_cadastro": "2025-08-08" },
-  { "id": "in-002", "nome": "Fralda Huggies Supreme Care M 36un", "imagem": "img/produtos/fralda-huggies.webp", "preco_de": 59.90, "preco_por": 54.90, "desconto": 8, "categoria": "fralda", "data_cadastro": "2025-07-29" },
-
-  { "id": "in-003", "nome": "Leite Ninho Fases 1+ 800g", "imagem": "img/produtos/leite-ninho.webp", "preco_de": 39.90, "preco_por": 36.90, "desconto": 8, "categoria": "leite", "data_cadastro": "2025-08-02" },
-  { "id": "in-004", "nome": "Leite Aptamil 2 800g", "imagem": "img/produtos/leite-aptamil.webp", "preco_de": 69.90, "preco_por": 64.90, "desconto": 7, "categoria": "leite", "data_cadastro": "2025-07-21" },
-
-  { "id": "in-005", "nome": "Papinha Nestlé Frango com Legumes", "imagem": "img/produtos/papinha-nestle.webp", "preco_de": 5.50, "preco_por": 4.90, "desconto": 11, "categoria": "papinha", "data_cadastro": "2025-07-12" }
+  {
+    "id": "in-001",
+    "nome": "Fralda Pampers Confort Sec M 46 unid",
+    "imagem": "img/produtos/fralda-pampers-m.webp",
+    "preco_de": 49.90,
+    "preco_por": 44.90,
+    "desconto": 10,
+    "categoria": "fraldas",
+    "data_cadastro": "2025-08-05"
+  },
+  {
+    "id": "in-002",
+    "nome": "Fralda Huggies Supreme Care G 34 unid",
+    "imagem": "img/produtos/fralda-huggies-g.webp",
+    "preco_de": 52.90,
+    "preco_por": 47.90,
+    "desconto": 9,
+    "categoria": "fraldas",
+    "data_cadastro": "2025-07-28"
+  },
+  {
+    "id": "in-003",
+    "nome": "Fralda Turma da Mônica P 56 unid",
+    "imagem": "img/produtos/fralda-monica-p.webp",
+    "preco_de": 39.90,
+    "preco_por": 35.90,
+    "desconto": 10,
+    "categoria": "fraldas",
+    "data_cadastro": "2025-08-02"
+  },
+  {
+    "id": "in-004",
+    "nome": "Fralda Descartável RN 40 unid",
+    "imagem": "img/produtos/fralda-rn.webp",
+    "preco_de": 29.90,
+    "preco_por": 26.90,
+    "desconto": 10,
+    "categoria": "fraldas",
+    "data_cadastro": "2025-07-30"
+  },
+  {
+    "id": "in-005",
+    "nome": "Lenço Umedecido Pampers 96 unid",
+    "imagem": "img/produtos/lenco-pampers.webp",
+    "preco_de": 19.90,
+    "preco_por": 17.90,
+    "desconto": 10,
+    "categoria": "higiene",
+    "data_cadastro": "2025-08-07"
+  },
+  {
+    "id": "in-006",
+    "nome": "Shampoo Johnson's Baby 400ml",
+    "imagem": "img/produtos/shampoo-johnsons.webp",
+    "preco_de": 24.90,
+    "preco_por": 22.90,
+    "desconto": 8,
+    "categoria": "higiene",
+    "data_cadastro": "2025-08-01"
+  }
 ]

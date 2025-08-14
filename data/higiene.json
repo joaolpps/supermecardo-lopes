@@ -1,9 +1,202 @@
 [
-  { "id": "hg-001", "nome": "Sabonete Dove Original 90g", "imagem": "img/produtos/sabonete-dove.webp", "preco_de": 4.50, "preco_por": 3.90, "desconto": 13, "categoria": "sabonetes", "data_cadastro": "2025-08-09" },
-  { "id": "hg-002", "nome": "Sabonete Lux Rosas Francesas 85g", "imagem": "img/produtos/sabonete-lux.webp", "preco_de": 3.80, "preco_por": 3.20, "desconto": 15, "categoria": "sabonetes", "data_cadastro": "2025-07-30" },
-
-  { "id": "hg-003", "nome": "Shampoo Seda Ceramidas 325ml", "imagem": "img/produtos/shampoo-seda.webp", "preco_de": 9.90, "preco_por": 8.90, "desconto": 10, "categoria": "shampoos", "data_cadastro": "2025-08-02" },
-  { "id": "hg-004", "nome": "Shampoo Pantene Hidratante 400ml", "imagem": "img/produtos/shampoo-pantene.webp", "preco_de": 17.90, "preco_por": 15.90, "desconto": 11, "categoria": "shampoos", "data_cadastro": "2025-07-20" },
-
-  { "id": "hg-005", "nome": "Creme Dental Colgate Total 90g", "imagem": "img/produtos/colgate-total.webp", "preco_de": 8.50, "preco_por": 7.50, "desconto": 12, "categoria": "creme-dental", "data_cadastro": "2025-07-12" }
+  {
+    "id": "hg-001",
+    "nome": "Shampoo Pantene Hidratação 400ml",
+    "imagem": "img/produtos/shampoo-pantene.webp",
+    "preco_de": 18.90,
+    "preco_por": 16.90,
+    "desconto": 11,
+    "categoria": "cabelos",
+    "data_cadastro": "2025-08-05"
+  },
+  {
+    "id": "hg-002",
+    "nome": "Condicionador Seda Reconstrução 325ml",
+    "imagem": "img/produtos/condicionador-seda.webp",
+    "preco_de": 15.90,
+    "preco_por": 13.90,
+    "desconto": 13,
+    "categoria": "cabelos",
+    "data_cadastro": "2025-07-28"
+  },
+  {
+    "id": "hg-003",
+    "nome": "Creme para Pentear Elseve 200ml",
+    "imagem": "img/produtos/creme-pentear-elseve.webp",
+    "preco_de": 22.90,
+    "preco_por": 19.90,
+    "desconto": 13,
+    "categoria": "cabelos",
+    "data_cadastro": "2025-08-02"
+  },
+  {
+    "id": "hg-004",
+    "nome": "Shampoo Clear Anticaspa 400ml",
+    "imagem": "img/produtos/shampoo-clear.webp",
+    "preco_de": 24.90,
+    "preco_por": 21.90,
+    "desconto": 12,
+    "categoria": "cabelos",
+    "data_cadastro": "2025-07-25"
+  },
+  {
+    "id": "hg-005",
+    "nome": "Sabonete Dove Original 90g",
+    "imagem": "img/produtos/sabonete-dove.webp",
+    "preco_de": 4.90,
+    "preco_por": 3.90,
+    "desconto": 20,
+    "categoria": "banho",
+    "data_cadastro": "2025-08-07"
+  },
+  {
+    "id": "hg-006",
+    "nome": "Sabonete Líquido Protex 250ml",
+    "imagem": "img/produtos/sabonete-protex.webp",
+    "preco_de": 12.90,
+    "preco_por": 10.90,
+    "desconto": 16,
+    "categoria": "banho",
+    "data_cadastro": "2025-08-01"
+  },
+  {
+    "id": "hg-007",
+    "nome": "Gel de Banho Johnson's Baby 400ml",
+    "imagem": "img/produtos/gel-banho-johnsons.webp",
+    "preco_de": 16.90,
+    "preco_por": 14.90,
+    "desconto": 12,
+    "categoria": "banho",
+    "data_cadastro": "2025-07-30"
+  },
+  {
+    "id": "hg-008",
+    "nome": "Bucha Vegetal Natural",
+    "imagem": "img/produtos/bucha-vegetal.webp",
+    "preco_de": 3.50,
+    "preco_por": 2.90,
+    "desconto": 17,
+    "categoria": "banho",
+    "data_cadastro": "2025-08-04"
+  },
+  {
+    "id": "hg-009",
+    "nome": "Creme Dental Colgate Total 12 90g",
+    "imagem": "img/produtos/creme-dental-colgate.webp",
+    "preco_de": 8.90,
+    "preco_por": 7.50,
+    "desconto": 16,
+    "categoria": "oral",
+    "data_cadastro": "2025-08-06"
+  },
+  {
+    "id": "hg-010",
+    "nome": "Escova Dental Oral-B Indicator",
+    "imagem": "img/produtos/escova-oral-b.webp",
+    "preco_de": 12.90,
+    "preco_por": 10.90,
+    "desconto": 16,
+    "categoria": "oral",
+    "data_cadastro": "2025-07-26"
+  },
+  {
+    "id": "hg-011",
+    "nome": "Enxaguante Bucal Listerine 500ml",
+    "imagem": "img/produtos/enxaguante-listerine.webp",
+    "preco_de": 19.90,
+    "preco_por": 17.90,
+    "desconto": 10,
+    "categoria": "oral",
+    "data_cadastro": "2025-08-03"
+  },
+  {
+    "id": "hg-012",
+    "nome": "Fio Dental Oral-B Essential 25m",
+    "imagem": "img/produtos/fio-dental-oral-b.webp",
+    "preco_de": 6.90,
+    "preco_por": 5.90,
+    "desconto": 14,
+    "categoria": "oral",
+    "data_cadastro": "2025-07-31"
+  },
+  {
+    "id": "hg-013",
+    "nome": "Desodorante Dove Original Roll-on 50ml",
+    "imagem": "img/produtos/desodorante-dove.webp",
+    "preco_de": 14.90,
+    "preco_por": 12.90,
+    "desconto": 13,
+    "categoria": "desodorantes",
+    "data_cadastro": "2025-08-08"
+  },
+  {
+    "id": "hg-014",
+    "nome": "Desodorante Rexona Men Aerosol 150ml",
+    "imagem": "img/produtos/desodorante-rexona.webp",
+    "preco_de": 16.90,
+    "preco_por": 14.90,
+    "desconto": 12,
+    "categoria": "desodorantes",
+    "data_cadastro": "2025-07-22"
+  },
+  {
+    "id": "hg-015",
+    "nome": "Antitranspirante Nivea Invisible 50ml",
+    "imagem": "img/produtos/antitranspirante-nivea.webp",
+    "preco_de": 18.90,
+    "preco_por": 16.90,
+    "desconto": 11,
+    "categoria": "desodorantes",
+    "data_cadastro": "2025-08-01"
+  },
+  {
+    "id": "hg-016",
+    "nome": "Creme Hidratante Nivea 200ml",
+    "imagem": "img/produtos/creme-nivea.webp",
+    "preco_de": 24.90,
+    "preco_por": 21.90,
+    "desconto": 12,
+    "categoria": "corpo",
+    "data_cadastro": "2025-07-29"
+  },
+  {
+    "id": "hg-017",
+    "nome": "Protetor Solar Episol FPS 60 200ml",
+    "imagem": "img/produtos/protetor-episol.webp",
+    "preco_de": 49.90,
+    "preco_por": 44.90,
+    "desconto": 10,
+    "categoria": "corpo",
+    "data_cadastro": "2025-08-05"
+  },
+  {
+    "id": "hg-018",
+    "nome": "Óleo Corporal Johnson's Baby 200ml",
+    "imagem": "img/produtos/oleo-johnsons.webp",
+    "preco_de": 19.90,
+    "preco_por": 17.90,
+    "desconto": 10,
+    "categoria": "corpo",
+    "data_cadastro": "2025-07-24"
+  },
+  {
+    "id": "hg-019",
+    "nome": "Absorvente Always Ultra 8 unid",
+    "imagem": "img/produtos/absorvente-always.webp",
+    "preco_de": 12.90,
+    "preco_por": 10.90,
+    "desconto": 16,
+    "categoria": "feminino",
+    "data_cadastro": "2025-08-02"
+  },
+  {
+    "id": "hg-020",
+    "nome": "Papel Higiênico Neve Folha Dupla 4 rolos",
+    "imagem": "img/produtos/papel-higienico-neve.webp",
+    "preco_de": 16.90,
+    "preco_por": 14.90,
+    "desconto": 12,
+    "categoria": "higiene",
+    "data_cadastro": "2025-08-07"
+  }
 ]

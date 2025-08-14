@@ -1,43 +1,202 @@
 [
-    { "id": "el-001", "nome": "Smartphone Galaxy S21", "imagem": "img/produtos/smartphone-galaxy-s21.webp", "preco_de": 3999.90, "preco_por": 3499.90, "desconto": 13, "categoria": "smartphone", "data_cadastro": "2025-08-05" },
-    { "id": "el-002", "nome": "Smartphone iPhone 13", "imagem": "img/produtos/iphone-13.webp", "preco_de": 5999.90, "preco_por": 5799.90, "desconto": 3, "categoria": "smartphone", "data_cadastro": "2025-08-01" },
-    { "id": "el-003", "nome": "Smartphone Xiaomi Redmi Note 12", "imagem": "img/produtos/redmi-note-12.webp", "preco_de": 1899.90, "preco_por": 1799.90, "desconto": 5, "categoria": "smartphone", "data_cadastro": "2025-07-25" },
-    { "id": "el-004", "nome": "Smartphone Motorola Edge 30", "imagem": "img/produtos/motorola-edge-30.webp", "preco_de": 2999.90, "preco_por": 2599.90, "desconto": 13, "categoria": "smartphone", "data_cadastro": "2025-07-15" },
-    { "id": "el-005", "nome": "Smartphone Realme 9 Pro", "imagem": "img/produtos/realme-9-pro.webp", "preco_de": 1999.90, "preco_por": 1899.90, "desconto": 5, "categoria": "smartphone", "data_cadastro": "2025-06-30" },
-
-    { "id": "el-006", "nome": "Notebook Dell Inspiron 15", "imagem": "img/produtos/dell-inspiron-15.webp", "preco_de": 3999.90, "preco_por": 3599.90, "desconto": 10, "categoria": "notebook", "data_cadastro": "2025-08-03" },
-    { "id": "el-007", "nome": "Notebook Acer Aspire 5", "imagem": "img/produtos/acer-aspire-5.webp", "preco_de": 3499.90, "preco_por": 3199.90, "desconto": 9, "categoria": "notebook", "data_cadastro": "2025-07-28" },
-    { "id": "el-008", "nome": "Notebook Lenovo Ideapad 3", "imagem": "img/produtos/lenovo-ideapad-3.webp", "preco_de": 2999.90, "preco_por": 2799.90, "desconto": 7, "categoria": "notebook", "data_cadastro": "2025-07-20" },
-    { "id": "el-009", "nome": "Notebook Asus VivoBook", "imagem": "img/produtos/asus-vivobook.webp", "preco_de": 3299.90, "preco_por": 2999.90, "desconto": 9, "categoria": "notebook", "data_cadastro": "2025-07-10" },
-    { "id": "el-010", "nome": "Notebook Samsung Book", "imagem": "img/produtos/samsung-book.webp", "preco_de": 3199.90, "preco_por": 2899.90, "desconto": 9, "categoria": "notebook", "data_cadastro": "2025-06-25" },
-
-    { "id": "el-011", "nome": "Smart TV LG 55\"", "imagem": "img/produtos/tv-lg-55.webp", "preco_de": 3499.90, "preco_por": 2999.90, "desconto": 14, "categoria": "tv", "data_cadastro": "2025-08-07" },
-    { "id": "el-012", "nome": "Smart TV Samsung 50\"", "imagem": "img/produtos/tv-samsung-50.webp", "preco_de": 3199.90, "preco_por": 2899.90, "desconto": 9, "categoria": "tv", "data_cadastro": "2025-07-29" },
-    { "id": "el-013", "nome": "Smart TV TCL 43\"", "imagem": "img/produtos/tv-tcl-43.webp", "preco_de": 2499.90, "preco_por": 2299.90, "desconto": 8, "categoria": "tv", "data_cadastro": "2025-07-18" },
-    { "id": "el-014", "nome": "Smart TV Philco 32\"", "imagem": "img/produtos/tv-philco-32.webp", "preco_de": 1499.90, "preco_por": 1299.90, "desconto": 13, "categoria": "tv", "data_cadastro": "2025-07-05" },
-    { "id": "el-015", "nome": "Smart TV Panasonic 65\"", "imagem": "img/produtos/tv-panasonic-65.webp", "preco_de": 4999.90, "preco_por": 4699.90, "desconto": 6, "categoria": "tv", "data_cadastro": "2025-06-22" },
-
-    { "id": "el-016", "nome": "Microondas Electrolux 20L", "imagem": "img/produtos/microondas-electrolux-20l.webp", "preco_de": 599.90, "preco_por": 549.90, "desconto": 8, "categoria": "microondas", "data_cadastro": "2025-08-04" },
-    { "id": "el-017", "nome": "Microondas Brastemp 25L", "imagem": "img/produtos/microondas-brastemp-25l.webp", "preco_de": 699.90, "preco_por": 649.90, "desconto": 7, "categoria": "microondas", "data_cadastro": "2025-07-30" },
-    { "id": "el-018", "nome": "Microondas Panasonic 30L", "imagem": "img/produtos/microondas-panasonic-30l.webp", "preco_de": 799.90, "preco_por": 749.90, "desconto": 6, "categoria": "microondas", "data_cadastro": "2025-07-21" },
-    { "id": "el-019", "nome": "Microondas Consul 20L", "imagem": "img/produtos/microondas-consul-20l.webp", "preco_de": 549.90, "preco_por": 499.90, "desconto": 9, "categoria": "microondas", "data_cadastro": "2025-07-08" },
-    { "id": "el-020", "nome": "Microondas Philco 25L", "imagem": "img/produtos/microondas-philco-25l.webp", "preco_de": 679.90, "preco_por": 629.90, "desconto": 7, "categoria": "microondas", "data_cadastro": "2025-06-26" },
-
-    { "id": "el-021", "nome": "Fogão 4 Bocas Brastemp", "imagem": "img/produtos/fogao-4b-brastemp.webp", "preco_de": 1299.90, "preco_por": 1199.90, "desconto": 8, "categoria": "fogao", "data_cadastro": "2025-08-02" },
-    { "id": "el-022", "nome": "Fogão 5 Bocas Consul", "imagem": "img/produtos/fogao-5b-consul.webp", "preco_de": 1599.90, "preco_por": 1499.90, "desconto": 6, "categoria": "fogao", "data_cadastro": "2025-07-31" },
-    { "id": "el-023", "nome": "Fogão Atlas 4 Bocas", "imagem": "img/produtos/fogao-4b-atlas.webp", "preco_de": 1199.90, "preco_por": 1099.90, "desconto": 8, "categoria": "fogao", "data_cadastro": "2025-07-23" },
-    { "id": "el-024", "nome": "Fogão Esmaltec 5 Bocas", "imagem": "img/produtos/fogao-5b-esmaltec.webp", "preco_de": 1399.90, "preco_por": 1299.90, "desconto": 7, "categoria": "fogao", "data_cadastro": "2025-07-12" },
-    { "id": "el-025", "nome": "Fogão Venax 4 Bocas", "imagem": "img/produtos/fogao-4b-venax.webp", "preco_de": 1099.90, "preco_por": 999.90, "desconto": 9, "categoria": "fogao", "data_cadastro": "2025-06-28" },
-
-    { "id": "el-026", "nome": "Geladeira Brastemp Frost Free", "imagem": "img/produtos/geladeira-brastemp-ff.webp", "preco_de": 3299.90, "preco_por": 2999.90, "desconto": 9, "categoria": "geladeira", "data_cadastro": "2025-08-06" },
-    { "id": "el-027", "nome": "Geladeira Consul Duplex", "imagem": "img/produtos/geladeira-consul-duplex.webp", "preco_de": 2899.90, "preco_por": 2699.90, "desconto": 7, "categoria": "geladeira", "data_cadastro": "2025-07-27" },
-    { "id": "el-028", "nome": "Geladeira Electrolux Frost Free", "imagem": "img/produtos/geladeira-electrolux-ff.webp", "preco_de": 3099.90, "preco_por": 2899.90, "desconto": 6, "categoria": "geladeira", "data_cadastro": "2025-07-17" },
-    { "id": "el-029", "nome": "Geladeira Panasonic Inverter", "imagem": "img/produtos/geladeira-panasonic-inverter.webp", "preco_de": 3399.90, "preco_por": 3199.90, "desconto": 6, "categoria": "geladeira", "data_cadastro": "2025-07-09" },
-    { "id": "el-030", "nome": "Geladeira Samsung Side by Side", "imagem": "img/produtos/geladeira-samsung-sbs.webp", "preco_de": 5299.90, "preco_por": 4999.90, "desconto": 6, "categoria": "geladeira", "data_cadastro": "2025-06-24" },
-
-    { "id": "el-031", "nome": "Caixa de Som JBL Flip 6", "imagem": "img/produtos/jbl-flip-6.webp", "preco_de": 699.90, "preco_por": 649.90, "desconto": 7, "categoria": "outros", "data_cadastro": "2025-08-08" },
-    { "id": "el-032", "nome": "Headset Gamer HyperX Cloud", "imagem": "img/produtos/headset-hyperx.webp", "preco_de": 499.90, "preco_por": 449.90, "desconto": 10, "categoria": "outros", "data_cadastro": "2025-08-01" },
-    { "id": "el-033", "nome": "Mouse Gamer Logitech G502", "imagem": "img/produtos/mouse-g502.webp", "preco_de": 349.90, "preco_por": 299.90, "desconto": 14, "categoria": "outros", "data_cadastro": "2025-07-22" },
-    { "id": "el-034", "nome": "Teclado Mecânico Redragon", "imagem": "img/produtos/teclado-redragon.webp", "preco_de": 399.90, "preco_por": 349.90, "desconto": 12, "categoria": "outros", "data_cadastro": "2025-07-14" },
-    { "id": "el-035", "nome": "Câmera Canon EOS Rebel T7", "imagem": "img/produtos/camera-canon-t7.webp", "preco_de": 2999.90, "preco_por": 2799.90, "desconto": 7, "categoria": "outros", "data_cadastro": "2025-06-29" }
+  {
+    "id": "el-001",
+    "nome": "Smartphone Samsung Galaxy A54 128GB",
+    "imagem": "img/produtos/samsung-galaxy-a54.webp",
+    "preco_de": 1299.00,
+    "preco_por": 1199.00,
+    "desconto": 8,
+    "categoria": "smartphone",
+    "data_cadastro": "2025-08-01"
+  },
+  {
+    "id": "el-002",
+    "nome": "iPhone 14 128GB",
+    "imagem": "img/produtos/iphone-14.webp",
+    "preco_de": 3999.00,
+    "preco_por": 3799.00,
+    "desconto": 5,
+    "categoria": "smartphone",
+    "data_cadastro": "2025-07-28"
+  },
+  {
+    "id": "el-003",
+    "nome": "Motorola Moto G23 128GB",
+    "imagem": "img/produtos/motorola-moto-g23.webp",
+    "preco_de": 899.00,
+    "preco_por": 799.00,
+    "desconto": 11,
+    "categoria": "smartphone",
+    "data_cadastro": "2025-08-05"
+  },
+  {
+    "id": "el-004",
+    "nome": "Xiaomi Redmi Note 12 256GB",
+    "imagem": "img/produtos/xiaomi-redmi-note12.webp",
+    "preco_de": 1199.00,
+    "preco_por": 1099.00,
+    "desconto": 8,
+    "categoria": "smartphone",
+    "data_cadastro": "2025-07-22"
+  },
+  {
+    "id": "el-005",
+    "nome": "TV Smart Samsung 55\" 4K UHD",
+    "imagem": "img/produtos/tv-samsung-55.webp",
+    "preco_de": 2299.00,
+    "preco_por": 2099.00,
+    "desconto": 9,
+    "categoria": "tv",
+    "data_cadastro": "2025-08-03"
+  },
+  {
+    "id": "el-006",
+    "nome": "TV LG 43\" Full HD Smart",
+    "imagem": "img/produtos/tv-lg-43.webp",
+    "preco_de": 1599.00,
+    "preco_por": 1449.00,
+    "desconto": 9,
+    "categoria": "tv",
+    "data_cadastro": "2025-07-30"
+  },
+  {
+    "id": "el-007",
+    "nome": "TV TCL 32\" HD Smart Android",
+    "imagem": "img/produtos/tv-tcl-32.webp",
+    "preco_de": 899.00,
+    "preco_por": 799.00,
+    "desconto": 11,
+    "categoria": "tv",
+    "data_cadastro": "2025-08-07"
+  },
+  {
+    "id": "el-008",
+    "nome": "Notebook Dell Inspiron 15 i5",
+    "imagem": "img/produtos/notebook-dell-inspiron.webp",
+    "preco_de": 2799.00,
+    "preco_por": 2599.00,
+    "desconto": 7,
+    "categoria": "notebook",
+    "data_cadastro": "2025-07-25"
+  },
+  {
+    "id": "el-009",
+    "nome": "Notebook Acer Aspire 5 Ryzen 5",
+    "imagem": "img/produtos/notebook-acer-aspire.webp",
+    "preco_de": 2499.00,
+    "preco_por": 2299.00,
+    "desconto": 8,
+    "categoria": "notebook",
+    "data_cadastro": "2025-08-02"
+  },
+  {
+    "id": "el-010",
+    "nome": "Tablet Samsung Galaxy Tab A8",
+    "imagem": "img/produtos/tablet-samsung-a8.webp",
+    "preco_de": 899.00,
+    "preco_por": 799.00,
+    "desconto": 11,
+    "categoria": "tablets",
+    "data_cadastro": "2025-08-06"
+  },
+  {
+    "id": "el-011",
+    "nome": "iPad 10ª Geração 64GB",
+    "imagem": "img/produtos/ipad-10geracao.webp",
+    "preco_de": 2699.00,
+    "preco_por": 2499.00,
+    "desconto": 7,
+    "categoria": "tablets",
+    "data_cadastro": "2025-07-20"
+  },
+  {
+    "id": "el-012",
+    "nome": "Fone JBL Tune 510BT Bluetooth",
+    "imagem": "img/produtos/fone-jbl-tune510.webp",
+    "preco_de": 199.00,
+    "preco_por": 179.00,
+    "desconto": 10,
+    "categoria": "acessorios",
+    "data_cadastro": "2025-08-08"
+  },
+  {
+    "id": "el-013",
+    "nome": "Carregador Portátil Xiaomi 10000mAh",
+    "imagem": "img/produtos/powerbank-xiaomi.webp",
+    "preco_de": 149.00,
+    "preco_por": 129.00,
+    "desconto": 13,
+    "categoria": "acessorios",
+    "data_cadastro": "2025-07-26"
+  },
+  {
+    "id": "el-014",
+    "nome": "Caixa de Som JBL Go 3 Bluetooth",
+    "imagem": "img/produtos/caixa-som-jbl-go3.webp",
+    "preco_de": 249.00,
+    "preco_por": 219.00,
+    "desconto": 12,
+    "categoria": "acessorios",
+    "data_cadastro": "2025-08-04"
+  },
+  {
+    "id": "el-015",
+    "nome": "Smartwatch Xiaomi Band 7",
+    "imagem": "img/produtos/xiaomi-band7.webp",
+    "preco_de": 299.00,
+    "preco_por": 269.00,
+    "desconto": 10,
+    "categoria": "acessorios",
+    "data_cadastro": "2025-07-31"
+  },
+  {
+    "id": "el-016",
+    "nome": "Console PlayStation 5 825GB",
+    "imagem": "img/produtos/playstation-5.webp",
+    "preco_de": 4199.00,
+    "preco_por": 3999.00,
+    "desconto": 5,
+    "categoria": "games",
+    "data_cadastro": "2025-07-18"
+  },
+  {
+    "id": "el-017",
+    "nome": "Console Xbox Series S 512GB",
+    "imagem": "img/produtos/xbox-series-s.webp",
+    "preco_de": 2499.00,
+    "preco_por": 2299.00,
+    "desconto": 8,
+    "categoria": "games",
+    "data_cadastro": "2025-08-01"
+  },
+  {
+    "id": "el-018",
+    "nome": "Micro-ondas Electrolux 20L",
+    "imagem": "img/produtos/microondas-electrolux.webp",
+    "preco_de": 599.00,
+    "preco_por": 549.00,
+    "desconto": 8,
+    "categoria": "eletrodomesticos",
+    "data_cadastro": "2025-07-29"
+  },
+  {
+    "id": "el-019",
+    "nome": "Ventilador de Mesa Mallory 30cm",
+    "imagem": "img/produtos/ventilador-mallory.webp",
+    "preco_de": 149.00,
+    "preco_por": 129.00,
+    "desconto": 13,
+    "categoria": "eletrodomesticos",
+    "data_cadastro": "2025-08-09"
+  },
+  {
+    "id": "el-020",
+    "nome": "Liquidificador Mondial Turbo 550W",
+    "imagem": "img/produtos/liquidificador-mondial.webp",
+    "preco_de": 199.00,
+    "preco_por": 179.00,
+    "desconto": 10,
+    "categoria": "eletrodomesticos",
+    "data_cadastro": "2025-07-24"
+  }
 ]
