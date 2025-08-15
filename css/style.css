@@ -111,11 +111,9 @@ header {
     color: var(--white);
     padding-block: 0.1rem;
     width: 100%;
-    position: sticky;
-    top: 0;
-    z-index: var(--z-header);
-    box-shadow: var(--shadow-light);
+    box-shadow: var(--shadow-light); 
 }
+
 
 header .container {
     display: flex;
