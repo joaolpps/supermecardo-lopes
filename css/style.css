@@ -1713,6 +1713,22 @@ textarea:focus-visible {
 
 /* <= 480px */
 @media (max-width: 480px) {
+    /* Header: sem sticky/fixed e com espaçamento do mobile */
+    header, header.fixed, header.sticky {
+        position: static !important;
+        top: auto !important;
+        z-index: auto !important;
+        box-shadow: var(--shadow-light);
+    }
+    header .container {
+        padding-inline: 15px; /* acompanha o .container do mobile */
+        padding-block: 10px;  /* reduz altura do header */
+        display: flex;
+        flex-direction: row;  /* evita header muito alto */
+        align-items: center;
+        gap: 8px;
+    }
+
     .container { padding-inline: 15px; }
 
     img.logo { width: 120px; }
@@ -1789,6 +1805,7 @@ textarea:focus-visible {
     .item-info h3 { font-size: 1rem; }
     .item-preco  { font-size: 1.1rem; }
 }
+
 
 /* Mobile landscape */
 @media (max-width: 768px) and (orientation: landscape) {
