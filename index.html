@@ -5,27 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Supermercado Lopes - Seu Supermercado Online</title>
 
-    <!-- Ícone da aba (usando imagem do projeto) -->
-    <link rel="icon" type="image/png" href="../img/logo/SUPERMERCADO.png">
-    <link rel="apple-touch-icon" href="../img/logo/SUPERMERCADO.png">
+    <!-- Ícone da aba -->
+    <link rel="icon" type="image/png" href="../img/logo/Supermercado.png">
+    <link rel="apple-touch-icon" href="../img/logo/Supermercado.png">
     <meta name="theme-color" content="#0f172a">
 
-    <!-- Open Graph / Twitter (em produção, prefira URL absoluta para og:image) -->
+    <!-- SEO / Social -->
     <meta property="og:title" content="Supermercado Lopes - Seu Supermercado Online">
     <meta property="og:description" content="Ofertas e novidades do seu supermercado online.">
-    <meta property="og:image" content="../img/logo/SUPERMERCADO.png">
+    <meta property="og:image" content="../img/logo/Supermercado.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="../img/logo/SUPERMERCADO.png">
+    <meta name="twitter:image" content="../img/logo/Supermercado.png">
 
     <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/carrinho.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
+    <!-- Popup de Login -->
     <div id="login-popup" class="login-popup" style="display:none;">
         <div class="login-popup-content">
             <span class="close-login-popup" id="closeLoginPopup">&times;</span>
@@ -40,26 +39,33 @@
         </div>
     </div>
 
+    <!-- Cabeçalho -->
     <header>
         <div class="container">
             <nav class="top-nav">
+                <!-- Botão menu hambúrguer -->
+                <button class="mobile-menu">&#9776;</button>
+
+                <!-- Logo centralizada no mobile -->
                 <a href="../index.html">
-                    <!-- Caminho ajustado para subpasta -->
-                    <img src="img/logo/SUPERMERCADO (800 x 500 px).png" alt="Logo Supermercado Lopes" class="logo">
+                    <img src="img/logo/Supermercado.png" alt="Logo Supermercado Lopes" class="logo">
                 </a>
-                <div class="search-bar">
-                    <input type="text" placeholder="Busque novos produtos">
-                    <button class="search-button">🔍</button>
-                </div>
+
+                <!-- Links à direita -->
                 <ul class="nav-links">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Busque novos produtos">
+                        <button class="search-button">🔍</button>
+                    </div>
                     <li><a href="#" id="openRegisterPopup"><p> Seja bem-vindo!</p><p><strong>Entre ou cadastre-se</strong></p></a></li>
                     <li><a href="#" id="pedidos"><p> Meus</p><p><strong>Pedidos</strong></p></a></li>
                     <li><a href="../carrinho/carrinho.html" id="carrinho"><p>Carrinho</p><p><strong id="total-carrinho">R$ 0,00</strong></p></a></li>
                 </ul>
-                <button class="mobile-menu">&#9776;</button>
+
+                <!-- Barra de busca -->
             </nav>
 
-            <!-- Removido nav duplicado -->
+            <!-- Menu categorias -->
             <nav class="main-categories-nav">
                 <ul class="nav-links">
                     <li><a href="../index.html"><i class="fas fa-bars"></i><strong> Início</strong></a></li>
@@ -77,10 +83,10 @@
         </div>
     </header>
 
+    <!-- Banner -->
     <section class="banner-carousel-section">
         <div class="swiper my-banner-swiper">
             <div class="swiper-wrapper">
-                <!-- Banners com caminho relativo corrigido -->
                 <div class="swiper-slide"><img class="banner-hero-img" src="../img/banners/banner1.png" alt="Banner 1" /></div>
                 <div class="swiper-slide"><img class="banner-hero-img" src="../img/banners/banner2.jpg" alt="Banner 2" /></div>
                 <div class="swiper-slide"><img class="banner-hero-img" src="../img/banners/banner3.jpg" alt="Banner 3" /></div>
@@ -93,17 +99,15 @@
         </div>
     </section>
 
+    <!-- Conteúdo principal -->
     <main>
         <section class="section" id="featured-products">
             <div class="container">
                 <h2 class="section-title">Produtos com Desconto</h2>
-                <div class="products-grid" id="products-grid">
-                    <!-- Produtos carregados dinamicamente -->
-                </div>
+                <div class="products-grid" id="products-grid"></div>
+                
                 <h2 class="section-title">Novidades</h2>
-                <div class="products-grid" id="new-products-grid">
-                    <!-- Novos produtos carregados dinamicamente -->
-                </div>
+                <div class="products-grid" id="new-products-grid"></div>
             </div>
         </section>
 
@@ -140,6 +144,15 @@
         </section>
 
         <section class="section schedule-delivery-section">
+            <!-- Imagem como elemento -->
+            <img src="img/icons/Delivery.png" 
+                 alt="Entrega de produtos do supermercado" 
+                 class="schedule-delivery-image">
+            
+            <!-- Overlay -->
+            <div class="schedule-delivery-overlay"></div>
+            
+            <!-- Container mantendo a estrutura original -->
             <div class="container">
                 <div class="schedule-delivery-content">
                     <h2>Agende sua entrega</h2>
@@ -150,6 +163,7 @@
         </section>
     </main>
 
+    <!-- Rodapé -->
     <footer>
         <div class="container">
             <p>&copy; 2025 Supermercado Lopes. Todos os direitos reservados.</p>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supermercado Lopes - Seu Supermercado Online</title>
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- SEO / Social -->
+  <meta property="og:title" content="Supermercado Lopes - Seu Supermercado Online" />
+  <meta property="og:description" content="Ofertas e novidades do seu supermercado online." />
+  <meta property="og:image" content="../img/logo/Supermercado.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="../img/logo/Supermercado.png" />
+
+  <!-- Ícones -->
+  <link rel="icon" type="image/png" href="../img/logo/Supermercado.png" />
+  <link rel="apple-touch-icon" href="../img/logo/Supermercado.png" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <!-- Aliases para tokens ausentes no CSS global -->
+  <style>
+    :root { --danger-red: var(--red); }
+  </style>
+
+  <!-- Scripts principais -->
+  <script defer src="../js/script.js"></script>
+</head>
+<body>
+  <!-- =====================================
+       POPUP DE LOGIN
+  ====================================== -->
+  <div id="login-popup" class="login-popup" style="display:none;">
+    <div class="login-popup-content">
+      <span class="close-login-popup" id="closeLoginPopup">&times;</span>
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label for="login-email">E-mail:</label>
+        <input type="email" id="login-email" name="email" required />
+        <label for="login-password">Senha:</label>
+        <input type="password" id="login-password" name="password" required />
+        <button type="submit" class="cta-button">Entrar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- =====================================
+       HEADER (como você enviou)
+  ====================================== -->
+  <header>
+    <div class="container">
+      <nav class="top-nav">
+        <!-- Botão menu hambúrguer -->
+        <button class="mobile-menu">&#9776;</button>
+
+        <!-- Logo centralizada no mobile -->
+        <a href="../index.html">
+          <img src="../img/logo/Supermercado.png" alt="Logo Supermercado Lopes" class="logo" />
+        </a>
+
+        <!-- Links à direita -->
+        <ul class="nav-links">
+          <div class="search-bar">
+            <input type="text" placeholder="Busque novos produtos" />
+            <button class="search-button">🔍</button>
+          </div>
+          <li><a href="#" id="openRegisterPopup"><p> Seja bem-vindo!</p><p><strong>Entre ou cadastre-se</strong></p></a></li>
+          <li><a href="#" id="pedidos"><p> Meus</p><p><strong>Pedidos</strong></p></a></li>
+          <li><a href="../carrinho/carrinho.html" id="carrinho"><p>Carrinho</p><p><strong id="total-carrinho">R$ 0,00</strong></p></a></li>
+        </ul>
+      </nav>
+
+      <!-- Menu categorias -->
+      <nav class="main-categories-nav">
+        <ul class="nav-links">
+          <li><a href="../index.html"><i class="fas fa-bars"></i><strong> Início</strong></a></li>
+          <li><a href="../categorias/Alimentos.html"><strong>Alimentos</strong></a></li>
+          <li><a href="../categorias/Bebidas.html"><strong>Bebidas</strong></a></li>
+          <li><a href="../categorias/Hortifruti.html"><strong>Hortifruti</strong></a></li>
+          <li><a href="../categorias/Eletrodomestico.html"><strong>Eletrodoméstico</strong></a></li>
+          <li><a href="../categorias/Eletronicos.html"><strong>Eletrônicos</strong></a></li>
+          <li><a href="../categorias/Higiene.html"><strong>Higiene & Beleza</strong></a></li>
+          <li><a href="../categorias/Limpeza.html"><strong>Limpezas</strong></a></li>
+          <li><a href="../categorias/Petshop.html"><strong>Pet Shop</strong></a></li>
+          <li><a href="../categorias/Infantil.html"><strong>Infantil</strong></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =====================================
+       TOAST + BOTÃO FLOTANTE + DRAWER LATERAL
+  ====================================== -->
+  <div id="cart-toast" class="cart-notification hidden" role="status" aria-live="polite">Produto adicionado ao carrinho!</div>
+
+  <button id="open-cart" class="cart-icon" aria-label="Abrir carrinho">
+    🛒
+    <span id="cart-count" class="cart-count">0</span>
+  </button>
+
+  <aside id="cart-drawer" class="cart" aria-labelledby="cart-drawer-title" aria-hidden="true">
+    <div class="cart-header">
+      <h2 id="cart-drawer-title">Seu Carrinho</h2>
+      <button id="close-cart" class="close-cart" aria-label="Fechar carrinho">×</button>
+    </div>
+
+    <div id="drawer-items" class="cart-items" aria-live="polite"></div>
+
+    <div class="cart-total">Total: <strong id="drawer-total">R$ 0,00</strong></div>
+
+    <div class="cart-actions">
+      <button id="clear-cart" class="clear-cart-btn" type="button">Esvaziar</button>
+      <a class="checkout-btn" href="../carrinho/carrinho.html">Checkout</a>
+    </div>
+  </aside>
+
+  <!-- =====================================
+       CONTEÚDO PRINCIPAL — PÁGINA DO CARRINHO
+  ====================================== -->
+  <main class="carrinho-container container">
+    <section class="carrinho-header" aria-labelledby="carrinho-title">
+      <h1 id="carrinho-title">Seu Carrinho</h1>
+      <p>Revise seus produtos antes de finalizar a compra.</p>
+    </section>
+
+    <section id="empty-cart" class="carrinho-vazio hidden" aria-live="polite">
+      <i>🛒</i>
+      <h2>Seu carrinho está vazio</h2>
+      <p>Você ainda não adicionou produtos.</p>
+      <a class="continuar-comprando" href="../index.html">Continuar comprando</a>
+    </section>
+
+    <section class="carrinho-content" aria-describedby="carrinho-title">
+      <div class="carrinho-items" id="cart-list">
+        <div id="cart-items-container" aria-live="polite">
+          <!-- Itens são inseridos via JS -->
+        </div>
+
+        <div class="cupom-section" aria-labelledby="cupom-title">
+          <h2 id="cupom-title" class="sr-only">Aplicar cupom</h2>
+          <label for="cupom-input">Possui cupom de desconto?</label>
+          <div class="cupom-input-group">
+            <input id="cupom-input" type="text" placeholder="Digite seu cupom" autocomplete="off" />
+            <button id="apply-coupon-btn" type="button">Aplicar</button>
+          </div>
+        </div>
+
+        <a href="../index.html" class="continuar-comprando">Continuar comprando</a>
+      </div>
+
+      <aside class="resumo-pedido" aria-labelledby="resumo-title">
+        <h2 id="resumo-title">Resumo do pedido</h2>
+        <div class="resumo-linha"><span>Subtotal</span><strong id="subtotal">R$ 0,00</strong></div>
+        <div class="resumo-linha"><span>Descontos</span><strong id="descontos">- R$ 0,00</strong></div>
+        <div class="resumo-linha"><span>Frete</span><strong id="frete">R$ 0,00</strong></div>
+        <div class="resumo-linha total"><span>Total</span><strong id="total">R$ 0,00</strong></div>
+        <button id="finalizar-btn" class="finalizar-btn" type="button" disabled>Finalizar compra</button>
+      </aside>
+    </section>
+  </main>
+
+  <!-- =====================================
+       TEMPLATES PARA O SCRIPT
+  ====================================== -->
+  <template id="cart-item-template">
+    <div class="item-carrinho" data-id="">
+      <div class="item-imagem">
+        <img src="" alt="" loading="lazy" />
+      </div>
+      <div class="item-info">
+        <h3></h3>
+        <p class="muted"></p>
+      </div>
+      <div class="item-preco">R$ 0,00</div>
+      <div class="quantidade-controls" role="group" aria-label="Controle de quantidade">
+        <button class="quantidade-btn" data-action="decrement" type="button" aria-label="Diminuir">−</button>
+        <input class="quantidade-input" type="number" min="1" value="1" aria-label="Quantidade" />
+        <button class="quantidade-btn" data-action="increment" type="button" aria-label="Aumentar">+</button>
+      </div>
+      <button class="remover-btn" data-action="remove" type="button" aria-label="Remover">Remover</button>
+    </div>
+  </template>
+
+  <template id="drawer-item-template">
+    <div class="cart-item" data-id="">
+      <div class="cart-item-info">
+        <h4></h4>
+        <p class="muted"></p>
+      </div>
+      <div class="cart-item-controls">
+        <button class="qty-btn" data-action="decrement" type="button" aria-label="Diminuir">−</button>
+        <span class="quantity">1</span>
+        <button class="qty-btn" data-action="increment" type="button" aria-label="Aumentar">+</button>
+        <button class="remove-btn" data-action="remove" type="button" aria-label="Remover">×</button>
+      </div>
+    </div>
+  </template>
+
+  <!-- =====================================
+       FOOTER
+  ====================================== -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Supermercado Lopes. Todos os direitos reservados.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i>FB</a>
+        <a href="#"><i class="fab fa-instagram"></i>IG</a>
+        <a href="#"><i class="fab fa-twitter"></i>TW</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,12 +1,13 @@
 /* =========================
-   Supermercado Lopes - script.js
+   Supermercado Lopes - script.js (completo)
    ========================= */
 
 /* -------------------------
    CONFIG
 ------------------------- */
 const IS_IN_CATEGORY = /\/categorias\//i.test(location.pathname);
-const BASE = IS_IN_CATEGORY ? ".." : ".";
+const IS_IN_CART = /\/carrinho\//i.test(location.pathname);
+const BASE = (IS_IN_CATEGORY || IS_IN_CART) ? ".." : ".";
 const DATA_DIR = `${BASE}/data`;
 
 const TITLE_TO_FILE = {
@@ -23,6 +24,11 @@ const TITLE_TO_FILE = {
   "pet shop": "petshop",
   "infantil": "infantil"
 };
+
+// Carrinho & Cupom
+const LS_CART_KEY = "lopes_cart_v1";
+const LS_COUPON_KEY = "lopes_coupon_v1";
+const DELIVERY_FEE_DEFAULT = 4.99;
 
 /* -------------------------
    HELPERS
@@ -54,6 +60,9 @@ function resolveAsset(path) {
   const cleaned = path.replace(/^(\.\/)+/, "").replace(/^(\.\.\/)+/, "");
   return `${BASE}/${cleaned}`;
 }
+
+function $(sel, root=document) { return root.querySelector(sel); }
+function $all(sel, root=document) { return Array.from(root.querySelectorAll(sel)); }
 
 /* -------------------------
    RENDER DE PRODUTO (CARD)
@@ -100,10 +109,8 @@ function productCardHTML(p) {
 }
 
 /* -------------------------
-   CARRINHO
+   CARRINHO (LOCALSTORAGE)
 ------------------------- */
-const LS_CART_KEY = "lopes_cart_v1";
-
 function readCart() {
   try { return JSON.parse(localStorage.getItem(LS_CART_KEY) || "[]"); }
   catch { return []; }
@@ -112,18 +119,27 @@ function readCart() {
 function writeCart(items) {
   localStorage.setItem(LS_CART_KEY, JSON.stringify(items));
   updateHeaderTotal();
+  // Re-renderiza onde for necessário
+  if (document.querySelector('.carrinho-container')) {
+    renderCartPage();
+  }
+  renderDrawer(readCart());
 }
 
 function addToCart(produto) {
   const cart = readCart();
   const idx = cart.findIndex(i => i.id === produto.id);
+  const precoBase = Number(produto.preco_por ?? produto.preco_de ?? produto.preco ?? 0);
   if (idx >= 0) {
     cart[idx].qtd += 1;
   } else {
     cart.push({ 
       id: produto.id, 
       nome: produto.nome, 
-      preco: Number(produto.preco_por || produto.preco_de || 0), 
+      preco: precoBase,
+      imagem: produto.imagem ? resolveAsset(produto.imagem) : "",
+      categoria: produto.categoria ?? "",
+      unidade: produto.unidade ?? "",
       qtd: 1 
     });
   }
@@ -135,25 +151,81 @@ function cartTotal() {
   return readCart().reduce((acc, i) => acc + Number(i.preco) * Number(i.qtd), 0);
 }
 
+function cartCount() {
+  return readCart().reduce((acc, i) => acc + Number(i.qtd || 1), 0);
+}
+
 function updateHeaderTotal() {
   const el = document.querySelector("#total-carrinho");
   if (el) el.textContent = formatBRL(cartTotal());
+  const cc = document.querySelector('#cart-count');
+  if (cc) cc.textContent = String(cartCount());
+}
+
+/* -------------------------
+   CUPOM
+------------------------- */
+function getCoupon() {
+  try { return JSON.parse(localStorage.getItem(LS_COUPON_KEY) || "null"); }
+  catch { return null; }
+}
+
+function setCoupon(c) {
+  if (!c) localStorage.removeItem(LS_COUPON_KEY);
+  else localStorage.setItem(LS_COUPON_KEY, JSON.stringify(c));
+}
+
+// Regras simples de exemplo (ajuste como quiser)
+function validateCoupon(code) {
+  const c = (code || "").trim().toUpperCase();
+  if (!c) return null;
+  // Exemplos:
+  if (c === "LOPES10") return { code: c, type: "percent", amount: 10 };
+  if (c === "LOPES20") return { code: c, type: "percent", amount: 20 };
+  if (c === "FRETEGRATIS") return { code: c, type: "frete", amount: 100 };
+  if (c === "DESCONTO10") return { code: c, type: "value", amount: 10 };
+  return null;
+}
+
+function calcDiscount(subtotal, coupon) {
+  if (!coupon) return 0;
+  if (coupon.type === 'percent') return (subtotal * (coupon.amount / 100));
+  if (coupon.type === 'value') return coupon.amount;
+  return 0;
+}
+
+function applyCoupon() {
+  const input = document.querySelector('#cupom-input');
+  const code = input ? input.value : '';
+  const valid = validateCoupon(code);
+  setCoupon(valid);
+  toast(valid ? `Cupom ${valid.code} aplicado!` : 'Cupom inválido.');
+  renderCartPage();
 }
 
 /* -------------------------
    TOAST
 ------------------------- */
 function toast(msg) {
+  const existent = document.getElementById('cart-toast');
+  if (existent && existent.classList) {
+    existent.textContent = msg;
+    existent.classList.remove('hidden');
+    existent.classList.remove('hide');
+    setTimeout(() => existent.classList.add('hide'), 1600);
+    setTimeout(() => existent.classList.add('hidden'), 2000);
+    return;
+  }
   const n = document.createElement("div");
   n.className = "cart-notification";
   n.textContent = msg;
   document.body.appendChild(n);
-  setTimeout(() => n.classList.add("hide"), 1800);
-  setTimeout(() => n.remove(), 2200);
+  setTimeout(() => n.classList.add("hide"), 1600);
+  setTimeout(() => n.remove(), 2000);
 }
 
 /* -------------------------
-   LOADERS
+   LOADERS (CATÁLOGO)
 ------------------------- */
 async function fetchJSON(path) {
   const resp = await fetch(path, { cache: "no-store" });
@@ -200,7 +272,7 @@ async function loadSectionsByTitles() {
       await loadGridFromJSON(grid, jsonPath); 
     } catch (e) { 
       console.error(e); 
-      grid.innerHTML = `<p class="cart-notification">Erro ao carregar produtos.</p>`; 
+      grid.innerHTML = `<p class=\"cart-notification\">Erro ao carregar produtos.</p>`; 
     }
   }
 }
@@ -216,7 +288,7 @@ async function loadCategoryPage() {
     await loadGridFromJSON(grid, jsonPath); 
   } catch (e) { 
     console.error(e); 
-    grid.innerHTML = `<p class="cart-notification">Erro ao carregar produtos.</p>`; 
+    grid.innerHTML = `<p class=\"cart-notification\">Erro ao carregar produtos.</p>`; 
   }
 }
 
@@ -224,9 +296,6 @@ async function loadCategoryPage() {
    PROMOÇÕES E NOVIDADES
 ------------------------- */
 async function loadPromosAndNews() {
-  // Carrega produtos com desconto e novidades usando tanto
-  // a abordagem de grids específicos quanto a agregação de categorias
-  
   const categorias = [
     "alimentos", "bebidas", "higiene", "limpeza", 
     "petshop", "infantil", "eletronicos"
@@ -236,34 +305,23 @@ async function loadPromosAndNews() {
   const produtosComDesconto = [];
   const novidades = [];
 
-  // Carrega todos os produtos das categorias
   for (const categoria of categorias) {
     try {
       const data = await fetchJSON(`${DATA_DIR}/${categoria}.json`);
       if (!Array.isArray(data)) continue;
-      
       todosProdutos = todosProdutos.concat(data);
-      
+
       data.forEach(produto => {
-        // Produtos com desconto
         const temDesconto = (produto.desconto && produto.desconto > 0) ||
           (produto.preco_de && produto.preco_por && Number(produto.preco_por) < Number(produto.preco_de));
-        
-        if (temDesconto) {
-          produtosComDesconto.push(produto);
-        }
-        
-        // Novidades baseadas na data de cadastro
-        if (produto.data_cadastro) {
-          novidades.push(produto);
-        }
+        if (temDesconto) produtosComDesconto.push(produto);
+        if (produto.data_cadastro) novidades.push(produto);
       });
     } catch (err) {
       console.error(`Erro ao carregar ${categoria}.json`, err);
     }
   }
 
-  // Ordena produtos com desconto por valor do desconto
   produtosComDesconto.sort((a, b) => {
     const descontoA = a.desconto || 
       (a.preco_de && a.preco_por ? Math.round(100 - (Number(a.preco_por) * 100) / Number(a.preco_de)) : 0);
@@ -272,14 +330,11 @@ async function loadPromosAndNews() {
     return descontoB - descontoA;
   });
 
-  // Ordena novidades pela data mais recente
   novidades.sort((a, b) => new Date(b.data_cadastro) - new Date(a.data_cadastro));
 
-  // Limita a 8 itens cada
   const descontosExibicao = produtosComDesconto.slice(0, 8);
   const novidadesExibicao = novidades.slice(0, 8);
 
-  // Produtos com desconto - suporta múltiplos IDs
   const gridsDescontos = document.querySelectorAll("#products-grid, .products-grid[data-type='desconto']");
   gridsDescontos.forEach(grid => {
     if (grid && descontosExibicao.length > 0) {
@@ -290,7 +345,6 @@ async function loadPromosAndNews() {
     }
   });
 
-  // Novidades - suporta múltiplos IDs
   const gridsNovidades = document.querySelectorAll("#new-products-grid, .products-grid[data-type='novidades']");
   gridsNovidades.forEach(grid => {
     if (grid && novidadesExibicao.length > 0) {
@@ -300,6 +354,189 @@ async function loadPromosAndNews() {
       });
     }
   });
+
+  // Caso exista #related-products-grid e não tenha data-json, tenta carregar "mais-vendidos.json"
+  const relatedGrid = document.getElementById('related-products-grid');
+  if (relatedGrid && !relatedGrid.getAttribute('data-json')) {
+    try {
+      await loadGridFromJSON(relatedGrid, `${DATA_DIR}/mais-vendidos.json`);
+    } catch (_) { /* silencioso */ }
+  }
+}
+
+/* -------------------------
+   PÁGINA DO CARRINHO (RENDER)
+------------------------- */
+function cartItemHTML(i, index) {
+  const img = i.imagem ? `<img src="${i.imagem}" alt="${i.nome}" />` : `<i class="fas fa-box" aria-hidden="true"></i>`;
+  return `
+    <div class="item-carrinho" data-index="${index}">
+      <div class="item-imagem">${img}</div>
+      <div class="item-info">
+        <h3>${i.nome}</h3>
+        ${i.unidade ? `<p>${i.unidade}</p>` : ''}
+      </div>
+      <div class="item-preco" aria-label="Preço unitário">${formatBRL(i.preco)}</div>
+      <div class="quantidade-controls" aria-label="Quantidade">
+        <button class="quantidade-btn" data-action="dec" aria-label="Diminuir">−</button>
+        <input class="quantidade-input" type="number" min="1" value="${i.qtd}" aria-label="Quantidade do item" />
+        <button class="quantidade-btn" data-action="inc" aria-label="Aumentar">+</button>
+      </div>
+      <button class="remover-btn" aria-label="Remover">Remover</button>
+    </div>
+  `;
+}
+
+function renderCartPage() {
+  const list = document.getElementById('cart-items-container');
+  const subtotalEl = document.getElementById('subtotal');
+  const discountEl = document.getElementById('descontos');
+  const deliveryFeeEl = document.getElementById('frete');
+  const totalEl = document.getElementById('total');
+  const sectionContent = document.querySelector('.carrinho-content');
+  const sectionEmpty = document.getElementById('empty-cart');
+
+  const items = readCart();
+  const subtotal = items.reduce((acc, i) => acc + Number(i.preco) * Number(i.qtd), 0);
+  const coupon = getCoupon();
+  const desconto = Math.min(calcDiscount(subtotal, coupon), subtotal);
+  // Frete
+  let deliveryFee = DELIVERY_FEE_DEFAULT;
+  if (coupon && coupon.type === 'frete') deliveryFee = 0;
+
+  // Mostra/oculta seções
+  if (items.length === 0) {
+    if (list) list.innerHTML = '';
+    if (sectionContent) sectionContent.style.display = 'none';
+    if (sectionEmpty) { sectionEmpty.classList.remove('hidden'); sectionEmpty.style.display = ''; }
+  } else {
+    if (sectionContent) sectionContent.style.display = '';
+    if (sectionEmpty) { sectionEmpty.classList.add('hidden'); sectionEmpty.style.display = 'none'; }
+    if (list) list.innerHTML = items.map(cartItemHTML).join('');
+  }
+
+  // Totais
+  subtotalEl && (subtotalEl.textContent = formatBRL(subtotal));
+  discountEl && (discountEl.textContent = `- ${formatBRL(desconto)}`);
+  deliveryFeeEl && (deliveryFeeEl.textContent = formatBRL(deliveryFee));
+  const total = Math.max(0, subtotal - desconto + deliveryFee);
+  totalEl && (totalEl.textContent = formatBRL(total));
+
+  // Habilita/desabilita botão finalizar
+  const finalizeBtn = document.getElementById('finalizar-btn');
+  if (finalizeBtn) finalizeBtn.disabled = (items.length === 0 || total <= 0);
+
+  // Renderiza também o drawer
+  renderDrawer(items, total);
+}
+
+// Delegação de eventos na lista
+function bindCartListEvents() {
+  const list = document.getElementById('cart-items-container');
+  if (!list) return;
+  list.addEventListener('click', (e) => {
+    const target = e.target;
+    const itemEl = target.closest('.item-carrinho');
+    if (!itemEl) return;
+    const index = Number(itemEl.getAttribute('data-index'));
+    const cart = readCart();
+    const current = cart[index];
+    if (!current) return;
+
+    if (target.classList.contains('remover-btn')) {
+      cart.splice(index, 1);
+      writeCart(cart);
+      return;
+    }
+
+    if (target.classList.contains('quantidade-btn')) {
+      const action = target.getAttribute('data-action');
+      if (action === 'inc') current.qtd += 1;
+      if (action === 'dec') current.qtd = Math.max(1, Number(current.qtd) - 1);
+      writeCart(cart);
+      return;
+    }
+  });
+
+  // Atualização direta pelo input
+  list.addEventListener('change', (e) => {
+    const input = e.target;
+    if (!input.classList.contains('quantidade-input')) return;
+    const itemEl = input.closest('.item-carrinho');
+    const index = Number(itemEl?.getAttribute('data-index'));
+    const cart = readCart();
+    const current = cart[index];
+    if (!current) return;
+    const val = Math.max(1, parseInt(input.value || '1', 10));
+    current.qtd = val;
+    writeCart(cart);
+  });
+}
+
+/* -------------------------
+   DRAWER LATERAL
+------------------------- */
+function renderDrawer(items = readCart(), pageTotal = null) {
+  const drawerItems = document.querySelector('#drawer-items');
+  const drawerTotal = document.querySelector('#drawer-total');
+  if (drawerItems) {
+    drawerItems.innerHTML = items.map((i, idx) => `
+      <div class="cart-item" data-index="${idx}">
+        <div class="cart-item-info">
+          <h4>${i.nome}</h4>
+          ${i.unidade ? `<p class="muted">${i.unidade}</p>` : ''}
+        </div>
+        <div class="cart-item-controls">
+          <button class="qty-btn" data-action="dec" type="button">−</button>
+          <span class="quantity">${i.qtd}</span>
+          <button class="qty-btn" data-action="inc" type="button">+</button>
+          <button class="remove-btn" data-action="remove" type="button">×</button>
+        </div>
+      </div>
+    `).join('');
+  }
+  const subtotal = items.reduce((acc, i) => acc + Number(i.preco) * Number(i.qtd), 0);
+  const coupon = getCoupon();
+  const desconto = Math.min(calcDiscount(subtotal, coupon), subtotal);
+  const deliveryFee = (coupon && coupon.type === 'frete') ? 0 : DELIVERY_FEE_DEFAULT;
+  const total = pageTotal != null ? pageTotal : Math.max(0, subtotal - desconto + deliveryFee);
+  if (drawerTotal) drawerTotal.textContent = formatBRL(total);
+}
+
+function bindDrawerEvents() {
+  const drawer = document.querySelector('#cart-drawer');
+  const drawerItems = document.querySelector('#drawer-items');
+  const openBtn = document.querySelector('#open-cart');
+  const closeBtn = document.querySelector('#close-cart');
+  const clearBtn = document.querySelector('#clear-cart');
+
+  function open() { drawer?.classList.add('open'); drawer?.setAttribute('aria-hidden', 'false'); }
+  function close() { drawer?.classList.remove('open'); drawer?.setAttribute('aria-hidden', 'true'); }
+
+  openBtn && openBtn.addEventListener('click', open);
+  closeBtn && closeBtn.addEventListener('click', close);
+
+  clearBtn && clearBtn.addEventListener('click', () => {
+    writeCart([]);
+    toast('Carrinho limpo.');
+  });
+
+  if (drawerItems) {
+    drawerItems.addEventListener('click', (e) => {
+      const btn = e.target.closest('button');
+      if (!btn) return;
+      const item = e.target.closest('.cart-item');
+      const index = Number(item?.getAttribute('data-index'));
+      const cart = readCart();
+      const current = cart[index];
+      if (!current) return;
+      const action = btn.getAttribute('data-action');
+      if (action === 'remove') cart.splice(index, 1);
+      if (action === 'inc') current.qtd += 1;
+      if (action === 'dec') current.qtd = Math.max(1, current.qtd - 1);
+      writeCart(cart);
+    });
+  }
 }
 
 /* -------------------------
@@ -310,10 +547,8 @@ function setupLoginPopup() {
   const openBtn = document.querySelector("#openRegisterPopup");
   const closeBtn = document.querySelector("#closeLoginPopup");
   if (!popup) return;
-  
-  function open() { popup.style.display = "flex"; }
-  function close() { popup.style.display = "none"; }
-  
+  function open() { popup.style.display = 'block'; popup.setAttribute('aria-hidden', 'false'); }
+  function close() { popup.style.display = 'none'; popup.setAttribute('aria-hidden', 'true'); }
   openBtn && openBtn.addEventListener("click", (e) => { e.preventDefault(); open(); });
   closeBtn && closeBtn.addEventListener("click", close);
   popup.addEventListener("click", (e) => { if (e.target === popup) close(); });
@@ -323,7 +558,30 @@ function setupMobileMenu() {
   const btn = document.querySelector(".mobile-menu");
   const nav = document.querySelector(".main-categories-nav");
   if (!btn || !nav) return;
-  btn.addEventListener("click", () => nav.classList.toggle("active"));
+
+  // Criar overlay simples
+  let overlay = document.querySelector('.menu-overlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.className = 'menu-overlay';
+    Object.assign(overlay.style, { position:'fixed', inset:'0', background:'rgba(0,0,0,.35)', display:'none', zIndex:999 });
+    document.body.appendChild(overlay);
+  }
+
+  function toggleMenu() {
+    const active = nav.classList.toggle("active");
+    overlay.style.display = active ? 'block' : 'none';
+    document.body.style.overflow = active ? 'hidden' : '';
+  }
+  function closeMenu() {
+    nav.classList.remove('active');
+    overlay.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  btn.addEventListener("click", toggleMenu);
+  overlay.addEventListener('click', closeMenu);
+  nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
 }
 
 function setupSwiperIfPresent() {
@@ -341,7 +599,6 @@ function setupProductFilters() {
   const filterBtns = document.querySelectorAll(".filter-btn");
   const grid = document.querySelector("#grid-produtos, .products-grid[data-filterable]");
   if (!filterBtns.length || !grid) return;
-
   filterBtns.forEach(btn => {
     btn.addEventListener("click", () => {
       filterBtns.forEach(b => b.classList.remove("active"));
@@ -357,22 +614,48 @@ function setupProductFilters() {
 }
 
 /* -------------------------
+   AÇÕES DE CHECKOUT
+------------------------- */
+function clearCart() { writeCart([]); toast('Carrinho limpo.'); }
+function proceedToCheckout() {
+  const items = readCart();
+  if (!items.length) { toast('Seu carrinho está vazio.'); return; }
+  alert('Fluxo de checkout ainda não implementado.');
+}
+
+/* -------------------------
    BOOT SEQUENCE
 ------------------------- */
 document.addEventListener("DOMContentLoaded", async () => {
-  // Setup inicial da UI
   setupLoginPopup();
   setupMobileMenu();
   setupSwiperIfPresent();
-  
-  // Atualiza total do carrinho
+
   updateHeaderTotal();
-  
-  // Carrega produtos (em ordem de prioridade)
-  await loadSectionsByTitles();   // Carrega seções baseadas em títulos
-  await loadCategoryPage();       // Carrega página de categoria específica
-  await loadPromosAndNews();      // Carrega promoções e novidades primeiro
-  
-  // Setup final da UI
+
+  // Essas funções só fazem algo se os elementos existirem
+  await loadSectionsByTitles();
+  await loadCategoryPage();
+  await loadPromosAndNews();
+
   setupProductFilters();
+
+  // Página do carrinho
+  if (document.querySelector('.carrinho-container')) {
+    bindCartListEvents();
+    bindDrawerEvents();
+    renderCartPage();
+
+    // Botões/cupom
+    document.querySelector('#apply-coupon-btn')?.addEventListener('click', applyCoupon);
+    document.querySelector('#finalizar-btn')?.addEventListener('click', () => {
+      const items = readCart();
+      if (!items.length) return toast('Seu carrinho está vazio.');
+      alert('Fluxo de checkout ainda não implementado.');
+    });
+  } else {
+    // Mesmo fora da página do carrinho, drawer funciona
+    bindDrawerEvents();
+    renderDrawer(readCart());
+  }
 });
