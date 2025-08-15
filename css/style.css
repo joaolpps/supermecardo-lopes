@@ -123,6 +123,13 @@ header .container {
     padding: 20px;
 }
 
+header, header.fixed, header.sticky {
+    position: static !important;
+    top: auto !important;
+    z-index: auto !important;
+}
+
+
 /* Top nav */
 .top-nav {
     display: flex;
